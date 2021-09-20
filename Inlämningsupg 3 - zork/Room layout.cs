@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inlämningsupg_3___zork
 {
-    public partial class Form1 : Form
+    public partial class Room1 : Form
     {
-        public Form1()
+        public Room1()
         {
             InitializeComponent();
             string hej = "hej där";

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="End screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="End screen.Designer.cs">
+      <DependentUpon>End screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Room layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="End screen.resx">
+      <DependentUpon>End screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Room layout.resx">
       <DependentUpon>Room layout.cs</DependentUpon>
     </EmbeddedResource>

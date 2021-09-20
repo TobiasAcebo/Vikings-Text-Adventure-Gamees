@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inlämningsupg_3___zork
 {
-    public partial class StartScreen : Form
+    public partial class EndScreen : Form
     {
-        public StartScreen()
+        public EndScreen()
         {
             InitializeComponent();
         }

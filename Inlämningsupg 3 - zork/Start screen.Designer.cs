@@ -1,7 +1,7 @@
 ﻿
 namespace Inlämningsupg_3___zork
 {
-    partial class Form2
+    partial class StartScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Inlämningsupg_3___zork
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.userNameTxt = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@ namespace Inlämningsupg_3___zork
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -89,10 +89,9 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Form2";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Start Screen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
