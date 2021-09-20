@@ -46,12 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Character.cs" />
     <Compile Include="End screen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="End screen.Designer.cs">
       <DependentUpon>End screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exit.cs" />
+    <Compile Include="GameEvent.cs" />
+    <Compile Include="IGameEvent.cs" />
+    <Compile Include="InputHandler.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Room layout.cs">
       <SubType>Form</SubType>
     </Compile>
