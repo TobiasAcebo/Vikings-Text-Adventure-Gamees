@@ -15,6 +15,7 @@ namespace Inlämningsupg_3___zork
         public Form1()
         {
             InitializeComponent();
+            string hej = "hej";
         }
     }
 }
