@@ -53,12 +53,12 @@
     <Compile Include="End screen.Designer.cs">
       <DependentUpon>End screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exit.cs" />
-    <Compile Include="GameEvent.cs" />
-    <Compile Include="IGameEvent.cs" />
+    <Compile Include="Door.cs" />
+    <Compile Include="GameContent.cs" />
+    <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Location.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="Room layout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +103,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Idéer.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

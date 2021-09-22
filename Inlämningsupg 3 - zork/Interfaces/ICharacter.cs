@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class GameEvent
+    interface ICharacter
     {
-        
+        void Move(string direction);
+        void PickUpItem(Item item);
+        void DropItem(Item item);
+        bool TryOpenDoor(Item door);
+
     }
 }

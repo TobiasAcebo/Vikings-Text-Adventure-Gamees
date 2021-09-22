@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class Exit
+    class Door
     {
         public bool IsOpen { get; set; }
     }
