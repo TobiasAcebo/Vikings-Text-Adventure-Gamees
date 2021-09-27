@@ -77,6 +77,7 @@ namespace Inlämningsupg_3___zork
             this.playBtn.TabIndex = 13;
             this.playBtn.Text = "Play";
             this.playBtn.UseVisualStyleBackColor = true;
+            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
             // 
             // StartScreen
             // 

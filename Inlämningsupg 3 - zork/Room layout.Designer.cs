@@ -1,7 +1,7 @@
 ﻿
 namespace Inlämningsupg_3___zork
 {
-    partial class Room1
+    partial class Scenario1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,22 +29,22 @@ namespace Inlämningsupg_3___zork
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scenario1));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.roomNameLabel = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.movesLabel = new System.Windows.Forms.Label();
+            this.roomDescriptionTxt = new System.Windows.Forms.RichTextBox();
+            this.roomPicturebox = new System.Windows.Forms.PictureBox();
+            this.playerLabel = new System.Windows.Forms.Label();
+            this.playerNameLabel = new System.Windows.Forms.Label();
+            this.inventoryLabel = new System.Windows.Forms.Label();
+            this.item1Label = new System.Windows.Forms.Label();
+            this.pickUpItemBtn = new System.Windows.Forms.Button();
+            this.userInputTxt = new System.Windows.Forms.TextBox();
+            this.keyOnDoorBtn = new System.Windows.Forms.Button();
+            this.item2Label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -55,170 +55,170 @@ namespace Inlämningsupg_3___zork
             this.label1.Size = new System.Drawing.Size(1496, 45);
             this.label1.TabIndex = 0;
             // 
-            // label2
+            // roomNameLabel
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "The docks";
+            this.roomNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.roomNameLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomNameLabel.Location = new System.Drawing.Point(12, 6);
+            this.roomNameLabel.Name = "roomNameLabel";
+            this.roomNameLabel.Size = new System.Drawing.Size(208, 31);
+            this.roomNameLabel.TabIndex = 1;
+            this.roomNameLabel.Text = "The docks";
             // 
-            // label4
+            // scoreLabel
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(922, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 31);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Score: 0";
+            this.scoreLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.Location = new System.Drawing.Point(922, 6);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(208, 31);
+            this.scoreLabel.TabIndex = 3;
+            this.scoreLabel.Text = "Score: 0";
             // 
-            // label3
+            // movesLabel
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1189, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(208, 31);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Moves: 0";
+            this.movesLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.movesLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movesLabel.Location = new System.Drawing.Point(1189, 6);
+            this.movesLabel.Name = "movesLabel";
+            this.movesLabel.Size = new System.Drawing.Size(208, 31);
+            this.movesLabel.TabIndex = 4;
+            this.movesLabel.Text = "Moves: 0";
             // 
-            // richTextBox1
+            // roomDescriptionTxt
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.richTextBox1.Location = new System.Drawing.Point(354, 396);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(759, 177);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.roomDescriptionTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.roomDescriptionTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.roomDescriptionTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomDescriptionTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.roomDescriptionTxt.Location = new System.Drawing.Point(354, 396);
+            this.roomDescriptionTxt.Name = "roomDescriptionTxt";
+            this.roomDescriptionTxt.ReadOnly = true;
+            this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 177);
+            this.roomDescriptionTxt.TabIndex = 5;
+            this.roomDescriptionTxt.Text = resources.GetString("roomDescriptionTxt.Text");
             // 
-            // pictureBox1
+            // roomPicturebox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(354, 114);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(759, 257);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.roomPicturebox.Image = ((System.Drawing.Image)(resources.GetObject("roomPicturebox.Image")));
+            this.roomPicturebox.Location = new System.Drawing.Point(354, 114);
+            this.roomPicturebox.Name = "roomPicturebox";
+            this.roomPicturebox.Size = new System.Drawing.Size(759, 257);
+            this.roomPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roomPicturebox.TabIndex = 6;
+            this.roomPicturebox.TabStop = false;
             // 
-            // label5
+            // playerLabel
             // 
-            this.label5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 797);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(113, 31);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Player:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.playerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.playerLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerLabel.Location = new System.Drawing.Point(0, 797);
+            this.playerLabel.Name = "playerLabel";
+            this.playerLabel.Size = new System.Drawing.Size(113, 31);
+            this.playerLabel.TabIndex = 7;
+            this.playerLabel.Text = "Player:";
+            this.playerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // playerNameLabel
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(114, 797);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 31);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Name";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.playerNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.playerNameLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerNameLabel.Location = new System.Drawing.Point(114, 797);
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(113, 31);
+            this.playerNameLabel.TabIndex = 8;
+            this.playerNameLabel.Text = "Name";
+            this.playerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // inventoryLabel
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1269, 797);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 31);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Inventory:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.inventoryLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.inventoryLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventoryLabel.Location = new System.Drawing.Point(1269, 797);
+            this.inventoryLabel.Name = "inventoryLabel";
+            this.inventoryLabel.Size = new System.Drawing.Size(113, 31);
+            this.inventoryLabel.TabIndex = 9;
+            this.inventoryLabel.Text = "Inventory:";
+            this.inventoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // item1Label
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1383, 797);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 31);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Item";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.item1Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.item1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.item1Label.Location = new System.Drawing.Point(1383, 797);
+            this.item1Label.Name = "item1Label";
+            this.item1Label.Size = new System.Drawing.Size(113, 31);
+            this.item1Label.TabIndex = 10;
+            this.item1Label.Text = "Item";
+            this.item1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // pickUpItemBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(553, 770);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 32);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Pick up item";
-            this.button1.UseVisualStyleBackColor = true;
+            this.pickUpItemBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pickUpItemBtn.Location = new System.Drawing.Point(553, 770);
+            this.pickUpItemBtn.Name = "pickUpItemBtn";
+            this.pickUpItemBtn.Size = new System.Drawing.Size(141, 32);
+            this.pickUpItemBtn.TabIndex = 11;
+            this.pickUpItemBtn.Text = "Pick up item";
+            this.pickUpItemBtn.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // userInputTxt
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(553, 595);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(345, 169);
-            this.textBox1.TabIndex = 12;
+            this.userInputTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.userInputTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userInputTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.userInputTxt.Location = new System.Drawing.Point(553, 595);
+            this.userInputTxt.Multiline = true;
+            this.userInputTxt.Name = "userInputTxt";
+            this.userInputTxt.Size = new System.Drawing.Size(345, 169);
+            this.userInputTxt.TabIndex = 12;
             // 
-            // button2
+            // keyOnDoorBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(757, 770);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 32);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Use key on door";
-            this.button2.UseVisualStyleBackColor = true;
+            this.keyOnDoorBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyOnDoorBtn.Location = new System.Drawing.Point(757, 770);
+            this.keyOnDoorBtn.Name = "keyOnDoorBtn";
+            this.keyOnDoorBtn.Size = new System.Drawing.Size(141, 32);
+            this.keyOnDoorBtn.TabIndex = 13;
+            this.keyOnDoorBtn.Text = "Use key on door";
+            this.keyOnDoorBtn.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // item2Label
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1383, 766);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 31);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Item";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.item2Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.item2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.item2Label.Location = new System.Drawing.Point(1383, 766);
+            this.item2Label.Name = "item2Label";
+            this.item2Label.Size = new System.Drawing.Size(113, 31);
+            this.item2Label.TabIndex = 14;
+            this.item2Label.Text = "Item";
+            this.item2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Room1
+            // Scenario1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.item2Label);
+            this.Controls.Add(this.keyOnDoorBtn);
+            this.Controls.Add(this.userInputTxt);
+            this.Controls.Add(this.pickUpItemBtn);
+            this.Controls.Add(this.item1Label);
+            this.Controls.Add(this.inventoryLabel);
+            this.Controls.Add(this.playerNameLabel);
+            this.Controls.Add(this.playerLabel);
+            this.Controls.Add(this.roomPicturebox);
+            this.Controls.Add(this.roomDescriptionTxt);
+            this.Controls.Add(this.movesLabel);
+            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.roomNameLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Room1";
+            this.Name = "Scenario1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Room 1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Scenario 1";
+            ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,19 +227,19 @@ namespace Inlämningsupg_3___zork
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label roomNameLabel;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label movesLabel;
+        private System.Windows.Forms.RichTextBox roomDescriptionTxt;
+        private System.Windows.Forms.PictureBox roomPicturebox;
+        private System.Windows.Forms.Label playerLabel;
+        private System.Windows.Forms.Label playerNameLabel;
+        private System.Windows.Forms.Label inventoryLabel;
+        private System.Windows.Forms.Label item1Label;
+        private System.Windows.Forms.Button pickUpItemBtn;
+        private System.Windows.Forms.TextBox userInputTxt;
+        private System.Windows.Forms.Button keyOnDoorBtn;
+        private System.Windows.Forms.Label item2Label;
     }
 }
 

@@ -16,5 +16,10 @@ namespace Inlämningsupg_3___zork
         {
             InitializeComponent();
         }
+
+        private void playBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

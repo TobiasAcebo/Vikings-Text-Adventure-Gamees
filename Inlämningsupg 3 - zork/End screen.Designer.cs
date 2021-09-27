@@ -32,13 +32,13 @@ namespace Inlämningsupg_3___zork
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EndScreen));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.scoreLabel = new System.Windows.Forms.Label();
+            this.player1ScoreLabel = new System.Windows.Forms.Label();
+            this.player1Label = new System.Windows.Forms.Label();
+            this.player2ScoreLabel = new System.Windows.Forms.Label();
+            this.player2Label = new System.Windows.Forms.Label();
+            this.player3ScoreLabel = new System.Windows.Forms.Label();
+            this.player3Label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,89 +73,89 @@ namespace Inlämningsupg_3___zork
             this.label2.Text = "Your score";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // scoreLabel
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(658, 421);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(254, 85);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Score";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.scoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreLabel.ForeColor = System.Drawing.SystemColors.Info;
+            this.scoreLabel.Location = new System.Drawing.Point(658, 421);
+            this.scoreLabel.Name = "scoreLabel";
+            this.scoreLabel.Size = new System.Drawing.Size(254, 85);
+            this.scoreLabel.TabIndex = 16;
+            this.scoreLabel.Text = "Score";
+            this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // player1ScoreLabel
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(834, 595);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 31);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Score";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player1ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player1ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player1ScoreLabel.Location = new System.Drawing.Point(834, 595);
+            this.player1ScoreLabel.Name = "player1ScoreLabel";
+            this.player1ScoreLabel.Size = new System.Drawing.Size(84, 31);
+            this.player1ScoreLabel.TabIndex = 18;
+            this.player1ScoreLabel.Text = "Score";
+            this.player1ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // player1Label
             // 
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(675, 595);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 31);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Player";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player1Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player1Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player1Label.Location = new System.Drawing.Point(675, 595);
+            this.player1Label.Name = "player1Label";
+            this.player1Label.Size = new System.Drawing.Size(84, 31);
+            this.player1Label.TabIndex = 17;
+            this.player1Label.Text = "Player";
+            this.player1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // player2ScoreLabel
             // 
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(834, 639);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 31);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Score";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player2ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player2ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player2ScoreLabel.Location = new System.Drawing.Point(834, 639);
+            this.player2ScoreLabel.Name = "player2ScoreLabel";
+            this.player2ScoreLabel.Size = new System.Drawing.Size(84, 31);
+            this.player2ScoreLabel.TabIndex = 20;
+            this.player2ScoreLabel.Text = "Score";
+            this.player2ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // player2Label
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(675, 639);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 31);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Player";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player2Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player2Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player2Label.Location = new System.Drawing.Point(675, 639);
+            this.player2Label.Name = "player2Label";
+            this.player2Label.Size = new System.Drawing.Size(84, 31);
+            this.player2Label.TabIndex = 19;
+            this.player2Label.Text = "Player";
+            this.player2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // player3ScoreLabel
             // 
-            this.label9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(834, 684);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 31);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Score";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player3ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player3ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player3ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player3ScoreLabel.Location = new System.Drawing.Point(834, 684);
+            this.player3ScoreLabel.Name = "player3ScoreLabel";
+            this.player3ScoreLabel.Size = new System.Drawing.Size(84, 31);
+            this.player3ScoreLabel.TabIndex = 22;
+            this.player3ScoreLabel.Text = "Score";
+            this.player3ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // player3Label
             // 
-            this.label10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(675, 684);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 31);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Player";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.player3Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.player3Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.player3Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.player3Label.Location = new System.Drawing.Point(675, 684);
+            this.player3Label.Name = "player3Label";
+            this.player3Label.Size = new System.Drawing.Size(84, 31);
+            this.player3Label.TabIndex = 21;
+            this.player3Label.Text = "Player";
+            this.player3Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -237,13 +237,13 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.player3ScoreLabel);
+            this.Controls.Add(this.player3Label);
+            this.Controls.Add(this.player2ScoreLabel);
+            this.Controls.Add(this.player2Label);
+            this.Controls.Add(this.player1ScoreLabel);
+            this.Controls.Add(this.player1Label);
+            this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "EndScreen";
@@ -258,13 +258,13 @@ namespace Inlämningsupg_3___zork
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label player1ScoreLabel;
+        private System.Windows.Forms.Label player1Label;
+        private System.Windows.Forms.Label player2ScoreLabel;
+        private System.Windows.Forms.Label player2Label;
+        private System.Windows.Forms.Label player3ScoreLabel;
+        private System.Windows.Forms.Label player3Label;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;

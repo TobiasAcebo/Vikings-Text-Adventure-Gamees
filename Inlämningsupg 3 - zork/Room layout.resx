@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
+  <data name="roomDescriptionTxt.Text" xml:space="preserve">
     <value>Years of traveling in the Mediterranean sea.
 You have finally arrived in Kattegatt with your ship. 
 Here at the docks, you must find your way into the great halls.
@@ -126,7 +126,7 @@ At the end of the docks, there's a fisherman talking about his travels with his 
 Perhaps he knows how to get into the great halls.</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="roomPicturebox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAYABgAAD/4QB8RXhpZgAATU0AKgAAAAgAAwESAAMAAAABAAEAAAExAAIAAAAu
         AAAAMgEyAAIAAAAUAAAAYAAAAABNaWNyb3NvZnQgV2luZG93cyBQaG90byBWaWV3ZXIgNi4zLjk2MDAu

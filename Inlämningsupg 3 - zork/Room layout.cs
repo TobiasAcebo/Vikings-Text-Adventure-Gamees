@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Inlämningsupg_3___zork
 {
-    public partial class Room1 : Form
+    public partial class Scenario1 : Form
     {
-        public Room1()
+        public Scenario1()
         {
             InitializeComponent();
-            string hej = "hej där";
+            
         }
+        
     }
 }
