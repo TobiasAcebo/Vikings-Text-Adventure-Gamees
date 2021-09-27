@@ -29,6 +29,7 @@ namespace Inlämningsupg_3___zork
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Room1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@ namespace Inlämningsupg_3___zork
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +63,7 @@ namespace Inlämningsupg_3___zork
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 31);
             this.label2.TabIndex = 1;
-            this.label2.Text = "West of House";
+            this.label2.Text = "The docks";
             // 
             // label4
             // 
@@ -91,15 +93,18 @@ namespace Inlämningsupg_3___zork
             this.richTextBox1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.richTextBox1.Location = new System.Drawing.Point(354, 396);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(759, 177);
             this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(354, 114);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(759, 257);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -178,12 +183,24 @@ namespace Inlämningsupg_3___zork
             this.button2.Text = "Use key on door";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(1383, 766);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 31);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Item";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Room1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
@@ -222,6 +239,7 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label9;
     }
 }
 

@@ -16,7 +16,7 @@ namespace Inlämningsupg_3___zork
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EndScreen());
+            Application.Run(new Room1());
         }
     }
 }
