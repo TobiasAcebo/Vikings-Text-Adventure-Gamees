@@ -58,7 +58,8 @@
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Room.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Scenario.cs" />
     <Compile Include="Room layout.cs">
       <SubType>Form</SubType>
     </Compile>

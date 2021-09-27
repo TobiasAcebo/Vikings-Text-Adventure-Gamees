@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class Room
+    class Location
     {
         public string Title { get; set; }
-        public bool IsEndPoint { get; set; }
-        public List<Door> DoorList { get; set; }
+        public string Description { get; set; }
         public List<Item> ItemList { get; set; }
+        public Door Door { get; set; }
     }
 }

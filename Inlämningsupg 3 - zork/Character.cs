@@ -8,14 +8,16 @@ namespace Inlämningsupg_3___zork
 {
     class Character : ICharacter
     {
-        private readonly Room _currentRoom;
-        private readonly string _name;
-
-        public Character(Room currentRoom, string name)
+        public Character(Scenario currentScenario, string name)
         {
-            _currentRoom = currentRoom;
-            _name = name;
+            CurrentScenario = currentScenario;
+            CurrentLocation = currentScenario.LocationList.FirstOrDefault(l => l.Title == "starting point");
+            Name = name;
         }
+
+        public string Name { get; set; }
+        public Scenario CurrentScenario { get; set; }
+        public Location CurrentLocation { get; set; }
         public List<Item> ItemList { get; set; }
         public string LastDirection { get; set; }
         public int ScoreCount { get; set; }
