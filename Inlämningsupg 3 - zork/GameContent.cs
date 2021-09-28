@@ -26,7 +26,7 @@ namespace Inlämningsupg_3___zork
                         new Location {Title = "end of docks", ItemList = new List<Item>{new Item {Title = "knife"}, new Item{Title = "fishing line" } }},
                         new Location {Title = "west side", Description = "West side of the docks. \r\nIt’s so noisy here, what is that sound? Very well, nothing to see I guess. "},
                         new Location {Title = "guidance", Description = "Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place."},
-                        new Location {Title = "gate", Door = new Door {IsOpen = false}, Description = "A locked gate. Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows. "}
+                        new Location {Title = "gate", Door = new Door {IsOpen = false}, Description =  "A locked gate. Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows. "}
                     },
 
                     IsEndPoint = false

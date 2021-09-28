@@ -10,13 +10,34 @@ using System.Windows.Forms;
 
 namespace Inlämningsupg_3___zork
 {
-    public partial class Scenario1 : Form
+    public partial class FrmScenario : Form
     {
-        public Scenario1()
+        private Character _character;
+        public FrmScenario(Character character)
         {
-            InitializeComponent();
+            _character = character;
             
+            InitializeComponent();
         }
-        
+
+        private void FrmScenario_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInputTxt.Text);
+
+            if (!string.IsNullOrEmpty(inputExceptionMessage)) 
+                PrintExceptionMessage(inputExceptionMessage);
+            else
+            {
+                
+            }
+        }
+
+        private void PrintExceptionMessage(string inputExceptionMessage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

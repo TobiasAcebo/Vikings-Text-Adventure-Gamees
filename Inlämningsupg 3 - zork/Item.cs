@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class Item
+    public class Item
     {
         public string Title { get; set; }
         public bool IsKey { get; set; }

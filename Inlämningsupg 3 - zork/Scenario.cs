@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class Scenario
+    public class Scenario
     {
         public int Id { get; set; }
         public string Title { get; set; }

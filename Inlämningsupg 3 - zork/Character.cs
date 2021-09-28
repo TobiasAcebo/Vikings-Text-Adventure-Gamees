@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class Character : ICharacter
+    public class Character : ICharacter
     {
         public Character(Scenario currentScenario, string name)
         {
