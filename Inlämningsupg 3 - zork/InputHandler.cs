@@ -10,16 +10,14 @@ namespace Inlämningsupg_3___zork
     static class InputHandler
     {
         private static readonly string[] _standardWords = { "go", "east", "west", "forward", "back", "to" };
+        private static readonly string _standardExceptionMessage = "The command is not valid";
         public static string GetInputExceptionMessage(Character character, string command)
         {
 
             if (character.CurrentScenario.Id == 1)
-            {
                 return GetTheDocksInputExceptionsMessage(character, command);
-            }
-                
             
-
+            
             return null;
         }
 
@@ -34,18 +32,36 @@ namespace Inlämningsupg_3___zork
                     result += $"'{inputWordException}', ";
                 }
 
-                return result.Substring(0, result.Length - 2) + "Isn't in our vocabulary";
+                return result.Substring(0, result.Length - 2) + " Isn't in our vocabulary";
             }
-            else
-            {
-                
-            }
-            
+
+            if (IsValidTheDocksCommand(character, command))
+                return null;
+
+            return _standardExceptionMessage;
+
             var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title);
 
             var currentLocation = character.CurrentLocation;
 
             return null;
+        }
+
+        private static bool IsValidTheDocksCommand(Character character, string command)
+        {
+            List<string> validCommands = new List<string>
+            {
+                "go east",
+                "go west",
+                "go forward",
+                "go back",
+                "go to fisherman",
+                "open door",
+                "use knife on fishing line",
+
+            };
+            if(character.CurrentLocation.Title != "end of docks")
+                validCommands.Add("go to fisherman");
         }
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
