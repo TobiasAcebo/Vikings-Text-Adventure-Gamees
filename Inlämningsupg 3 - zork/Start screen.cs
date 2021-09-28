@@ -19,7 +19,15 @@ namespace Inlämningsupg_3___zork
 
         private void playBtn_Click(object sender, EventArgs e)
         {
+            GameContent gameContent = new GameContent();
 
+            Scenario currentScenario = gameContent.GetStartingScenario();
+
+            Character character = new Character(currentScenario, userNameTxt.Text);
+            character.CurrentLocation = currentScenario.LocationList.First(l => l.Title == "starting point");
+
+            FrmScenario frmScenario = new FrmScenario(character);
+            frmScenario.Show();
         }
     }
 }

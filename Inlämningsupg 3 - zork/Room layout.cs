@@ -18,6 +18,7 @@ namespace Inlämningsupg_3___zork
             _character = character;
             
             InitializeComponent();
+            playerNameLabel.Text = _character.Name;
         }
 
         private void FrmScenario_KeyDown(object sender, KeyEventArgs e)
