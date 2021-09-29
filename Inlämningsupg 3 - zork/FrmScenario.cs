@@ -64,7 +64,7 @@ namespace Inlämningsupg_3___zork
                         inventory2 = "knife";
                         
                         else if (inventory1 == "" && inventory2 != "")
-                        inventory2 = "knife";
+                        inventory1 = "knife";
                         
                         else
                         outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
@@ -78,7 +78,7 @@ namespace Inlämningsupg_3___zork
                         inventory2 = "Fishing line";
                         
                         else if (inventory1 == "" && inventory2 != "")
-                        inventory2 = "Fishing line";
+                        inventory1 = "Fishing line";
                         
                         else
                         outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
