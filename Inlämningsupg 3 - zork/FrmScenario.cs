@@ -50,6 +50,7 @@ namespace Inlämningsupg_3___zork
             var currentInventory = _character.ItemList;
             string inventory1 = item1Label.Text;
             string inventory2 = item2Label.Text;
+            string outputValue = roomDescriptionTxt.Text;
 
             foreach (var item in currentInventory)
             {
@@ -57,41 +58,31 @@ namespace Inlämningsupg_3___zork
                 {
                     case "knife":
                         if (inventory1 == "" && inventory2 == "")
-                        {
-                            inventory1 = "Knife";
-                        }
-                        else if (inventory1 != "" && inventory2 == "")
-                        {
-                            inventory2 = "knife";
-                        }
-                        else if (inventory1 == "" && inventory2 != "")
-                        {
-                            inventory2 = "knife";
-                        }
-                        else
-                        {
-                            roomDescriptionTxt.Text = "Invetory is full"; // skriver den över all text eller adderar en rad?
-                        }
+                        inventory1 = "Knife";
 
+                        else if (inventory1 != "" && inventory2 == "")
+                        inventory2 = "knife";
+                        
+                        else if (inventory1 == "" && inventory2 != "")
+                        inventory2 = "knife";
+                        
+                        else
+                        outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
                         break;
+
                     case "fishing line":
                         if (inventory1 == "" && inventory2 == "")
-                        {
-                            inventory1 = "Fishing line";
-                        }
+                        inventory1 = "Fishing line";
+                        
                         else if (inventory1 != "" && inventory2 == "")
-                        {
-                            inventory2 = "Fishing line";
-                        }
+                        inventory2 = "Fishing line";
+                        
                         else if (inventory1 == "" && inventory2 != "")
-                        {
-                            inventory2 = "Fishing line";
-                        }
+                        inventory2 = "Fishing line";
+                        
                         else
-                        {
-                            roomDescriptionTxt.Text = "Invetory is full"; // skriver den över all text eller adderar en rad?
-                        }
-                        break;
+                        outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
+                         break;
                 }
 
             }
