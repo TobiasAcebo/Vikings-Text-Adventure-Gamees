@@ -62,7 +62,8 @@ namespace Inlämningsupg_3___zork
             };
             if (character.CurrentLocation.Title != "end of docks")
                 validCommands.Add("go to fisherman");
-            
+
+            return true;
         }
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)

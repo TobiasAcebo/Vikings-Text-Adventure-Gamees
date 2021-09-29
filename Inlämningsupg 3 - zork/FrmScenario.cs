@@ -32,8 +32,15 @@ namespace Inlämningsupg_3___zork
                 PrintExceptionMessage(inputExceptionMessage);
             else
             {
-                
+                //_game.ExecuteCommand(_character, userInputTxt.Text);
+
+                UpdateScenario();
             }
+        }
+
+        private void UpdateScenario()
+        {
+            throw new NotImplementedException();
         }
 
         private void PrintExceptionMessage(string inputExceptionMessage)

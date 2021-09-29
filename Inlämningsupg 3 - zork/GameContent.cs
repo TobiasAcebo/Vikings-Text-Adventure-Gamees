@@ -30,7 +30,8 @@ namespace Inlämningsupg_3___zork
                     },
 
                     IsEndPoint = false
-                }
+                },
+            
             };
         }
 
