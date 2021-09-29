@@ -60,8 +60,9 @@ namespace Inlämningsupg_3___zork
                 "use knife on fishing line",
 
             };
-            if(character.CurrentLocation.Title != "end of docks")
+            if (character.CurrentLocation.Title != "end of docks")
                 validCommands.Add("go to fisherman");
+            
         }
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)

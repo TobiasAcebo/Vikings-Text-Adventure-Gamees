@@ -27,7 +27,9 @@ namespace Inlämningsupg_3___zork
             character.CurrentLocation = currentScenario.LocationList.First(l => l.Title == "starting point");
 
             FrmScenario frmScenario = new FrmScenario(character);
+            StartScreen.ActiveForm.Hide();
             frmScenario.Show();
+            
         }
     }
 }

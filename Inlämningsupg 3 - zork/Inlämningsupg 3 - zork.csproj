@@ -60,11 +60,11 @@
     <Compile Include="Item.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Scenario.cs" />
-    <Compile Include="Room layout.cs">
+    <Compile Include="FrmScenario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Room layout.Designer.cs">
-      <DependentUpon>Room layout.cs</DependentUpon>
+    <Compile Include="FrmScenario.Designer.cs">
+      <DependentUpon>FrmScenario.cs</DependentUpon>
     </Compile>
     <Compile Include="Start screen.cs">
       <SubType>Form</SubType>
@@ -77,8 +77,8 @@
     <EmbeddedResource Include="End screen.resx">
       <DependentUpon>End screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Room layout.resx">
-      <DependentUpon>Room layout.cs</DependentUpon>
+    <EmbeddedResource Include="FrmScenario.resx">
+      <DependentUpon>FrmScenario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start screen.resx">
       <DependentUpon>Start screen.cs</DependentUpon>
