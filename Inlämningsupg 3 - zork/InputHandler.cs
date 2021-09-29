@@ -9,10 +9,11 @@ namespace Inlämningsupg_3___zork
 {
     static class InputHandler
     {
-        private static readonly string[] _standardWords = { "go", "east", "west", "forward", "back", "to" };
+        private static readonly string[] _standardWords = { "go", "east", "west", "north", "back", "south", "to" };
         private static readonly string _standardExceptionMessage = "The command is not valid";
         public static string GetInputExceptionMessage(Character character, string command)
         {
+
 
             if (character.CurrentScenario.Id == 1)
                 return GetTheDocksInputExceptionsMessage(character, command);
@@ -23,6 +24,10 @@ namespace Inlämningsupg_3___zork
 
         private static string GetTheDocksInputExceptionsMessage(Character character, string command)
         {
+            if (character.CurrentLocation.Title == "starting point")
+            {
+
+            }
             List<string> inputWordsExceptionsList = GetTheDocksInputWordsExceptionsList(character, command);
             if (inputWordsExceptionsList.Count > 0)
             {
@@ -68,8 +73,24 @@ namespace Inlämningsupg_3___zork
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
-            string[] theDocksStandardWords = { "talk", "fisherman" };
-            return null;
+            var validWordsList = new List<string>();
+            var inputWordsExceptionsList = new List<string>();
+
+            string[] commandWordsArr = command.Split(' ');
+
+            validWordsList.AddRange(_standardWords);
+
+            if (character.CurrentLocation.Title == "starting point")
+            {
+
+            }
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat" };
+            foreach (var commandWord in commandWordsArr)
+            {
+                if(!validWordsList.Contains(commandWord))
+                    inputWordsExceptionsList.Add(commandWord);
+            }
+            return inputWordsExceptionsList;
         }
     }
 }
