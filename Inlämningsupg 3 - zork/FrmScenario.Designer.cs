@@ -42,7 +42,7 @@ namespace Inlämningsupg_3___zork
             this.item1Label = new System.Windows.Forms.Label();
             this.pickUpItemBtn = new System.Windows.Forms.Button();
             this.userInputTxt = new System.Windows.Forms.TextBox();
-            this.keyOnDoorBtn = new System.Windows.Forms.Button();
+            this.keyOnGateBtn = new System.Windows.Forms.Button();
             this.item2Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).BeginInit();
             this.SuspendLayout();
@@ -149,7 +149,6 @@ namespace Inlämningsupg_3___zork
             this.item1Label.Name = "item1Label";
             this.item1Label.Size = new System.Drawing.Size(113, 31);
             this.item1Label.TabIndex = 10;
-            this.item1Label.Text = "Item";
             this.item1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pickUpItemBtn
@@ -173,25 +172,24 @@ namespace Inlämningsupg_3___zork
             this.userInputTxt.Size = new System.Drawing.Size(345, 169);
             this.userInputTxt.TabIndex = 12;
             // 
-            // keyOnDoorBtn
+            // keyOnGateBtn
             // 
-            this.keyOnDoorBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keyOnDoorBtn.Location = new System.Drawing.Point(757, 770);
-            this.keyOnDoorBtn.Name = "keyOnDoorBtn";
-            this.keyOnDoorBtn.Size = new System.Drawing.Size(141, 32);
-            this.keyOnDoorBtn.TabIndex = 13;
-            this.keyOnDoorBtn.Text = "Use key on door";
-            this.keyOnDoorBtn.UseVisualStyleBackColor = true;
+            this.keyOnGateBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keyOnGateBtn.Location = new System.Drawing.Point(757, 770);
+            this.keyOnGateBtn.Name = "keyOnGateBtn";
+            this.keyOnGateBtn.Size = new System.Drawing.Size(141, 32);
+            this.keyOnGateBtn.TabIndex = 13;
+            this.keyOnGateBtn.Text = "Use key on gate";
+            this.keyOnGateBtn.UseVisualStyleBackColor = true;
             // 
             // item2Label
             // 
             this.item2Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.item2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item2Label.Location = new System.Drawing.Point(1383, 766);
+            this.item2Label.Location = new System.Drawing.Point(1383, 765);
             this.item2Label.Name = "item2Label";
             this.item2Label.Size = new System.Drawing.Size(113, 31);
             this.item2Label.TabIndex = 14;
-            this.item2Label.Text = "Item";
             this.item2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmScenario
@@ -201,7 +199,7 @@ namespace Inlämningsupg_3___zork
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
             this.Controls.Add(this.item2Label);
-            this.Controls.Add(this.keyOnDoorBtn);
+            this.Controls.Add(this.keyOnGateBtn);
             this.Controls.Add(this.userInputTxt);
             this.Controls.Add(this.pickUpItemBtn);
             this.Controls.Add(this.item1Label);
@@ -239,7 +237,7 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Label item1Label;
         private System.Windows.Forms.Button pickUpItemBtn;
         private System.Windows.Forms.TextBox userInputTxt;
-        private System.Windows.Forms.Button keyOnDoorBtn;
+        private System.Windows.Forms.Button keyOnGateBtn;
         private System.Windows.Forms.Label item2Label;
     }
 }
