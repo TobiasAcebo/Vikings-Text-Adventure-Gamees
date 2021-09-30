@@ -13,6 +13,7 @@ namespace Inlämningsupg_3___zork
     public partial class FrmScenario : Form
     {
         private Character _character;
+        private int _seconds = 0;
         public FrmScenario(Character character)
         {
             _character = character;
@@ -36,6 +37,20 @@ namespace Inlämningsupg_3___zork
 
                 UpdateScenario();
             }
+        }
+
+        public void GameTimer()
+        {
+            this._seconds++;
+
+            if (this._seconds == 60)
+            {
+                this._seconds = 0;
+                //this._minutes++;
+            }
+
+            //TimeLabel.Text = "Time: " + this._seconds.ToString();
+
         }
 
         private void UpdateScenario()

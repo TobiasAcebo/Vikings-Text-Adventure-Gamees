@@ -44,12 +44,6 @@ namespace Inlämningsupg_3___zork
                 return null;
 
             return _standardExceptionMessage;
-
-            
-
-            var currentLocation = character.CurrentLocation;
-
-            return null;
         }
 
         private static bool IsValidTheDocksCommand(Character character, string command)
