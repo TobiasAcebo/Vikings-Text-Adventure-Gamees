@@ -42,10 +42,15 @@ namespace Inlämningsupg_3___zork
         {
             Moves();
             Scene();
-            inventory();
+            Inventory();
         }
 
-        private void inventory() 
+        private void Inventory() 
+        {
+            ItemsTheDocks();
+            KeyTheDocks();
+        }
+        private void ItemsTheDocks()
         {
             var currentInventory = _character.ItemList;
             string inventory1 = item1Label.Text;
@@ -58,36 +63,59 @@ namespace Inlämningsupg_3___zork
                 {
                     case "knife":
                         if (inventory1 == "" && inventory2 == "")
-                        inventory1 = "Knife";
+                            inventory1 = "Knife";
 
                         else if (inventory1 != "" && inventory2 == "")
-                        inventory2 = "knife";
-                        
+                            inventory2 = "knife";
+
                         else if (inventory1 == "" && inventory2 != "")
-                        inventory1 = "knife";
-                        
+                            inventory1 = "knife";
+
                         else
-                        outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
+                            outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
                         break;
 
                     case "fishing line":
                         if (inventory1 == "" && inventory2 == "")
-                        inventory1 = "Fishing line";
-                        
+                            inventory1 = "Fishing line";
+
                         else if (inventory1 != "" && inventory2 == "")
-                        inventory2 = "Fishing line";
-                        
+                            inventory2 = "Fishing line";
+
                         else if (inventory1 == "" && inventory2 != "")
-                        inventory1 = "Fishing line";
-                        
+                            inventory1 = "Fishing line";
+
                         else
-                        outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
-                         break;
+                            outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
+                        break;
                 }
 
             }
         }
+        private void KeyTheDocks()
+        {
+            string inventory1 = item1Label.Text;
+            string inventory2 = item2Label.Text;
+            string outputValue = roomDescriptionTxt.Text;
 
+            switch (inventory1)
+            {
+                case "knife" when inventory2 == "fishing line":
+                    if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
+                    {
+                        inventory1 = "Key";
+                        outputValue = "You found a key!";
+                    }
+                    break;
+                case "fishing line" when inventory2 == "knife":
+                    if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
+                    {
+                        inventory1 = "Key";
+                        outputValue = "You found a key!";
+                    }
+                    break;
+            }
+        }
         private void Scene()
         {
             var currentScenario = _character.CurrentScenario;
@@ -111,7 +139,6 @@ namespace Inlämningsupg_3___zork
                 roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
-
         private void Moves()
         {
             if (counter >= 0)
@@ -120,10 +147,14 @@ namespace Inlämningsupg_3___zork
             }
             movesLabel.Text = "Moves: " + counter.ToString();
         }
-
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
-            throw new NotImplementedException();
+            
+        }
+
+        private void pickUpItemBtn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

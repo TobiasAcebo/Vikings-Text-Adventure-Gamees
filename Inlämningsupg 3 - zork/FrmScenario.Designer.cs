@@ -160,6 +160,7 @@ namespace Inlämningsupg_3___zork
             this.pickUpItemBtn.TabIndex = 11;
             this.pickUpItemBtn.Text = "Pick up item";
             this.pickUpItemBtn.UseVisualStyleBackColor = true;
+            this.pickUpItemBtn.Click += new System.EventHandler(this.pickUpItemBtn_Click);
             // 
             // userInputTxt
             // 
