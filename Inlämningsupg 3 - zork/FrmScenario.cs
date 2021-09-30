@@ -50,7 +50,6 @@ namespace Inlämningsupg_3___zork
             }
 
             //TimeLabel.Text = "Time: " + this._seconds.ToString();
-
         }
 
         private void UpdateScenario()

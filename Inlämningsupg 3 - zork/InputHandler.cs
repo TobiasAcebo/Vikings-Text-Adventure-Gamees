@@ -14,11 +14,9 @@ namespace Inlämningsupg_3___zork
         public static string GetInputExceptionMessage(Character character, string command)
         {
 
-
             if (character.CurrentScenario.Id == 1)
                 return GetTheDocksInputExceptionsMessage(character, command);
-            
-            
+
             return null;
         }
 
@@ -52,44 +50,78 @@ namespace Inlämningsupg_3___zork
             {
                 "go east",
                 "go west",
-                "go forward",
-                "go back",
+                "go north",
+                "go south",
                 "go to fisherman",
-                "open door",
-                "use knife on fishing line",
-
+                "open gate",
+                "jump in water",
+                "jump into the water",
+                "go back",
+                "go to end of docks",
+                "go to gate",
+                "look",
+                "go on the boat",
+                "go on boat",
+                "hi",
+                "hi there",
+                "hello",
+                "hello there", 
+                "talk to fisherman",
+                "talk",
+                "buy fishing line",
+                "buy knife",
+                "buy fishing line and knife"
             };
-            if (character.CurrentLocation.Title != "end of docks")
-                validCommands.Add("go to fisherman");
 
-            return true;
+            var itemTitles = character.ItemList.Select(i => i.Title).ToList();
+
+            if (itemTitles.Contains("fishing line") && itemTitles.Contains("knife"))
+            {
+                validCommands.Add("use knife on fishing line");
+            }
+
+            return validCommands.Contains(command);
         }
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "gate", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and" };
+
             var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "gate", "buy", "hi", "hello", "there", "use", "on" };
-            var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title).ToArray();
-            var itemTitlesInInventory = character.ItemList.Select(i => i.Title).ToArray();
-            string[] commandWordsArr = command.Split(' ');
 
+            var uniqueItemTitles = GetUniqueItemTitlesFromInventoryAndCurrentLocation(character);
+            
             validWordsList.AddRange(_standardWords);
             validWordsList.AddRange(theDocksStandardWords);
-            validWordsList.AddRange(itemTitlesInCurrentLocation);
-            validWordsList.AddRange(itemTitlesInInventory);
+            validWordsList.AddRange(uniqueItemTitles);
 
-            if (character.CurrentLocation.Title == "starting point")
-            {
-
-            }
-            
+            string[] commandWordsArr = command.Split(' ');
             foreach (var commandWord in commandWordsArr)
             {
-                if(!validWordsList.Contains(commandWord))
+                if(!validWordsList.Contains(commandWord.ToLower()))
                     inputWordsExceptionsList.Add(commandWord);
             }
             return inputWordsExceptionsList;
+        }
+
+        private static List<string> GetUniqueItemTitlesFromInventoryAndCurrentLocation(Character character)
+        {
+            var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title).ToArray();
+            var itemTitlesInInventory = character.ItemList.Select(i => i.Title).ToArray();
+
+            var uniqueItemTitles = new List<string>();
+            foreach (var itemTitle in itemTitlesInCurrentLocation)
+            {
+                uniqueItemTitles.AddRange(itemTitle.Split(' '));
+            }
+
+            foreach (var itemTitle in itemTitlesInInventory)
+            {
+                uniqueItemTitles.AddRange(itemTitle.Split(' '));
+            }
+
+            return uniqueItemTitles.Distinct().ToList();
         }
     }
 }
