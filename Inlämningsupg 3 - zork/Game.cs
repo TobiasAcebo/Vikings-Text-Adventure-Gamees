@@ -43,17 +43,21 @@ namespace Inlämningsupg_3___zork
 
         private void StartingPointTheDocks(string input)
         {
-            if(input == "Go east" || input == "Go west")
+            string command = input.ToLower();
+
+            if(command == "go east" || command == "go west")
             {
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "water");
+                _character.LastDirection = command;
+                _character.MovesCount++;
             }
 
-            else if (input == "Go back")
+            else if (command == "go back")
             {
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "boat");
             }
 
-            else if (input == "Go forward")
+            else if (command == "go forward")
             {
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "end of docks");
             }

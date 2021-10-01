@@ -17,7 +17,7 @@ namespace Inlämningsupg_3___zork
                 {
                     Id = 1,
                     Title = "the docks",
-                    Description = "Years of traveling in the Mediterranean sea. \r\nYou have finally arrived in Kattegatt with your ship.  \r\nHere at the docks, you must find your way into the great halls. \r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. ",
+                    Description = "Years of traveling in the Mediterranean sea. \r\nYou have finally arrived in Kattegatt with your ship.  \r\nHere at the docks, you must find your way into the great halls. \r\n\r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. ",
                     LocationList = new List<Location>
                     {
                         new Location {Title = "starting point", Description = "Ah here we are, back were we started. At the end of the docks I can see a fisherman talking about his travels with his men. "}, 
@@ -31,6 +31,10 @@ namespace Inlämningsupg_3___zork
 
                     IsEndPoint = false
                 },
+                new Scenario
+                {
+
+                }
             
             };
         }

@@ -73,13 +73,16 @@ namespace Inlämningsupg_3___zork
                 "buy fishing line and knife"
             };
 
-            var itemTitles = character.ItemList.Select(i => i.Title).ToList();
+            
 
-            if (itemTitles.Contains("fishing line") && itemTitles.Contains("knife"))
+            if (character.ItemList != null)
             {
-                validCommands.Add("use knife on fishing line");
+                var itemTitles = character.ItemList.Select(i => i.Title).ToList();
+                if (itemTitles.Contains("fishing line") && itemTitles.Contains("knife"))
+                {
+                    validCommands.Add("use knife on fishing line");
+                }
             }
-
             return validCommands.Contains(command);
         }
 

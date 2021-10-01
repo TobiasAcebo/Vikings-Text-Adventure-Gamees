@@ -14,30 +14,21 @@ namespace Inlämningsupg_3___zork
     {
         private int _seconds = 0;
         private Character _character;
+        private Game _game;
         public FrmScenario(Character character)
         {
             _character = character;
-            
+            _game = new Game(_character);
             InitializeComponent();
             playerNameLabel.Text = _character.Name;
             GameTimer();
+            Scene();
+            ActiveControl = userInputTxt;
         }
         int counter = 0;
         private void FrmScenario_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode != Keys.Enter)
-                return;
-
-            string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInputTxt.Text);
-
-            if (!string.IsNullOrEmpty(inputExceptionMessage)) 
-                PrintExceptionMessage(inputExceptionMessage);
-            else
-            {
-                //_game.ExecuteCommand(_character, userInputTxt.Text);
-
-                UpdateScenario();
-            }
+           
         }
 
         private void UpdateScenario()
@@ -125,6 +116,14 @@ namespace Inlämningsupg_3___zork
 
             if (currentScenario.Id == 1)
             {
+                if (counter == 0)
+                {
+                    roomDescriptionTxt.Text = currentScenario.Description + "\r\n\r\n";
+                }
+                else
+                {
+                    roomDescriptionTxt.AppendText("\r\n" + _character.CurrentLocation.Description);
+                }
                 roomNameLabel.Text = "The docks";
                 roomPicturebox.ImageLocation = @"C:\Users\tedha\source\repos\Inlämningsupg 3 - zork\Inlämningsupg 3 - zork\docks.jpg";
                 roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -164,12 +163,34 @@ namespace Inlämningsupg_3___zork
         }
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
-            
-        }
+            roomDescriptionTxt.AppendText(inputExceptionMessage + "\r\n");
+    }
 
         private void pickUpItemBtn_Click(object sender, EventArgs e)
         {
             
         }
+
+        private void userInputTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+            
+
+            string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInputTxt.Text);
+            
+
+            if (!string.IsNullOrEmpty(inputExceptionMessage))
+                PrintExceptionMessage(inputExceptionMessage);
+            else
+            {
+                _game.ExecuteInput(userInputTxt.Text);
+
+                UpdateScenario();
+            }
+            userInputTxt.Clear();
+            roomDescriptionTxt.ScrollToCaret();
+        }
+        
     }
 }

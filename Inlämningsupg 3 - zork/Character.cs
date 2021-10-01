@@ -18,7 +18,7 @@ namespace Inlämningsupg_3___zork
         public string Name { get; set; }
         public Scenario CurrentScenario { get; set; }
         public Location CurrentLocation { get; set; }
-        public List<Item> ItemList { get; set; }
+        public List<Item> ItemList { get; set; } = new List<Item>();
         public string LastDirection { get; set; }
         public int ScoreCount { get; set; }
         public int MovesCount { get; set; }

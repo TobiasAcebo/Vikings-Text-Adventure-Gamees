@@ -96,7 +96,7 @@ namespace Inlämningsupg_3___zork
             this.roomDescriptionTxt.ReadOnly = true;
             this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 177);
             this.roomDescriptionTxt.TabIndex = 5;
-            this.roomDescriptionTxt.Text = resources.GetString("roomDescriptionTxt.Text");
+            this.roomDescriptionTxt.Text = "Descirption";
             // 
             // roomPicturebox
             // 
@@ -165,13 +165,14 @@ namespace Inlämningsupg_3___zork
             // userInputTxt
             // 
             this.userInputTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.userInputTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userInputTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userInputTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.userInputTxt.Location = new System.Drawing.Point(553, 595);
-            this.userInputTxt.Multiline = true;
             this.userInputTxt.Name = "userInputTxt";
-            this.userInputTxt.Size = new System.Drawing.Size(345, 169);
+            this.userInputTxt.Size = new System.Drawing.Size(345, 23);
             this.userInputTxt.TabIndex = 12;
+            this.userInputTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userInputTxt_KeyDown);
             // 
             // keyOnGateBtn
             // 
