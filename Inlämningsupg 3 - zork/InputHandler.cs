@@ -107,19 +107,25 @@ namespace Inlämningsupg_3___zork
 
         private static List<string> GetUniqueItemTitlesFromInventoryAndCurrentLocation(Character character)
         {
-            var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title).ToArray();
-            var itemTitlesInInventory = character.ItemList.Select(i => i.Title).ToArray();
-
             var uniqueItemTitles = new List<string>();
-            foreach (var itemTitle in itemTitlesInCurrentLocation)
+            if (character.CurrentLocation.ItemList != null)
             {
-                uniqueItemTitles.AddRange(itemTitle.Split(' '));
+                var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title).ToArray();
+                foreach (var itemTitle in itemTitlesInCurrentLocation)
+                {
+                    uniqueItemTitles.AddRange(itemTitle.Split(' '));
+                }
             }
 
-            foreach (var itemTitle in itemTitlesInInventory)
+            if (character.ItemList != null)
             {
-                uniqueItemTitles.AddRange(itemTitle.Split(' '));
+                 var itemTitlesInInventory = character.ItemList.Select(i => i.Title).ToArray();
+                 foreach (var itemTitle in itemTitlesInInventory)
+                 {
+                     uniqueItemTitles.AddRange(itemTitle.Split(' '));
+                 }
             }
+            
 
             return uniqueItemTitles.Distinct().ToList();
         }
