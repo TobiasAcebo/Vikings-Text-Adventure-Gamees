@@ -33,7 +33,17 @@ namespace Inlämningsupg_3___zork
                 },
                 new Scenario
                 {
-
+                    Id = 2,
+                    Title = "muddy road",
+                    Description = "You have entered Muddy road. \r\n A mist settels over the abandoned houses. \r\n The sign of life seems to have left this place. \r\n if you are lucky, perhaps someone is still around.",
+                    LocationList = new List<Location>
+                    {
+                        new Location {Title = "starting point", Description = "We are inside the gate from the docks"},
+                        new Location {Title = "forward", Description = "We are middle of the road"},
+                        new Location {Title = "back", Description = "You can't go back this way!"},
+                        new Location {Title = "west", Description = "Oh look it is a house with stacks of logs..."},
+                        new Location {Title = "east", Description = "Oh it is a house with a shield on th wall!"},
+                    }
                 }
             
             };

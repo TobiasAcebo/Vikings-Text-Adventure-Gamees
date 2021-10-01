@@ -13,6 +13,7 @@ namespace Inlämningsupg_3___zork
     public partial class FrmScenario : Form
     {
         private int _seconds = 0;
+        private int _minutes = 0;
         private Character _character;
         private Game _game;
         public FrmScenario(Character character)
@@ -156,10 +157,11 @@ namespace Inlämningsupg_3___zork
             if (this._seconds == 60)
             {
                 this._seconds = 0;
-                //this._minutes++;
+                this._minutes++;
             }
 
-            timerLabel.Text = "Time: " + this._seconds.ToString();
+            TimerMinNSeconds.Text = this._minutes.ToString() + ":" + this._seconds.ToString();
+            
         }
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
@@ -191,6 +193,10 @@ namespace Inlämningsupg_3___zork
             userInputTxt.Clear();
             roomDescriptionTxt.ScrollToCaret();
         }
-        
+
+        private void TimeCounter_Tick(object sender, EventArgs e)
+        {
+            GameTimer();
+        }
     }
 }
