@@ -70,7 +70,8 @@ namespace Inlämningsupg_3___zork
                 "talk",
                 "buy fishing line",
                 "buy knife",
-                "buy fishing line and knife"
+                "buy fishing line and knife",
+                "go to starting point"
             };
 
             
@@ -88,7 +89,7 @@ namespace Inlämningsupg_3___zork
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "gate", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and" };
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point"};
 
             var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();
