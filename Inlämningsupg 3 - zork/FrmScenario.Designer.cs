@@ -32,7 +32,7 @@ namespace Inlämningsupg_3___zork
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScenario));
             this.label1 = new System.Windows.Forms.Label();
             this.roomNameLabel = new System.Windows.Forms.Label();
-            this.scoreLabel = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Label();
             this.movesLabel = new System.Windows.Forms.Label();
             this.roomDescriptionTxt = new System.Windows.Forms.RichTextBox();
             this.roomPicturebox = new System.Windows.Forms.PictureBox();
@@ -65,15 +65,15 @@ namespace Inlämningsupg_3___zork
             this.roomNameLabel.TabIndex = 1;
             this.roomNameLabel.Text = "The docks";
             // 
-            // scoreLabel
+            // timerLabel
             // 
-            this.scoreLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreLabel.Location = new System.Drawing.Point(922, 6);
-            this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(208, 31);
-            this.scoreLabel.TabIndex = 3;
-            this.scoreLabel.Text = "Score: 0";
+            this.timerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.timerLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timerLabel.Location = new System.Drawing.Point(922, 6);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(208, 31);
+            this.timerLabel.TabIndex = 3;
+            this.timerLabel.Text = "Timer: 0";
             // 
             // movesLabel
             // 
@@ -210,7 +210,7 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.roomPicturebox);
             this.Controls.Add(this.roomDescriptionTxt);
             this.Controls.Add(this.movesLabel);
-            this.Controls.Add(this.scoreLabel);
+            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.roomNameLabel);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -228,7 +228,7 @@ namespace Inlämningsupg_3___zork
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label roomNameLabel;
-        private System.Windows.Forms.Label scoreLabel;
+        private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label movesLabel;
         private System.Windows.Forms.RichTextBox roomDescriptionTxt;
         private System.Windows.Forms.PictureBox roomPicturebox;

@@ -12,14 +12,15 @@ namespace Inlämningsupg_3___zork
 {
     public partial class FrmScenario : Form
     {
-        private Character _character;
         private int _seconds = 0;
+        private Character _character;
         public FrmScenario(Character character)
         {
             _character = character;
             
             InitializeComponent();
             playerNameLabel.Text = _character.Name;
+            GameTimer();
         }
         int counter = 0;
         private void FrmScenario_KeyDown(object sender, KeyEventArgs e)
@@ -39,19 +40,6 @@ namespace Inlämningsupg_3___zork
             }
         }
 
-        public void GameTimer()
-        {
-            this._seconds++;
-
-            if (this._seconds == 60)
-            {
-                this._seconds = 0;
-                //this._minutes++;
-            }
-
-            //TimeLabel.Text = "Time: " + this._seconds.ToString();
-        }
-
         private void UpdateScenario()
         {
             Moves();
@@ -69,7 +57,6 @@ namespace Inlämningsupg_3___zork
             var currentInventory = _character.ItemList;
             string inventory1 = item1Label.Text;
             string inventory2 = item2Label.Text;
-            string outputValue = roomDescriptionTxt.Text;
 
             foreach (var item in currentInventory)
             {
@@ -86,7 +73,7 @@ namespace Inlämningsupg_3___zork
                             inventory1 = "knife";
 
                         else
-                            outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
+                            roomDescriptionTxt.AppendText("\r\n Inventory is full!");
                         break;
 
                     case "fishing line":
@@ -100,7 +87,7 @@ namespace Inlämningsupg_3___zork
                             inventory1 = "Fishing line";
 
                         else
-                            outputValue = "Inventory is full"; // skriver den över all text eller adderar en rad?
+                            roomDescriptionTxt.AppendText("\r\n Inventory is full!");
                         break;
                 }
 
@@ -112,20 +99,22 @@ namespace Inlämningsupg_3___zork
             string inventory2 = item2Label.Text;
             string outputValue = roomDescriptionTxt.Text;
 
+
+
             switch (inventory1)
             {
                 case "knife" when inventory2 == "fishing line":
                     if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
                     {
                         inventory1 = "Key";
-                        outputValue = "You found a key!";
+                        roomDescriptionTxt.AppendText("\r\n You found a key!"); 
                     }
                     break;
                 case "fishing line" when inventory2 == "knife":
                     if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
                     {
                         inventory1 = "Key";
-                        outputValue = "You found a key!";
+                        roomDescriptionTxt.AppendText("\r\n You found a key!");
                     }
                     break;
             }
@@ -160,6 +149,18 @@ namespace Inlämningsupg_3___zork
                 counter++;
             }
             movesLabel.Text = "Moves: " + counter.ToString();
+        }
+        public void GameTimer()
+        {
+            this._seconds++;
+
+            if (this._seconds == 60)
+            {
+                this._seconds = 0;
+                //this._minutes++;
+            }
+
+            timerLabel.Text = "Time: " + this._seconds.ToString();
         }
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
