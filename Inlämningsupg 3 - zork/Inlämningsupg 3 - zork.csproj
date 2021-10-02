@@ -59,6 +59,7 @@
     <Compile Include="GameClasses\GameTheDocks.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="InputHandler.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Scenario.cs" />

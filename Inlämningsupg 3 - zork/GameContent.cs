@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork
 {
-    class GameContent
+    public class GameContent
     {
         private readonly List<Scenario> _allScenariosList;
         public GameContent()
@@ -52,6 +52,11 @@ namespace Inlämningsupg_3___zork
         public Scenario GetStartingScenario()
         {
             return _allScenariosList.First(s => s.Id == 1);
+        }
+
+        public Scenario GetMuddyRoadScenario()
+        {
+            return _allScenariosList.First(s => s.Id == 2);
         }
     }
 }

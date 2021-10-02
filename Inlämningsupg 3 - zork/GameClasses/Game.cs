@@ -4,16 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inlämningsupg_3___zork.GameClasses;
+using Inlämningsupg_3___zork.Interfaces;
 
 namespace Inlämningsupg_3___zork
 {
-    public class Game
+    public class Game : IGame
     {
-        private Character _character;
-      
-        public Game(Character character)
+        private readonly Character _character;
+        private readonly GameContent _gameContent;
+
+        public Game(Character character, GameContent gameContent)
         {
             this._character = character;
+            _gameContent = gameContent;
         }
 
         public virtual void ExecuteInput(string input)
@@ -23,7 +26,7 @@ namespace Inlämningsupg_3___zork
 
             if(currentScenario.Id == 1)
             {
-                var gameTheDocks = new GameTheDocks(_character);
+                var gameTheDocks = new GameTheDocks(_character, _gameContent);
                 gameTheDocks.ExecuteInput(lowerCaseInput);
             }
 

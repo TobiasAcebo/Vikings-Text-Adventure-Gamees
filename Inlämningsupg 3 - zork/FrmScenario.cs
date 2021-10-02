@@ -16,10 +16,12 @@ namespace Inlämningsupg_3___zork
         private int _minutes = 0;
         private Character _character;
         private Game _game;
-        public FrmScenario(Character character)
+        private readonly GameContent _gameContent;
+        public FrmScenario(Character character, GameContent gameContent)
         {
             _character = character;
-            _game = new Game(_character);
+            _gameContent = gameContent;
+            _game = new Game(_character, _gameContent);
             InitializeComponent();
             playerNameLabel.Text = _character.Name;
             GameTimer();
@@ -27,6 +29,8 @@ namespace Inlämningsupg_3___zork
             ActiveControl = userInputTxt;
         }
         int counter = 0;
+        
+
         private void FrmScenario_KeyDown(object sender, KeyEventArgs e)
         {
            
