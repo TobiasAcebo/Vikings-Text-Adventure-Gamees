@@ -51,6 +51,9 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (input == "go to gate")
                 GoToGate();
 
+            else if (input == "open gate")
+                TryOpenGate();
+
             _character.PreviousLocation = "starting point";
 
             //DESSA KOMMANDON ÄR KVAR:
@@ -65,6 +68,35 @@ namespace Inlämningsupg_3___zork.GameClasses
             //"buy fishing line",
             //"buy knife",
             //"buy fishing line and knife"
+
+        }
+
+        private void TryOpenGate()
+        {
+            if (_character.CurrentLocation.Title != "gate")
+                _character.CurrentLocation.Description = "You can't open the gate from here";
+            else
+            {
+                var characterHasKey = _character.ItemList.Any(i => i.Title == "key");
+                var gateIsOpen = _character.CurrentLocation.Door.IsOpen;
+
+                if (!characterHasKey && !gateIsOpen)
+                {
+                    _character.CurrentLocation.Description =
+                        "The gate is locked and you are missing a key. Ask around the docks. Maybe someone knows how to get one.";
+                }
+                else if (characterHasKey && !gateIsOpen)
+                {
+                    _character.CurrentLocation.Door.IsOpen = true;
+                    _character.CurrentLocation.Description =
+                        "You opened the gate. You can now enter Muddy Road";
+                }
+                else
+                {
+                    _character.CurrentLocation.Description =
+                        "The gate is already open";
+                }
+            }
 
         }
 
