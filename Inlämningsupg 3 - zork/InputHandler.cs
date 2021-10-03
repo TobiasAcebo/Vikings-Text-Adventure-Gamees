@@ -22,7 +22,7 @@ namespace Inlämningsupg_3___zork
 
         private static string GetTheDocksInputExceptionsMessage(Character character, string command)
         {
-            if (character.CurrentLocation.Title == "end of docks" && command.ToLower().Contains("excuse me"))
+            if (command.ToLower().Contains("excuse me"))
                 return null;
             
             
@@ -56,6 +56,8 @@ namespace Inlämningsupg_3___zork
                 "open gate",
                 "jump in water",
                 "jump into the water",
+                "climb up",
+                "climb back up",
                 "go back",
                 "go to end of docks",
                 "go to gate",
@@ -67,7 +69,6 @@ namespace Inlämningsupg_3___zork
                 "hello",
                 "hello there", 
                 "talk to fisherman",
-                "talk",
                 "buy fishing line",
                 "buy knife",
                 "buy fishing line and knife",
@@ -92,7 +93,7 @@ namespace Inlämningsupg_3___zork
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road"};
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up"};
 
             var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();

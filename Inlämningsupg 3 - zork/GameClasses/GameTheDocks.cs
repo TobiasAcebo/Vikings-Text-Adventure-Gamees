@@ -23,24 +23,38 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             if (currentLocation.Title == "starting point")
                 StartingPointExecuteInput(input);
-            
-            else if (currentLocation.Title == "end of docks")
-                EndOfDocksExecuteInput(input);
-            
+
             else if (currentLocation.Title == "water")
                 WaterExecuteInput(input);
+
+            else if (currentLocation.Title == "boat")
+                BoatExecuteInput(input);
+
+            else if (currentLocation.Title == "end of docks")
+                EndOfDocksExecuteInput(input);
+
+            else if (currentLocation.Title == "west side")
+                WestSideExecuteInput();
+
+            else if (currentLocation.Title == "guidance")
+                GuidanceExecuteInput(input);
+
+            else if (currentLocation.Title == "gate")
+                GateExecuteInput(input);
         }
+
+       
 
         private void StartingPointExecuteInput(string input)
         {
 
-            if (input == "go east" || input == "go west" || input == "jump in water" || input == "jump into the water")
+            if (input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
                 GoToWater();
             
-            else if (input == "go south" || input == "go on the boat" || input == "go on boat")
+            else if (input == "go south" || IsTryingToEnterBoat(input))
                 GoToBoat();
             
-            else if (input == "go north" || input == "go to fisherman" || input == "go to end of docks")
+            else if (input == "go north" || IsTryingToEnterEndOfDocks(input))
                 GoToEndOfDocks();
             
             else if (input == "go to gate")
@@ -49,41 +63,68 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (input == "open gate")
                 TryOpenGate();
 
+            else if (IsTryingToEnterMuddyRoad(input))
+                TryEnterMuddyRoad();
+
             else if (input == "go back")
                 StartingPointGoBack();
             
-            else if (TryingToConverse(input))
-            {
+            else if (IsTryingToGreet(input) || input.Contains("excuse me"))
                 _character.CurrentLocation.Description = "There is no one here to talk to at the starting point";
-            }
             
-            else if (TryingToBuy(input))
-            {
-                _character.CurrentLocation.Description = 
-                    "There is no one here at the starting point who is selling anything. Perhaps the fisherman can help you.";
-            }
+            else if (input == "talk to fisherman")
+                _character.CurrentLocation.Description = "The fisherman is not here at starting point";
 
-            else if (input == "enter muddy road" || input == "go to muddy road")
-            {
-                TryEnterMuddyRoad();
-            }
+            else if (IsTryingToBuy(input))
+                _character.CurrentLocation.Description = "There is no one here at the starting point who is selling anything. Perhaps the fisherman can help you.";
+            
+            else if (IsTryingToClimb(input))
+                _character.CurrentLocation.Description = "It's not possible to climb here";
+
             else if (input == "look")
-            {
-                _character.CurrentLocation.Description = _character.CurrentScenario.Description; //hur gör vi här? Vilken text ska visas vid "Look"?
-            }
-
+                _character.CurrentLocation.Description = _character.CurrentLocation.Description; //hur gör vi här? Vilken text ska visas vid "Look"?
+            
 
             _character.PreviousLocation = "starting point";
         }
 
+        
+
+
         private void WaterExecuteInput(string input)
         {
-            if (input == "go back")
-            {
+            if (input == "go back" || IsTryingToClimb(input))
                 WaterGoBack();
-            }
+            
 
-            //fortsättning följer.....
+            //ÅTERSTÅENDE KOMMANDON....
+            //"go east",
+            //"go west",
+            //"go north",
+            //"go south",
+            //"go to fisherman",
+            //"open gate",
+            //"jump in water",
+            //"jump into the water",
+            //"go back",
+            //"go to end of docks",
+            //"go to gate",
+            //"look",
+            //"go on the boat",
+            //"go on boat",
+            //"hi",
+            //"hi there",
+            //"hello",
+            //"hello there", 
+            //"talk to fisherman",
+            //"talk",
+            //"buy fishing line",
+            //"buy knife",
+            //"buy fishing line and knife",
+            //"buy knife and fishing line",
+            //"go to starting point",
+            //"enter muddy road",
+            //"go to muddy road"
 
             _character.PreviousLocation = "water";
         }
@@ -115,8 +156,27 @@ namespace Inlämningsupg_3___zork.GameClasses
             _character.PreviousLocation = "end of docks";
 
         }
+        private void GateExecuteInput(string input)
+        {
+            throw new NotImplementedException();
+        }
 
-        
+        private void GuidanceExecuteInput(string input)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void WestSideExecuteInput()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void BoatExecuteInput(string input)
+        {
+            throw new NotImplementedException();
+        }
+
+
         private void GoBack()
         {
             if (_character.PreviousLocation == "starting point")
@@ -139,8 +199,6 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (_character.PreviousLocation == "guidance")
                 GoBackToGuidance();
-
-            //fortsättning följer....
         }
         private void TryOpenGate()
         {
@@ -287,23 +345,21 @@ namespace Inlämningsupg_3___zork.GameClasses
                 "Oh no! You fell into the water. Try and climb back up the docks.";
         }
 
-        private bool TryingToConverse(string input)
+        private bool IsTryingToGreet(string input)
         {
-            var conversationList = new List<string>
+            var greetingPhrasesList = new List<string>
             {
                 "hi",
                 "hi there",
                 "hello",
-                "hello there",
-                "talk",
-                "talk to fisherman",
+                "hello there"
             };
 
-            return conversationList.Contains(input) || input.Contains("excuse me");
+            return greetingPhrasesList.Contains(input);
         }
-        private bool TryingToBuy(string input)
+        private bool IsTryingToBuy(string input)
         {
-            var buyingFrasesList = new List<string>
+            var buyingPhrasesList = new List<string>
             {
                 "buy fishing line",
                 "buy knife",
@@ -311,13 +367,62 @@ namespace Inlämningsupg_3___zork.GameClasses
                 "buy knife and fishing line"
             };
 
-            return buyingFrasesList.Contains(input);
+            return buyingPhrasesList.Contains(input);
+        }
+        private bool IsTryingToClimb(string input)
+        {
+            var climbingPhrasesList = new List<string>
+            {
+                "climb up",
+                "climb back up"
+            };
+
+            return climbingPhrasesList.Contains(input);
+        }
+        private bool IsTryingToEnterBoat(string input)
+        {
+            var boatPhrasesList = new List<string>
+            {
+                "go on the boat",
+                "go on boat"
+            };
+
+            return boatPhrasesList.Contains(input);
+        }
+        private bool IsTryingToEnterEndOfDocks(string input)
+        {
+            var endOfDocksPhrasesList = new List<string>
+            {
+                "go to fisherman",
+                "go to end of docks"
+            };
+
+            return endOfDocksPhrasesList.Contains(input);
+        }
+        private bool IsTryingToJumpInWater(string input)
+        {
+            var jumpInWaterPhrasesList = new List<string>
+            {
+                "jump in water",
+                "jump into the water"
+            };
+
+            return jumpInWaterPhrasesList.Contains(input);
+        }
+        private bool IsTryingToEnterMuddyRoad(string input)
+        {
+            var enterMuddyRoadPhrasesList = new List<string>
+            {
+                "enter muddy road",
+                "go to muddy road"
+            };
+
+            return enterMuddyRoadPhrasesList.Contains(input);
         }
 
         private bool CharacterHasKey()
         {
             return _character.ItemList.Any(i => i.Title == "key");
         }
-
     }
 }
