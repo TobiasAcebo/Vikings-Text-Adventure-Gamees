@@ -85,20 +85,13 @@ namespace Inlämningsupg_3___zork
 
             
 
-            if (character.ItemList != null)
-            {
-                var itemTitles = character.ItemList.Select(i => i.Title).ToList();
-                if (itemTitles.Contains("fishing line") && itemTitles.Contains("knife"))
-                {
-                    validCommands.Add("use knife on fishing line");
-                }
-            }
+           
             return validCommands.Contains(command);
         }
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up", "key"};
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up", "key", "fishing", "line", "knife"};
 
             var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();
