@@ -19,7 +19,7 @@ namespace Inlämningsupg_3___zork
             _gameContent = gameContent;
         }
 
-        public virtual void ExecuteInput(string input)
+        public void ExecuteInput(string input)
         {
             var lowerCaseInput = input.ToLower();
             var currentScenario = _character.CurrentScenario;
@@ -29,6 +29,7 @@ namespace Inlämningsupg_3___zork
                 var gameTheDocks = new GameTheDocks(_character, _gameContent);
                 gameTheDocks.ExecuteInput(lowerCaseInput);
             }
+
 
             _character.MovesCount++;
         }

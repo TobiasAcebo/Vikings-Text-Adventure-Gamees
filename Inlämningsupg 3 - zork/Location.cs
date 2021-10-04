@@ -10,7 +10,7 @@ namespace Inlämningsupg_3___zork
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public List<Item> ItemList { get; set; }
+        public List<Item> ItemList { get; set; } = new List<Item>();
         public Door Door { get; set; }
 
     }

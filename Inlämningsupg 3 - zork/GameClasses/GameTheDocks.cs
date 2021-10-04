@@ -19,6 +19,9 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public void ExecuteInput(string input)
         {
+            if (input == "look")
+                Look();
+
             var currentLocation = _character.CurrentLocation;
 
             if (currentLocation.Title == "starting point")
@@ -81,9 +84,8 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (IsTryingToClimb(input))
                 _character.CurrentLocation.Description = "It's not possible to climb here";
 
-            else if (input == "look")
-                _character.CurrentLocation.Description = _character.CurrentLocation.Description; //hur gör vi här? Vilken text ska visas vid "Look"?
             
+
 
             _character.PreviousLocation = "starting point";
         }
@@ -95,37 +97,12 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (input == "go back" || IsTryingToClimb(input))
                 WaterGoBack();
+
+            else if(input != "look")
+            {
+                _character.CurrentLocation.Description = "You cannot do that.";
+            }
             
-
-            //ÅTERSTÅENDE KOMMANDON....
-            //"go east",
-            //"go west",
-            //"go north",
-            //"go south",
-            //"go to fisherman",
-            //"open gate",
-            //"jump in water",
-            //"jump into the water",
-            //"go back",
-            //"go to end of docks",
-            //"go to gate",
-            //"look",
-            //"go on the boat",
-            //"go on boat",
-            //"hi",
-            //"hi there",
-            //"hello",
-            //"hello there", 
-            //"talk to fisherman",
-            //"talk",
-            //"buy fishing line",
-            //"buy knife",
-            //"buy fishing line and knife",
-            //"buy knife and fishing line",
-            //"go to starting point",
-            //"enter muddy road",
-            //"go to muddy road"
-
             _character.PreviousLocation = "water";
         }
 
@@ -344,6 +321,22 @@ namespace Inlämningsupg_3___zork.GameClasses
             _character.CurrentLocation.Description =
                 "Oh no! You fell into the water. Try and climb back up the docks.";
         }
+        private void Look()
+        {
+            _character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; //hur gör vi här? Vilken text ska visas vid "Look"?
+            _character.CurrentLocation.Description += "\r\nThere is a gate located east of the docks";
+            _character.CurrentLocation.Description += "\r\nItems available: ";
+            foreach (var location in _character.CurrentScenario.LocationList)
+            {
+                foreach (var item in location.ItemList)
+                {
+                    _character.CurrentLocation.Description += "\r\n" + item.Title;
+                }
+
+            }
+
+            _character.CurrentLocation.Description += "\r\n";
+        }
 
         private bool IsTryingToGreet(string input)
         {
@@ -424,5 +417,6 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             return _character.ItemList.Any(i => i.Title == "key");
         }
+
     }
 }
