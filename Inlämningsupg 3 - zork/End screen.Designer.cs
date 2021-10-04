@@ -51,6 +51,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -63,6 +64,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -75,6 +77,7 @@ namespace Inlämningsupg_3___zork
             // 
             // scoreLabel
             // 
+            this.scoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.scoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.SystemColors.Info;
@@ -87,6 +90,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player1ScoreLabel
             // 
+            this.player1ScoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player1ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player1ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player1ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -99,6 +103,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player1Label
             // 
+            this.player1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player1Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player1Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -111,6 +116,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player2ScoreLabel
             // 
+            this.player2ScoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player2ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player2ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player2ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -123,6 +129,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player2Label
             // 
+            this.player2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player2Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player2Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -135,6 +142,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player3ScoreLabel
             // 
+            this.player3ScoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player3ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player3ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player3ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -147,6 +155,7 @@ namespace Inlämningsupg_3___zork
             // 
             // player3Label
             // 
+            this.player3Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player3Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player3Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player3Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -159,6 +168,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -171,6 +181,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -183,6 +194,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -195,6 +207,7 @@ namespace Inlämningsupg_3___zork
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(1239, 663);
             this.pictureBox2.Name = "pictureBox2";
@@ -205,6 +218,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label13.Font = new System.Drawing.Font("Tahoma", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -217,6 +231,7 @@ namespace Inlämningsupg_3___zork
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1002, 187);
             this.pictureBox1.Name = "pictureBox1";

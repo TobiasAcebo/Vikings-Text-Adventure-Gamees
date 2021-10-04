@@ -39,6 +39,7 @@ namespace Inlämningsupg_3___zork
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(354, 114);
             this.pictureBox1.Name = "pictureBox1";
@@ -49,6 +50,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -61,6 +63,7 @@ namespace Inlämningsupg_3___zork
             // 
             // userNameTxt
             // 
+            this.userNameTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userNameTxt.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTxt.Location = new System.Drawing.Point(626, 469);
             this.userNameTxt.Multiline = true;
@@ -70,6 +73,7 @@ namespace Inlämningsupg_3___zork
             // 
             // playBtn
             // 
+            this.playBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.playBtn.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playBtn.Location = new System.Drawing.Point(664, 523);
             this.playBtn.Name = "playBtn";
@@ -93,7 +97,6 @@ namespace Inlämningsupg_3___zork
             this.Name = "StartScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Screen";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

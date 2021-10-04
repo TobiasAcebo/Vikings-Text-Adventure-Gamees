@@ -52,6 +52,7 @@ namespace Inlämningsupg_3___zork
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(0, -2);
             this.label1.Name = "label1";
@@ -60,6 +61,7 @@ namespace Inlämningsupg_3___zork
             // 
             // roomNameLabel
             // 
+            this.roomNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.roomNameLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomNameLabel.Location = new System.Drawing.Point(12, 6);
@@ -70,6 +72,7 @@ namespace Inlämningsupg_3___zork
             // 
             // timerLabel
             // 
+            this.timerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.timerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.timerLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.Location = new System.Drawing.Point(922, 6);
@@ -80,6 +83,7 @@ namespace Inlämningsupg_3___zork
             // 
             // movesLabel
             // 
+            this.movesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.movesLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.movesLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movesLabel.Location = new System.Drawing.Point(1189, 6);
@@ -90,6 +94,7 @@ namespace Inlämningsupg_3___zork
             // 
             // roomDescriptionTxt
             // 
+            this.roomDescriptionTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomDescriptionTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.roomDescriptionTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.roomDescriptionTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +108,7 @@ namespace Inlämningsupg_3___zork
             // 
             // roomPicturebox
             // 
+            this.roomPicturebox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomPicturebox.Image = ((System.Drawing.Image)(resources.GetObject("roomPicturebox.Image")));
             this.roomPicturebox.Location = new System.Drawing.Point(354, 114);
             this.roomPicturebox.Name = "roomPicturebox";
@@ -113,6 +119,7 @@ namespace Inlämningsupg_3___zork
             // 
             // playerLabel
             // 
+            this.playerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.playerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.playerLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerLabel.Location = new System.Drawing.Point(0, 797);
@@ -124,6 +131,7 @@ namespace Inlämningsupg_3___zork
             // 
             // playerNameLabel
             // 
+            this.playerNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.playerNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.playerNameLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerNameLabel.Location = new System.Drawing.Point(114, 797);
@@ -135,9 +143,10 @@ namespace Inlämningsupg_3___zork
             // 
             // inventoryLabel
             // 
+            this.inventoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inventoryLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.inventoryLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventoryLabel.Location = new System.Drawing.Point(1269, 797);
+            this.inventoryLabel.Location = new System.Drawing.Point(1258, 797);
             this.inventoryLabel.Name = "inventoryLabel";
             this.inventoryLabel.Size = new System.Drawing.Size(113, 31);
             this.inventoryLabel.TabIndex = 9;
@@ -146,16 +155,18 @@ namespace Inlämningsupg_3___zork
             // 
             // item1Label
             // 
+            this.item1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.item1Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.item1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item1Label.Location = new System.Drawing.Point(1383, 797);
+            this.item1Label.Location = new System.Drawing.Point(1372, 797);
             this.item1Label.Name = "item1Label";
-            this.item1Label.Size = new System.Drawing.Size(113, 31);
+            this.item1Label.Size = new System.Drawing.Size(124, 31);
             this.item1Label.TabIndex = 10;
             this.item1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pickUpItemBtn
             // 
+            this.pickUpItemBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pickUpItemBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pickUpItemBtn.Location = new System.Drawing.Point(553, 770);
             this.pickUpItemBtn.Name = "pickUpItemBtn";
@@ -167,6 +178,7 @@ namespace Inlämningsupg_3___zork
             // 
             // userInputTxt
             // 
+            this.userInputTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userInputTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.userInputTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userInputTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +191,7 @@ namespace Inlämningsupg_3___zork
             // 
             // keyOnGateBtn
             // 
+            this.keyOnGateBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.keyOnGateBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keyOnGateBtn.Location = new System.Drawing.Point(757, 770);
             this.keyOnGateBtn.Name = "keyOnGateBtn";
@@ -189,11 +202,12 @@ namespace Inlämningsupg_3___zork
             // 
             // item2Label
             // 
+            this.item2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.item2Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.item2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.item2Label.Location = new System.Drawing.Point(1383, 765);
+            this.item2Label.Location = new System.Drawing.Point(1372, 765);
             this.item2Label.Name = "item2Label";
-            this.item2Label.Size = new System.Drawing.Size(113, 31);
+            this.item2Label.Size = new System.Drawing.Size(124, 31);
             this.item2Label.TabIndex = 14;
             this.item2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -205,6 +219,7 @@ namespace Inlämningsupg_3___zork
             // 
             // TimerMinNSeconds
             // 
+            this.TimerMinNSeconds.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TimerMinNSeconds.AutoSize = true;
             this.TimerMinNSeconds.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TimerMinNSeconds.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
