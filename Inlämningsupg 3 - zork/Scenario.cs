@@ -13,5 +13,6 @@ namespace Inlämningsupg_3___zork
         public string Description { get; set; }
         public bool IsEndPoint { get; set; }
         public List<Location> LocationList { get; set; }
+        public string ImagePath { get; set; }
     }
 }

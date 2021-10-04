@@ -51,100 +51,80 @@ namespace Inlämningsupg_3___zork
         private void ItemsTheDocks()
         {
             var currentInventory = _character.ItemList;
-            string inventory1 = item1Label.Text;
-            string inventory2 = item2Label.Text;
 
             foreach (var item in currentInventory)
             {
-                switch (item.Title)
+                //switch (item.Title)
+                //{
+                //    case "knife":
+                //        if (item1Label.Text == "" && item2Label.Text == "")
+                //            item1Label.Text = "Knife";
+
+                //        else if (item1Label.Text != "" && item2Label.Text == "")
+                //            item2Label.Text = "knife";
+
+                //        else if (item1Label.Text == "" && item2Label.Text != "")
+                //            item1Label.Text = "knife";
+
+                //        break;
+
+                //    case "fishing line":
+                //        if (item1Label.Text == "" && item2Label.Text == "")
+                //            item1Label.Text = "Fishing line";
+
+                //        else if (item1Label.Text != "" && item2Label.Text == "")
+                //            item2Label.Text = "Fishing line";
+
+                //        else if (item1Label.Text == "" && item2Label.Text != "")
+                //            item1Label.Text = "Fishing line";
+
+                //        break;
+                //}
+                if (item1Label.Text == "" && item2Label.Text == "")
                 {
-                    case "knife":
-                        if (inventory1 == "" && inventory2 == "")
-                            inventory1 = "Knife";
-
-                        else if (inventory1 != "" && inventory2 == "")
-                            inventory2 = "knife";
-
-                        else if (inventory1 == "" && inventory2 != "")
-                            inventory1 = "knife";
-
-                        else
-                            roomDescriptionTxt.AppendText("\r\n Inventory is full!");
-                        break;
-
-                    case "fishing line":
-                        if (inventory1 == "" && inventory2 == "")
-                            inventory1 = "Fishing line";
-
-                        else if (inventory1 != "" && inventory2 == "")
-                            inventory2 = "Fishing line";
-
-                        else if (inventory1 == "" && inventory2 != "")
-                            inventory1 = "Fishing line";
-
-                        else
-                            roomDescriptionTxt.AppendText("\r\n Inventory is full!");
-                        break;
+                    item1Label.Text = item.Title;
                 }
+                else if (item1Label.Text != "" && item2Label.Text == "")
+                    item2Label.Text = item.Title;
+              
 
             }
+            
         }
         private void KeyTheDocks()
         {
-            string inventory1 = item1Label.Text;
-            string inventory2 = item2Label.Text;
-            string outputValue = roomDescriptionTxt.Text;
+            //string inventory1 = item1Label.Text;
+            //string inventory2 = item2Label.Text;
+            //string outputValue = roomDescriptionTxt.Text;
 
 
 
-            switch (inventory1)
-            {
-                case "knife" when inventory2 == "fishing line":
-                    if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
-                    {
-                        inventory1 = "Key";
-                        roomDescriptionTxt.AppendText("\r\n You found a key!"); 
-                    }
-                    break;
-                case "fishing line" when inventory2 == "knife":
-                    if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
-                    {
-                        inventory1 = "Key";
-                        roomDescriptionTxt.AppendText("\r\n You found a key!");
-                    }
-                    break;
-            }
+            //switch (inventory1)
+            //{
+            //    case "knife" when inventory2 == "fishing line":
+            //        if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
+            //        {
+            //            inventory1 = "Key";
+            //            roomDescriptionTxt.AppendText("\r\n You found a key!"); 
+            //        }
+            //        break;
+            //    case "fishing line" when inventory2 == "knife":
+            //        if (outputValue == "use knife on fishing line" || outputValue == "use fishing line on knife")
+            //        {
+            //            inventory1 = "Key";
+            //            roomDescriptionTxt.AppendText("\r\n You found a key!");
+            //        }
+            //        break;
+            //}
         }
         private void Scene()
         {
             var currentScenario = _character.CurrentScenario;
 
-            if (currentScenario.Id == 1)
-            {
-                if (counter == 0)
-                {
-                    roomDescriptionTxt.Text = currentScenario.Description + "\r\n\r\n";
-                }
-                else
-                {
-                    roomDescriptionTxt.AppendText("\r\n" + _character.CurrentLocation.Description);
-                }
-                roomNameLabel.Text = "The docks";
-                roomPicturebox.ImageLocation = @"C:\Users\tedha\source\repos\Inlämningsupg 3 - zork\Inlämningsupg 3 - zork\docks.jpg";
-                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            else if (currentScenario.Id == 2)
-            {
-                roomNameLabel.Text = "Muddy road";
-                roomPicturebox.ImageLocation = @"C:\Users\tedha\source\repos\Inlämningsupg 3 - zork\Inlämningsupg 3 - zork\muddy road.jpg";
-                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            else if (currentScenario.Id == 3)
-            {
-                roomNameLabel.Text = "Town";
-                roomPicturebox.ImageLocation = @"C:\Users\tedha\source\repos\Inlämningsupg 3 - zork\Inlämningsupg 3 - zork\town.jpg";
-                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
+            roomDescriptionTxt.AppendText(_character.CurrentLocation.Description + "\r\n\r\n");
+            roomNameLabel.Text = currentScenario.Title;
+            roomPicturebox.ImageLocation = currentScenario.ImagePath;
+            roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         private void Moves()
         {
@@ -152,7 +132,7 @@ namespace Inlämningsupg_3___zork
             {
                 counter++;
             }
-            movesLabel.Text = "Moves: " + counter.ToString();
+            movesLabel.Text = "Moves: " + _character.MovesCount;
         }
         public void GameTimer()
         {
@@ -169,7 +149,7 @@ namespace Inlämningsupg_3___zork
         }
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
-            roomDescriptionTxt.AppendText(inputExceptionMessage + "\r\n");
+            roomDescriptionTxt.AppendText(inputExceptionMessage + "\r\n\r\n");
     }
 
         private void pickUpItemBtn_Click(object sender, EventArgs e)
