@@ -230,7 +230,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                     DialogNotOpen();
             }
 
-            else if (IsTryingToGreet(input))
+            else if (IsTryingToGreet(input) || input == "talk to fisherman")
             {
                 if (_character.InDialog)
                     _character.CurrentLocation.Description = "Fisherman: \"Hello there, traveler. How can I help you?\"";

@@ -28,7 +28,7 @@ namespace Inlämningsupg_3___zork
                         new Location {Title = "guidance", Description = "Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place."},
                         new Location {Title = "gate", Door = new Door {IsOpen = false}, Description =  "A locked gate. Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows. "}
                     },
-                    ImagePath = @"docks.jpg",
+                    ImagePath = @"../../docks.jpg",
 
                     IsEndPoint = false
                 },
@@ -47,7 +47,7 @@ namespace Inlämningsupg_3___zork
                         new Location {Title = "house next to a water well", Description = "You have entered a house next to a water well."},
                         new Location {Title = "gate", Door = new Door{IsOpen = false }, Description = "Another locked gate. Do you have the key perhaps? If not, try find someone to ask."}
                     },
-                    ImagePath = @"muddy road.jpg",
+                    ImagePath = @"../../muddy road.jpg",
 
                     IsEndPoint = false
                 },
