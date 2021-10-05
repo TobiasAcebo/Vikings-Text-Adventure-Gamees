@@ -22,8 +22,9 @@ namespace Inlämningsupg_3___zork
 
         private static string GetTheDocksInputExceptionsMessage(Character character, string command)
         {
-            if (command.ToLower().Contains("excuse me"))
+            if (command.ToLower().Contains("excuse me") || command.ToLower().Contains("great halls") || command.ToLower().Contains("gate") || command.ToLower().Contains("key"))
                 return null;
+
             if (command.ToLower() == "go forward" && character.CurrentLocation.Title == "starting point")
                 return "Try use: go north";
             

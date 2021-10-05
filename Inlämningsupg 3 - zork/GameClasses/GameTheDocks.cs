@@ -123,12 +123,15 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         private void GuidanceExecuteInput(string input)
         {
-            throw new NotImplementedException();
+            if(input == "go back" || IsTryingToEnterEndOfDocks(input))
+                GoBackToEndOfDocks(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
         private void EndOfDocksExecuteInput(string input)
         {
             if (input == "go east" || input == "go to gate")
-                GoToGate(_character.CurrentLocation.Title);
+                GoToGate(_character.CurrentLocation.Title); //Ska dialogen stängas (om den är öppen)?
             
             else if (input == "go west")
                 GoToWestSide(_character.CurrentLocation.Title);
@@ -138,96 +141,74 @@ namespace Inlämningsupg_3___zork.GameClasses
             
             else if (input == "go north")
                 EndOfDocksGoForward(_character.CurrentLocation.Title);
-            
-            else if (IsTryingToGreet(input))
-            {
-                DialogNotOpen();
-            }
+
             else if (input.Contains("excuse me"))
-            {
-                _character.CurrentLocation.Description = "\"Oh hello there traveler. Didn't quite see you.\r\nHow can I help you?\"";
-                _character.InDialog = true;
-            }
+                OpenDialog();
+
             else if (input.Contains("great halls"))
             {
                 if (_character.InDialog)
-                {
                     _character.CurrentLocation.Description = "\"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
-                }
                 else
                      DialogNotOpen();
             }
+
             else if (input.Contains("gate"))
             {
                 if (_character.InDialog)
-                {
                     _character.CurrentLocation.Description = "\"Yes, I know abouyt this gate. It's located east of the docks\"";
-                }
                 else
                     DialogNotOpen();
             }
+
             else if (input.Contains("key"))
             {
                 if (_character.InDialog)
-                {
                     _character.CurrentLocation.Description = "\"I don't know anything about a key..\r\nI do sell a knife and a fishing line though.\r\nmaybe they can come in handy for your misson.\"";
-                }
                 else
                     DialogNotOpen();
             }
+
+            else if (IsTryingToGreet(input))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "\"Hello there, traveler. How can I help you?\"";
+                else
+                    DialogNotOpen();
+            }
+
             else if (input == "buy knife")
             {
                 if (_character.InDialog)
-                {
-                    if (KnifeAvailable())
-                    {
-                        BuyKnife();
-                        _character.CurrentLocation.Description = "\"Here you go.\"";
-                    }
-                    else
-                        _character.CurrentLocation.Description = "\"That item has already been bought.\"";
-                    
-                }
+                    TryBuyKnife();
                 else
                     DialogNotOpen();
             }
+
             else if (input == "buy fishing line")
             {
                 if (_character.InDialog)
-                {
-                    if (FishingLineAvailable())
-                    {
-                        BuyFishingLine();
-                        _character.CurrentLocation.Description = "\"Here you go.\"";
-                    }
-                    else
-                        _character.CurrentLocation.Description = "\"That item has already been bought.\"";
-
-                }
+                    TryBuyFishingLine();
                 else
                     DialogNotOpen();
             }
+
             else if (input == "buy fishing line and knife" || input == "buy knife and fishing line")
             {
                 if (_character.InDialog)
-                {
-                    if (FishingLineAvailable() && KnifeAvailable())
-                    {
-                        BuyFishingLine();
-                        BuyKnife();
-                        _character.CurrentLocation.Description = "\"Here you go.\"";
-                    }
-                    else
-                        _character.CurrentLocation.Description = "You can't do that.";
-                   
-                }
+                    TryBuyFishingLineAndKnife();
                 else
                     DialogNotOpen();
             }
         }
 
         
-        
+        private void OpenDialog()
+        {
+            _character.CurrentLocation.Description = "\"Oh hello there traveler. Didn't quite see you.\r\nHow can I help you?\"";
+            _character.InDialog = true;
+        }
+
         private void TryOpenGate()
         {
 
@@ -266,7 +247,38 @@ namespace Inlämningsupg_3___zork.GameClasses
                     "You must open the gate to enter Muddy Road. I don't believe you have the key, do you. Ask around the docks. Maybe someone knows how to get one.";
             }
         }
-        
+        private void TryBuyFishingLine()
+        {
+            if (FishingLineAvailable())
+            {
+                BuyFishingLine();
+                _character.CurrentLocation.Description = "\"Here you go.\"";
+            }
+            else
+                _character.CurrentLocation.Description = "\"That item has already been bought.\"";
+        }
+        private void TryBuyFishingLineAndKnife()
+        {
+            if (FishingLineAvailable() && KnifeAvailable())
+            {
+                BuyFishingLine();
+                BuyKnife();
+                _character.CurrentLocation.Description = "\"Here you go.\"";
+            }
+            else
+                _character.CurrentLocation.Description = "You can't do that.";
+        }
+        private void TryBuyKnife()
+        {
+            if (KnifeAvailable())
+            {
+                BuyKnife();
+                _character.CurrentLocation.Description = "\"Here you go.\"";
+            }
+            else
+                _character.CurrentLocation.Description = "\"That item has already been bought.\"";
+        }
+
         private void StartingPointGoBack(string previousLocation)
         {
             if (_character.PreviousLocation == null)
@@ -482,14 +494,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             return _character.ItemList.Any(i => i.Title == "key");
         }
-        private void CannotExecuteInputFrom(string currentLocationTitle)
-        {
-            _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
-        }
-        private bool FishingLineAvailable()
-        {
-            return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
-        }
+        
         private void DialogNotOpen()
         {
             _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by being polite.";
@@ -498,6 +503,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             return _character.CurrentLocation.ItemList.Any(x => x.Title == "knife");
         }
+
         private void BuyFishingLine()
         {
             Item fishingLine = _character.CurrentLocation.ItemList.Find(x => x.Title == "fishing line");
@@ -509,6 +515,14 @@ namespace Inlämningsupg_3___zork.GameClasses
             Item knife = _character.CurrentLocation.ItemList.Find(x => x.Title == "knife");
             _character.ItemList.Add(knife);
             _character.CurrentLocation.ItemList.Remove(knife);
+        }
+        private bool FishingLineAvailable()
+        {
+            return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
+        }
+        private void CannotExecuteInputFrom(string currentLocationTitle)
+        {
+            _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
         }
     }
 }
