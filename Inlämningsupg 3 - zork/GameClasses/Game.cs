@@ -21,18 +21,17 @@ namespace Inlämningsupg_3___zork
 
         public virtual void ExecuteInput(string input)
         {
-            var lowerCaseInput = input.ToLower();
             var currentScenario = _character.CurrentScenario;
 
             if(currentScenario.Id == 1)
             {
                 var gameTheDocks = new GameTheDocks(_character, _gameContent);
-                gameTheDocks.ExecuteInput(lowerCaseInput);
+                gameTheDocks.ExecuteInput(input);
             }
             else if (currentScenario.Id == 2)
             {
                 var gameMuddyRoad = new GameMuddyRoad(_character, _gameContent);
-                gameMuddyRoad.ExecuteInput(lowerCaseInput);
+                gameMuddyRoad.ExecuteInput(input);
             }
 
 

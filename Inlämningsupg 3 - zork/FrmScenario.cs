@@ -162,16 +162,16 @@ namespace Inlämningsupg_3___zork
         {
             if (e.KeyCode != Keys.Enter)
                 return;
-            
 
-            string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInputTxt.Text);
+            string userInput = userInputTxt.Text.ToLower();
+            string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInput);
             
 
             if (!string.IsNullOrEmpty(inputExceptionMessage))
                 PrintExceptionMessage(inputExceptionMessage);
             else
             {
-                _game.ExecuteInput(userInputTxt.Text);
+                _game.ExecuteInput(userInput);
 
                 UpdateScenario();
             }

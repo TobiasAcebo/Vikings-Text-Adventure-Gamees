@@ -9,47 +9,41 @@ namespace Inlämningsupg_3___zork
 {
     static class InputHandler
     {
-        private static readonly string[] _standardWords = { "go", "east", "west", "north", "back", "south", "to", "look" };
-        private static readonly string _standardExceptionMessage = "The command is not valid";
-        public static string GetInputExceptionMessage(Character character, string command)
+        private static readonly string _standardExceptionMessage = "The input is not valid";
+        public static string GetInputExceptionMessage(Character character, string input)
         {
 
-            if (character.CurrentScenario.Id == 1)
-                return GetTheDocksInputExceptionsMessage(character, command);
-
-            return null;
-        }
-
-        private static string GetTheDocksInputExceptionsMessage(Character character, string command)
-        {
-            if (command.ToLower().Contains("excuse me") || command.ToLower().Contains("great halls") || command.ToLower().Contains("gate") || command.ToLower().Contains("key"))
+            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key"))
                 return null;
 
-            if (command.ToLower() == "go forward" && character.CurrentLocation.Title == "starting point")
+            if (input == "go forward" && character.CurrentLocation.Title == "starting point")
                 return "Try use: go north";
-            
-            
-            List<string> inputWordsExceptionsList = GetTheDocksInputWordsExceptionsList(character, command);
+
+            List<string> inputWordsExceptionsList = GetInputWordsExceptionsList(input);
             if (inputWordsExceptionsList.Count > 0)
-            {
-                string result = "";
-                foreach (var inputWordException in inputWordsExceptionsList)
-                {
-                    result += $"'{inputWordException}', ";
-                }
+                return GetWordExceptionMessage(inputWordsExceptionsList);
 
-                return result.Substring(0, result.Length - 2) + " Isn't in our vocabulary";
-            }
-
-            if (IsValidTheDocksCommand(character, command))
+            if (IsValidInput(input))
                 return null;
+
 
             return _standardExceptionMessage;
         }
 
-        private static bool IsValidTheDocksCommand(Character character, string command)
+        private static string GetWordExceptionMessage(List<string> inputWordsExceptionsList)
         {
-            List<string> validCommands = new List<string>
+            string result = "";
+            foreach (var inputWordException in inputWordsExceptionsList)
+            {
+                result += $"\"{inputWordException}\", ";
+            }
+
+            return result.Substring(0, result.Length - 2) + " is not in our vocabulary.";
+        }
+
+        private static bool IsValidInput(string input)
+        {
+            string [] validInputList = 
             {
                 "go east",
                 "go west",
@@ -91,57 +85,72 @@ namespace Inlämningsupg_3___zork
                 "use key on door"
             };
 
-            
-
-           
-            return validCommands.Contains(command);
+            return validInputList.Contains(input);
         }
 
-        private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
+        private static List<string> GetInputWordsExceptionsList(string input)
         {
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up", "key", "fishing", "line", "knife", "door", "open", "drop", "pick"};
-
-            var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();
+            var validWordsArr = GetStandardWordsArr();
 
-            var uniqueItemTitles = GetUniqueItemTitlesFromInventoryAndCurrentLocation(character);
-            
-            validWordsList.AddRange(_standardWords);
-            validWordsList.AddRange(theDocksStandardWords);
-            validWordsList.AddRange(uniqueItemTitles);
+            string[] inputWordsArr = input.Split(' ');
 
-            string[] commandWordsArr = command.Split(' ');
-            foreach (var commandWord in commandWordsArr)
+            foreach (var inputWord in inputWordsArr)
             {
-                if(!validWordsList.Contains(commandWord.ToLower()))
-                    inputWordsExceptionsList.Add(commandWord);
+                if(!validWordsArr.Contains(inputWord))
+                    inputWordsExceptionsList.Add(inputWord);
             }
+
             return inputWordsExceptionsList;
         }
 
-        private static List<string> GetUniqueItemTitlesFromInventoryAndCurrentLocation(Character character)
+        private static string[] GetStandardWordsArr()
         {
-            var uniqueItemTitles = new List<string>();
-            if (character.CurrentLocation.ItemList != null)
+            return new []
             {
-                var itemTitlesInCurrentLocation = character.CurrentLocation.ItemList.Select(i => i.Title).ToArray();
-                foreach (var itemTitle in itemTitlesInCurrentLocation)
-                {
-                    uniqueItemTitles.AddRange(itemTitle.Split(' '));
-                }
-            }
-
-            if (character.ItemList != null)
-            {
-                 var itemTitlesInInventory = character.ItemList.Select(i => i.Title).ToArray();
-                 foreach (var itemTitle in itemTitlesInInventory)
-                 {
-                     uniqueItemTitles.AddRange(itemTitle.Split(' '));
-                 }
-            }
-            
-
-            return uniqueItemTitles.Distinct().ToList();
+                "fisherman",
+                "end",
+                "of",
+                "docks",
+                "gate",
+                "boat",
+                "buy",
+                "hi",
+                "hello",
+                "there",
+                "use",
+                "on",
+                "jump",
+                "in",
+                "water",
+                "into",
+                "the",
+                "talk",
+                "and",
+                "starting",
+                "point",
+                "enter",
+                "muddy",
+                "road",
+                "climb",
+                "up",
+                "key",
+                "fishing",
+                "line",
+                "knife",
+                "door",
+                "open",
+                "drop",
+                "pick",
+                "go", 
+                "east", 
+                "west", 
+                "north", 
+                "back",
+                "south", 
+                "to", 
+                "look"
+            };
         }
     }
 }
