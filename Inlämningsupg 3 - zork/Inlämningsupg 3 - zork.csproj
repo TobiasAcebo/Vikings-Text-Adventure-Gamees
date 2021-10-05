@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Door.cs" />
     <Compile Include="GameClasses\Game.cs" />
+    <Compile Include="GameClasses\GameMuddyRoad.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="GameClasses\GameTheDocks.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />

@@ -8,6 +8,6 @@ namespace Inlämningsupg_3___zork.Interfaces
 {
     interface IGame
     {
-        void ExecuteInput(string input);
+        void Look();
     }
 }

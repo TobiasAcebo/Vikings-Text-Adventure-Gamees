@@ -29,12 +29,14 @@ namespace Inlämningsupg_3___zork
 
         public void PickUpItem(Item item)
         {
-            throw new NotImplementedException();
+            ItemList.Add(item);
+            CurrentLocation.ItemList.Remove(item);
         }
 
         public void DropItem(Item item)
         {
-            throw new NotImplementedException();
+            ItemList.Remove(item);
+            CurrentLocation.ItemList.Add(item);
         }
 
         public bool TryOpenDoor(Item door)

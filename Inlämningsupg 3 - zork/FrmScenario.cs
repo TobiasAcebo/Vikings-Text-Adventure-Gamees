@@ -51,7 +51,8 @@ namespace Inlämningsupg_3___zork
         private void ItemsTheDocks()
         {
             var currentInventory = _character.ItemList;
-
+            item1Label.Text = "";
+            item2Label.Text = "";
             foreach (var item in currentInventory)
             {
                 //switch (item.Title)

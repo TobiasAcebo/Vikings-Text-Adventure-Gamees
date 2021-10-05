@@ -7,35 +7,34 @@ using Inlämningsupg_3___zork.Interfaces;
 
 namespace Inlämningsupg_3___zork.GameClasses
 {
-    class GameTheDocks : IGame
+    class GameTheDocks : Game, IGame
     {
         private readonly Character _character;
         private readonly GameContent _gameContent;
-        public GameTheDocks(Character character, GameContent gameContent)
+        public GameTheDocks(Character character, GameContent gameContent) :base(character, gameContent)
         {
             _character = character;
             _gameContent = gameContent;
         }
 
-        public void ExecuteInput(string input)
+        public override void ExecuteInput(string input)
         {
             if (input == "look")
             {
                 Look();
                 return;
             }
-                
 
-            //if (input == "use knife on fishing line" || input == "use fishing line on knife")
-            //{
-            //    if (_character.ItemList.Any(x => x.Title == "knife" && x.Title == "fishing line"))
-            //    {
-            //        Item key = _character.ItemList.Find(x => x.Title == "knife" && x.Title == "fishing line");
-            //        _character.ItemList.Add(key);
-            //        _character.ItemList.First(x=> x.Title == "knife")
-            //    }
-                
-            //}
+            if (input == "use knife on fishing line" || input == "use fishing line on knife")
+            {
+                TryCreateKey();
+                return;
+            }
+            if (DropItemInputWorks(input))
+                return;
+            
+            if (PickUpItemInputWorks(input))
+                return;
 
             var currentLocation = _character.CurrentLocation;
 
@@ -61,7 +60,52 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GateExecuteInput(input);
         }
 
-       
+        private bool PickUpItemInputWorks(string input)
+        {
+            var itemsInLocation = _character.CurrentLocation.ItemList;
+            foreach (var item in itemsInLocation)
+            {
+                if (input == "pick up " + item.Title)
+                {
+                    if (!InventoryFull())
+                    {
+                        _character.PickUpItem(item);
+                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
+                        InventoryStatusPrint();
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private bool DropItemInputWorks(string input)
+        {
+            var inventory = _character.ItemList;
+            foreach (var item in inventory)
+            {
+                if (input == "drop " + item.Title)
+                {
+                    _character.DropItem(item);
+                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void TryCreateKey()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                Item key = new Item();
+                key.IsKey = true;
+                key.Title = "key";
+                _character.ItemList.Clear();
+                _character.ItemList.Add(key);
+                _character.CurrentLocation.Description = "\"You have made a key!\"";
+            }
+        }
 
         private void StartingPointExecuteInput(string input)
         {
@@ -109,7 +153,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         private void GateExecuteInput(string input)
         {
-            if(input == "open gate")
+            if(input == "open gate") // lägg till flera alternativ
                 TryOpenGate();
 
             else if(input == "go west" || input == "go back")
@@ -131,16 +175,33 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void EndOfDocksExecuteInput(string input)
         {
             if (input == "go east" || input == "go to gate")
-                GoToGate(_character.CurrentLocation.Title); //Ska dialogen stängas (om den är öppen)?
-            
+            {
+                GoToGate(_character.CurrentLocation.Title);
+                _character.InDialog = false;
+            }
+                
             else if (input == "go west")
+            {
                 GoToWestSide(_character.CurrentLocation.Title);
-            
+                _character.InDialog = false;
+            }
+                
             else if (input == "go back")
+            {
                 EndOfDocksGoBack(_character.CurrentLocation.Title);
-            
+                _character.InDialog = false;
+            }
+                
             else if (input == "go north")
+            {
                 EndOfDocksGoForward(_character.CurrentLocation.Title);
+                _character.InDialog = false;
+            }
+            else if (input == "go south" || input == "go to starting point")
+            {
+                GoBackToStartingPoint(_character.CurrentLocation.Title);
+                _character.InDialog = false;
+            }
 
             else if (input.Contains("excuse me"))
                 OpenDialog();
@@ -148,7 +209,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (input.Contains("great halls"))
             {
                 if (_character.InDialog)
-                    _character.CurrentLocation.Description = "\"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
+                    _character.CurrentLocation.Description = "Fisherman: \"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
                 else
                      DialogNotOpen();
             }
@@ -156,7 +217,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (input.Contains("gate"))
             {
                 if (_character.InDialog)
-                    _character.CurrentLocation.Description = "\"Yes, I know abouyt this gate. It's located east of the docks\"";
+                    _character.CurrentLocation.Description = "Fisherman: \"Yes, I know about this gate. It's located east of the docks\"";
                 else
                     DialogNotOpen();
             }
@@ -164,7 +225,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (input.Contains("key"))
             {
                 if (_character.InDialog)
-                    _character.CurrentLocation.Description = "\"I don't know anything about a key..\r\nI do sell a knife and a fishing line though.\r\nmaybe they can come in handy for your misson.\"";
+                    _character.CurrentLocation.Description = "Fisherman: \"I don't know anything about a key..\r\nI do sell a knife and a fishing line though.\r\nmaybe they can come in handy for your misson.\"";
                 else
                     DialogNotOpen();
             }
@@ -172,7 +233,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (IsTryingToGreet(input))
             {
                 if (_character.InDialog)
-                    _character.CurrentLocation.Description = "\"Hello there, traveler. How can I help you?\"";
+                    _character.CurrentLocation.Description = "Fisherman: \"Hello there, traveler. How can I help you?\"";
                 else
                     DialogNotOpen();
             }
@@ -205,7 +266,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         
         private void OpenDialog()
         {
-            _character.CurrentLocation.Description = "\"Oh hello there traveler. Didn't quite see you.\r\nHow can I help you?\"";
+            _character.CurrentLocation.Description = "Fisherman: \"Oh hello there traveler. Didn't quite see you.\r\nHow can I help you?\"";
             _character.InDialog = true;
         }
 
@@ -222,13 +283,14 @@ namespace Inlämningsupg_3___zork.GameClasses
             }
             else if (characterHasKey && !gateIsOpen)
             {
-                _character.CurrentLocation.Door.IsOpen = true;
+                OpenGate();
                 _character.CurrentLocation.Description = "You opened the gate. You can now enter Muddy Road.";
             }
             else
                 _character.CurrentLocation.Description = "The gate is already open. You can now enter Muddy Road.";
             
         }
+
         private void TryEnterMuddyRoad()
         {
             if (_character.CurrentLocation.Door.IsOpen)
@@ -252,18 +314,39 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (FishingLineAvailable())
             {
                 BuyFishingLine();
-                _character.CurrentLocation.Description = "\"Here you go.\"";
+                _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
+                 InventoryStatusPrint();
             }
             else
                 _character.CurrentLocation.Description = "\"That item has already been bought.\"";
         }
+
+        private void InventoryStatusPrint()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                _character.CurrentLocation.Description = "You have knife and fishing line in your inventory \r\n";
+                _character.CurrentLocation.Description += "\"Try use them on each other.\"";
+            }
+        }
+
+        private bool CharacterHasKnifeAndFihsingLine()
+        {
+            if (_character.ItemList.Count(item => item.Title == "knife" || item.Title == "fishing line") == 2)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void TryBuyFishingLineAndKnife()
         {
             if (FishingLineAvailable() && KnifeAvailable())
             {
                 BuyFishingLine();
                 BuyKnife();
-                _character.CurrentLocation.Description = "\"Here you go.\"";
+                _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
+                InventoryStatusPrint();
             }
             else
                 _character.CurrentLocation.Description = "You can't do that.";
@@ -273,7 +356,8 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (KnifeAvailable())
             {
                 BuyKnife();
-                _character.CurrentLocation.Description = "\"Here you go.\"";
+                _character.CurrentLocation.Description = "Fisherman:  \"Here you go.\"";
+                InventoryStatusPrint();
             }
             else
                 _character.CurrentLocation.Description = "\"That item has already been bought.\"";
@@ -364,7 +448,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (!characterHasKey && !gateIsOpen)
             {
                 _character.CurrentLocation.Description =
-                    "A locked gate.Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows.";
+                    "A locked gate. Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows.";
             }
             else if (characterHasKey && !gateIsOpen)
             {
@@ -406,25 +490,15 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void EndOfDocksGoForward(string previousLocation)
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "guidance");
-            _character.CurrentLocation.Description = "Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place.";
+            _character.CurrentLocation.Description = "Lady: \"Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place.\"";
             _character.PreviousLocation = previousLocation;
         }
 
-        private void Look()
+        public void Look()
         {
-            _character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; //hur gör vi här? Vilken text ska visas vid "Look"?
+            _character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; 
             _character.CurrentLocation.Description += "\r\nThere is a gate located east of the docks";
-            _character.CurrentLocation.Description += "\r\nItems available: ";
-            foreach (var location in _character.CurrentScenario.LocationList)
-            {
-                foreach (var item in location.ItemList)
-                {
-                    _character.CurrentLocation.Description += "\r\n" + item.Title;
-                }
-
-            }
-
-            _character.CurrentLocation.Description += "\r\n";
+            DisplayItemsAvailable();
         }
 
         private bool IsTryingToGreet(string input)
@@ -489,12 +563,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             return enterMuddyRoadPhrasesList.Contains(input);
         }
-
-        private bool CharacterHasKey()
-        {
-            return _character.ItemList.Any(i => i.Title == "key");
-        }
-        
+ 
         private void DialogNotOpen()
         {
             _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by being polite.";

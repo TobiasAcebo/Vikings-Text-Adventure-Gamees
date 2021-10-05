@@ -8,7 +8,7 @@ using Inlämningsupg_3___zork.Interfaces;
 
 namespace Inlämningsupg_3___zork
 {
-    public class Game : IGame
+    public class Game 
     {
         private readonly Character _character;
         private readonly GameContent _gameContent;
@@ -19,7 +19,7 @@ namespace Inlämningsupg_3___zork
             _gameContent = gameContent;
         }
 
-        public void ExecuteInput(string input)
+        public virtual void ExecuteInput(string input)
         {
             var lowerCaseInput = input.ToLower();
             var currentScenario = _character.CurrentScenario;
@@ -29,9 +29,50 @@ namespace Inlämningsupg_3___zork
                 var gameTheDocks = new GameTheDocks(_character, _gameContent);
                 gameTheDocks.ExecuteInput(lowerCaseInput);
             }
+            else if (currentScenario.Id == 2)
+            {
+                var gameMuddyRoad = new GameMuddyRoad(_character, _gameContent);
+                gameMuddyRoad.ExecuteInput(lowerCaseInput);
+            }
 
 
             _character.MovesCount++;
         }
+        public void DisplayItemsAvailable()
+        {
+            _character.CurrentLocation.Description += "\r\nItems available: ";
+            foreach (var location in _character.CurrentScenario.LocationList)
+            {
+                foreach (var item in location.ItemList)
+                {
+                    _character.CurrentLocation.Description += "\r\n" + item.Title;
+                }
+
+            }
+
+            _character.CurrentLocation.Description += "\r\n";
+        }
+        public bool InventoryFull()
+        {
+            if (_character.ItemList.Count() == 2)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void OpenGate()
+        {
+            _character.CurrentLocation.Door.IsOpen = true;
+            Item key = _character.ItemList.Find(x => x.IsKey == true);
+            _character.ItemList.Remove(key);
+        }
+        public bool CharacterHasKey()
+        {
+            return _character.ItemList.Any(i => i.IsKey == true);
+        }
+       
+        
+
+        
     }
 }

@@ -17,7 +17,7 @@ namespace Inlämningsupg_3___zork
                 {
                     Id = 1,
                     Title = "The Docks",
-                    Description = "Years of traveling in the Mediterranean sea. \r\nYou have finally arrived in Kattegatt with your ship.  \r\nHere at the docks, you must find your way into the great halls. \r\n\r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. ",
+                    Description = "Years of traveling in the Mediterranean sea.\r\nYou have finally arrived in Kattegatt with your ship.\r\nHere at the docks, you must find your way into the great halls.\r\n\r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. ",
                     LocationList = new List<Location>
                     {
                         new Location {Title = "starting point", Description = "Years of traveling in the Mediterranean sea. \r\nYou have finally arrived in Kattegatt with your ship.  \r\nHere at the docks, you must find your way into the great halls. \r\n\r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. "},
@@ -36,17 +36,16 @@ namespace Inlämningsupg_3___zork
                 {
                     Id = 2,
                     Title = "Muddy Road",
-                    Description = "You have entered Muddy road. \r\n A mist settels over the abandoned houses. \r\n The sign of life seems to have left this place. \r\n if you are lucky, perhaps someone is still around.",
+                    Description = "You have entered Muddy road.\r\nA mist settels over the abandoned houses.\r\nThe sign of life seems to have left this place.\r\nif you are lucky, perhaps someone is still around.",
                     LocationList = new List<Location>
                     {
-                        new Location {Title = "starting point", Description = "We are inside the gate from the docks. \r\n We can see a house stack of logs \r\n and a house with a shield on the wall..."},
-                        new Location {Title = "middle of the road", Description = "We are middle of the road."},
-                        new Location {Title = "gate the docks", Description = "You can't go back this way!"},
-                        new Location {Title = "house with stack full of logs", Description = "Oh look it is a house with stacks of logs..."},
-                        new Location {Title = "house with a sheild on the wall", ItemList = new List<Item>{ new Item { Title = "spear"}, new Item {Title = "helmet"}, new Item {Title = "book"}, new Item {Title = "candle" }}},
-                        new Location {Title = "house with carpet made of fur", Description = "It is a house with a carpet made of fur."},
-                        new Location {Title = "house next to a water well", Description = "It might be something in the well."},
-                        new Location {Title = "town gate", Description = "The gate leads us to the town"}
+                        new Location {Title = "starting point", Description = "You have entered Muddy road... \r\nA mist settels over the abandoned houses. \r\nThe sign of life seems to have left this place. \r\nif you are lucky, perhaps someone is still around."},
+                        new Location {Title = "middle of the road", Description = "Oh look, there is someone here. It seems to be a Viking. Maybe he knows how to get out of this place."},
+                        new Location {Title = "house with stack full of logs", Description = "You have entered a house with a stack of logs"},
+                        new Location {Title = "house with a sheild on the wall", Description = "You have entered a house with a shield on the wall.", ItemList = new List<Item>{ new Item { Title = "spear"}, new Item {Title = "helmet"}, new Item {Title = "book"}, new Item {Title = "candle" }}},
+                        new Location {Title = "house with carpet made of fur", Description = "You have entered a house with a carpet made of fur."},
+                        new Location {Title = "house next to a water well", Description = "You have entered a house next to a water well."},
+                        new Location {Title = "gate", Door = new Door{IsOpen = false }, Description = "Another locked gate. Do you have the key perhaps? If not, try find someone to ask."}
                     },
                     ImagePath = @"muddy road.jpg",
 

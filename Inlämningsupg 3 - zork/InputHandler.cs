@@ -81,6 +81,13 @@ namespace Inlämningsupg_3___zork
                 "go to starting point",
                 "enter muddy road",
                 "go to muddy road",
+                "use key on gate",
+                "open gate",
+                "open door",
+                "drop knife",
+                "drop fishing line",
+                "pick up knife",
+                "pick up fishing line",
                 "use key on door"
             };
 
@@ -92,7 +99,7 @@ namespace Inlämningsupg_3___zork
 
         private static List<string> GetTheDocksInputWordsExceptionsList(Character character, string command)
         {
-            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up", "key", "fishing", "line", "knife"};
+            string[] theDocksStandardWords = { "fisherman", "end", "of", "docks", "gate", "boat", "buy", "hi", "hello", "there", "use", "on", "jump", "in", "water", "into", "the", "talk", "and", "starting", "point", "enter", "muddy", "road", "climb", "up", "key", "fishing", "line", "knife", "door", "open", "drop", "pick"};
 
             var validWordsList = new List<string>();
             var inputWordsExceptionsList = new List<string>();
