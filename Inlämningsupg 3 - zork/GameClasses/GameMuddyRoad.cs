@@ -71,7 +71,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void StartingPointGoBack(string previousLocation)
         {
             if (_character.PreviousLocation == null)
-                _character.CurrentLocation.Description = "You are still at the starting point";
+                _character.CurrentLocation.Description = "You are still at the starting point \r\nIf you want to go back to the docks, type: enter the docks";
             else
             {
                 if (_character.PreviousLocation == "middle of the road")
@@ -121,6 +121,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             _character.CurrentScenario = _gameContent.GetStartingScenario();
             _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "gate");
             _character.PreviousLocation = null;
+            _character.CurrentLocation.Description = "You have entered The docks.\r\nYou are still at the gate.\r\nIf you want to go back to Muddy road, type: enter muddy road.\r\nElse you can move as you please within The docks";
         }
 
         private void GoToHouseWithStackFullOfLogs(string previousLocation)
@@ -199,12 +200,18 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void HouseNextToAWaterWellExecuteInput(string input)
         {
-            throw new NotImplementedException();
+            if(input == "go west" || input == "go back")
+                GoBackToMiddleOfTheRoad(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
         private void HouseWithACarpetMadeOfFurExecuteInput(string input)
         {
-            throw new NotImplementedException();
+            if (input == "go east" || input == "go back")
+                GoBackToMiddleOfTheRoad(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
         private void MiddleOfTheRoadExecuteInput(string input)
@@ -215,7 +222,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 _character.InDialog = false;
             }
 
-            else if (input == "go west")
+            else if (input == "go west" || input == "go to house with a carpet made of fur" || input == "go to the house with a carpet made of fur")
             {
                 GoToHouseWithACarpetMadeOfFur(_character.CurrentLocation.Title);
                 _character.InDialog = false;
@@ -227,9 +234,9 @@ namespace Inlämningsupg_3___zork.GameClasses
                 _character.InDialog = false;
             }
 
-            else if (input == "go north")
+            else if (input == "go east" || input == "go to house next to a water well" || input == "go to the house next to a water well")
             {
-                EndOfDocksGoForward(_character.CurrentLocation.Title);
+                GoToHouseNextToAWaterWell(_character.CurrentLocation.Title);
                 _character.InDialog = false;
             }
             else if (input == "go south" || input == "go to starting point")
@@ -239,26 +246,51 @@ namespace Inlämningsupg_3___zork.GameClasses
             }
         }
 
+        private void GoToHouseNextToAWaterWell(string previousLocation)
+        {
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "house next to a water well");
+            _character.PreviousLocation = previousLocation;
+        }
+
         private void MiddleOfTheRoadGoBack(string previousLocation)
         {
             if (_character.PreviousLocation == "starting point")
                 GoBackToStartingPoint(previousLocation);
 
             else if (_character.PreviousLocation == "house with a carpet made of fur")
-                GoBackToWestSide(previousLocation);
+                GoBackToHouseWithACarpetMadeOfFur(previousLocation);
 
             else if (_character.PreviousLocation == "gate")
                 GoBackToGate(previousLocation);
 
             else if (_character.PreviousLocation == "house next to a water well")
-                GoBackToGuidance(previousLocation);
+                GoBackToHouseNextToAWaterWell(previousLocation);
+        }
+
+        private void GoBackToHouseNextToAWaterWell(string previousLocation)
+        {
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "house next to a water well");
+            _character.CurrentLocation.Description = "This house seems familiar. It's the house next to a water well";
+            _character.PreviousLocation = previousLocation;
+        }
+
+        private void GoBackToGate(string previousLocation)
+        {
+            GoToGate(previousLocation);
+        }
+
+        private void GoBackToHouseWithACarpetMadeOfFur(string previousLocation)
+        {
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "house with a carpet made of fur");
+            _character.CurrentLocation.Description = "This house seems familiar. It's the house with a carpet made of fur";
+            _character.PreviousLocation = previousLocation;
         }
 
         private void GoBackToStartingPoint(string previousLocation)
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "starting point");
             _character.CurrentLocation.Description =
-                "Once again ";
+                "We are back at the entrance of Muddy road. Wondering if there's still someone around in this place.";
             _character.PreviousLocation = previousLocation;
         }
 
@@ -293,12 +325,18 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void HouseWithAShieldOnTheWallExecuteInput(string input)
         {
-            throw new NotImplementedException();
+            if(input == "go west" || input == "go back")
+                GoBackToStartingPoint(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
         private void HouseWithStackOfLogsExecuteInput(string input)
         {
-            throw new NotImplementedException();
+            if (input == "go east" || input == "go back")
+                GoBackToStartingPoint(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
         public void Look()

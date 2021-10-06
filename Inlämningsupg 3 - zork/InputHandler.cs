@@ -91,7 +91,11 @@ namespace Inlämningsupg_3___zork
                 "enter the docks",
                 "go to the docks",
                 "enter town",
-                "go to town"
+                "go to town",
+                "go to house with a carpet made of fur",
+                "go to the house with a carpet made of fur",
+                "go to house next to a water well",
+                "go to the house next to a water well"
             };
 
             return validInputList.Contains(input);
@@ -168,7 +172,12 @@ namespace Inlämningsupg_3___zork
                 "full",
                 "of",
                 "logs",
-                "town"
+                "town",
+                "carpet",
+                "fur",
+                "made",
+                "well",
+                "next"
             };
         }
     }

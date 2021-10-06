@@ -73,6 +73,7 @@ namespace Inlämningsupg_3___zork
         {
             _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
         }
+        
 
 
 
