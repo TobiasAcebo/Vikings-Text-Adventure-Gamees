@@ -10,5 +10,6 @@ namespace Inlämningsupg_3___zork
     {
         public string Title { get; set; }
         public bool IsKey { get; set; }
+        public bool isCoin { get; set; }
     }
 }

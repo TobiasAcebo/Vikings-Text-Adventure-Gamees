@@ -73,7 +73,10 @@ namespace Inlämningsupg_3___zork
         {
             _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
         }
-        
+        public bool CharacterHasCoin()
+        {
+            return _character.ItemList.Any(i => i.isCoin == true);
+        }
 
 
 

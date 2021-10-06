@@ -106,7 +106,10 @@ namespace Inlämningsupg_3___zork
                 "drop candle",
                 "drop helmet",
                 "use spear on book",
-                "use book on spear"
+                "use book on spear",
+                "pick up coin",
+                "drop coin",
+                "coin"
             };
 
             return validInputList.Contains(input);
@@ -193,7 +196,13 @@ namespace Inlämningsupg_3___zork
                 "helmet",
                 "spear",
                 "book",
-                "candle"
+                "candle",
+                "coin",
+                "sir",
+                "how",
+                "do",
+                "i",
+                "get"
             };
         }
     }

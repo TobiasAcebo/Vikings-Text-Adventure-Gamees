@@ -22,7 +22,7 @@ namespace Inlämningsupg_3___zork
                     {
                         new Location {Title = "starting point", Description = "Years of traveling in the Mediterranean sea. \r\nYou have finally arrived in Kattegatt with your ship.  \r\nHere at the docks, you must find your way into the great halls. \r\n\r\nAt the end of the docks, there's a fisherman talking about his travels with his men. \r\nPerhaps he knows how to get into the great halls. "},
                         new Location {Title = "water", Description = "Oh no! You fell into the water. Try and climb back up the docks."},
-                        new Location {Title = "boat", Description = "You have boarded the ship."},
+                        new Location {Title = "boat", Description = "You have boarded the ship.", ItemList = new List<Item>{new Item {Title = "coin", isCoin = true} } },
                         new Location {Title = "end of docks", ItemList = new List<Item>{new Item {Title = "knife"}, new Item{Title = "fishing line" } }},
                         new Location {Title = "west side", Description = "West side of the docks. \r\nIt’s so noisy here, what is that sound? Very well, nothing to see I guess. "},
                         new Location {Title = "guidance", Description = "Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place."},

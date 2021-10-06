@@ -140,10 +140,20 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (input == "go south" || input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
                 GoToWater(_character.CurrentLocation.Title);
+            else if (input == "pick up coin")
+                TryToPickUpCoin();
 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
+
+        private void TryToPickUpCoin()
+        {
+            Item coin = _character.CurrentLocation.ItemList.Find(x => x.Title == "coin");
+            _character.ItemList.Add(coin);
+            _character.CurrentLocation.ItemList.Remove(coin);
+        }
+
         private void WestSideExecuteInput(string input)
         {
             if(input == "go east" || input == "go back" || IsTryingToEnterEndOfDocks(input))
@@ -221,6 +231,13 @@ namespace Inlämningsupg_3___zork.GameClasses
                     _character.CurrentLocation.Description = "Fisherman: \"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
                 else
                      DialogNotOpen();
+            }
+            else if (input.Contains("coin"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Fisherman: \"You will need a coin to shop here.\r\nYou should be able to find one around here.\"" + "\r\n\r\nRemember, you can move anywhere you want by typing for example:\r\ngo north\r\ngo west\r\ngo south\r\ngo east ";
+                else
+                    DialogNotOpen();
             }
 
             else if (input.Contains("gate"))
@@ -323,12 +340,19 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (FishingLineAvailable())
             {
-                BuyFishingLine();
-                _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
-                 InventoryStatusPrint();
+                if (CharacterHasCoin())
+                {
+                    BuyFishingLine();
+                    _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
+                    CoinSpent();
+                    InventoryStatusPrint();
+                }
+                else
+                    _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
+                
             }
             else
-                _character.CurrentLocation.Description = "\"That item has already been bought.\"";
+                _character.CurrentLocation.Description = "Fisherman: \"That item has already been bought.\"";
         }
 
         private void InventoryStatusPrint()
@@ -353,10 +377,17 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (FishingLineAvailable() && KnifeAvailable())
             {
-                BuyFishingLine();
-                BuyKnife();
-                _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
-                InventoryStatusPrint();
+                if (CharacterHasCoin())
+                {
+                    BuyFishingLine();
+                    BuyKnife();
+                    _character.CurrentLocation.Description = "Fisherman: \"Here you go.\"";
+                    CoinSpent();
+                    InventoryStatusPrint();
+                }
+                else
+                    _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
+                
             }
             else
                 _character.CurrentLocation.Description = "You can't do that.";
@@ -365,12 +396,19 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (KnifeAvailable())
             {
-                BuyKnife();
-                _character.CurrentLocation.Description = "Fisherman:  \"Here you go.\"";
-                InventoryStatusPrint();
+                if (CharacterHasCoin())
+                {
+                    BuyKnife();
+                    _character.CurrentLocation.Description = "Fisherman:  \"Here you go.\"";
+                    CoinSpent();
+                    InventoryStatusPrint();
+                }
+                else
+                    _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
+               
             }
             else
-                _character.CurrentLocation.Description = "\"That item has already been bought.\"";
+                _character.CurrentLocation.Description = "Fisherman: \"That item has already been bought.\"";
         }
 
         private void StartingPointGoBack(string previousLocation)
@@ -482,9 +520,10 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void GoToBoat(string previousLocation)
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "boat");
-            _character.CurrentLocation.Description = "You have boarded the ship.";
+            _character.CurrentLocation.Description = "You have boarded the ship.\r\nPssst..There is a Coin on this ship.";
             _character.PreviousLocation = previousLocation;
         }
+
         private void GoToWater(string previousLocation)
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "water");
@@ -598,6 +637,17 @@ namespace Inlämningsupg_3___zork.GameClasses
         private bool FishingLineAvailable()
         {
             return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
+        }
+        private void CoinSpent()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                Item coin = new Item();
+                coin.isCoin = false;
+                coin.Title = "coin";
+                _character.ItemList.Remove(coin);
+                
+            }
         }
        
     }
