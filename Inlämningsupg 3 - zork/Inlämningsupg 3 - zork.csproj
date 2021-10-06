@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CurrentScenarioInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurrentScenarioInfo.Designer.cs">
+      <DependentUpon>CurrentScenarioInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="End screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CurrentScenarioInfo.resx">
+      <DependentUpon>CurrentScenarioInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="End screen.resx">
       <DependentUpon>End screen.cs</DependentUpon>
     </EmbeddedResource>
