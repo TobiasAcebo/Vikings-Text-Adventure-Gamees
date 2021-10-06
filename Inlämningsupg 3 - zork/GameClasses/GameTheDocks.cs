@@ -30,11 +30,20 @@ namespace Inlämningsupg_3___zork.GameClasses
                 TryCreateKey();
                 return;
             }
-            if (DropItemInputWorks(input))
-                return;
+
+            if (_character.CurrentLocation.Title != "end of docks")
+            {
+                if (DropItemInputWorks(input))
+                    return;
+            }
+                
+
+            if (_character.CurrentLocation.Title != "end of docks")
+            {
+                if (PickUpItemInputWorks(input))
+                    return;
+            }
             
-            if (PickUpItemInputWorks(input))
-                return;
 
             var currentLocation = _character.CurrentLocation;
 
@@ -287,6 +296,10 @@ namespace Inlämningsupg_3___zork.GameClasses
                 else
                     DialogNotOpen();
             }
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
+                
+            
         }
 
         
@@ -642,9 +655,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (CharacterHasKnifeAndFihsingLine())
             {
-                Item coin = new Item();
-                coin.isCoin = false;
-                coin.Title = "coin";
+                var coin = _character.ItemList.First(i => i.isCoin);
                 _character.ItemList.Remove(coin);
                 
             }
