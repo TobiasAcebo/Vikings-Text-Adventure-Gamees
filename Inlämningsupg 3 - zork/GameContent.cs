@@ -42,8 +42,8 @@ namespace Inlämningsupg_3___zork
                         new Location {Title = "starting point", Description = "You have entered Muddy road... \r\nA mist settels over the abandoned houses. \r\nThe sign of life seems to have left this place. \r\nif you are lucky, perhaps someone is still around."},
                         new Location {Title = "middle of the road", Description = "Oh look, there is someone here. It seems to be a Viking. Maybe he knows how to get out of this place."},
                         new Location {Title = "house with stack full of logs", Description = "You have entered a house with a stack of logs"},
-                        new Location {Title = "house with a sheild on the wall", Description = "You have entered a house with a shield on the wall.", ItemList = new List<Item>{ new Item { Title = "spear"}, new Item {Title = "helmet"}, new Item {Title = "book"}, new Item {Title = "candle" }}},
-                        new Location {Title = "house with carpet made of fur", Description = "You have entered a house with a carpet made of fur."},
+                        new Location {Title = "house with a shield on the wall", Description = "You have entered a house with a shield on the wall.", ItemList = new List<Item>{ new Item { Title = "spear"}, new Item {Title = "helmet"}, new Item {Title = "book"}, new Item {Title = "candle" }}},
+                        new Location {Title = "house with carpet a made of fur", Description = "You have entered a house with a carpet made of fur."},
                         new Location {Title = "house next to a water well", Description = "You have entered a house next to a water well."},
                         new Location {Title = "gate", Door = new Door{IsOpen = false }, Description = "Another locked gate. Do you have the key perhaps? If not, try find someone to ask."}
                     },

@@ -82,7 +82,16 @@ namespace Inlämningsupg_3___zork
                 "drop fishing line",
                 "pick up knife",
                 "pick up fishing line",
-                "use key on door"
+                "use key on door",
+                "go to house with a shield on the wall",
+                "go to the house with a shield on the wall",
+                "go to house with stack full of logs",
+                "go to the house with stack full of logs",
+                "go back to the docks",
+                "enter the docks",
+                "go to the docks",
+                "enter town",
+                "go to town"
             };
 
             return validInputList.Contains(input);
@@ -149,7 +158,17 @@ namespace Inlämningsupg_3___zork
                 "back",
                 "south", 
                 "to", 
-                "look"
+                "look",
+                "house",
+                "with",
+                "shield",
+                "a",
+                "wall",
+                "stack",
+                "full",
+                "of",
+                "logs",
+                "town"
             };
         }
     }

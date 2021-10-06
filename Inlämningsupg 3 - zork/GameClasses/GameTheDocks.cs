@@ -156,8 +156,17 @@ namespace Inlämningsupg_3___zork.GameClasses
             if(input == "open gate") // lägg till flera alternativ
                 TryOpenGate();
 
-            else if(input == "go west" || input == "go back")
+            else if(input == "go west")
                 GoBackToEndOfDocks(_character.CurrentLocation.Title);
+            else if (input == "go back")
+            {
+                if (_character.PreviousLocation != null)
+                {
+                    GoBackToEndOfDocks(_character.CurrentLocation.Title);
+                }
+                else
+                    _character.CurrentLocation.Description = "You need to enter muddy road again";
+            }
 
             else if(IsTryingToEnterMuddyRoad(input))
                 TryEnterMuddyRoad();
@@ -297,6 +306,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             {
                 _character.CurrentScenario = _gameContent.GetMuddyRoadScenario();
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
+                _character.PreviousLocation = null;
             }
             else if (CharacterHasKey())
             {
@@ -589,9 +599,6 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
         }
-        private void CannotExecuteInputFrom(string currentLocationTitle)
-        {
-            _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
-        }
+       
     }
 }

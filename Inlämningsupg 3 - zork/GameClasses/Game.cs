@@ -69,9 +69,13 @@ namespace Inlämningsupg_3___zork
         {
             return _character.ItemList.Any(i => i.IsKey == true);
         }
-       
-        
+        public void CannotExecuteInputFrom(string currentLocationTitle)
+        {
+            _character.CurrentLocation.Description = "The command may work somewhere in this game but not in: " + currentLocationTitle;
+        }
 
-        
+
+
+
     }
 }
