@@ -24,6 +24,17 @@ namespace Inlämningsupg_3___zork.GameClasses
                 return;
             }
 
+            if (input == "use spear on book" || input == "use book on spear")
+            {
+                TryCreateKey();
+                return;
+            }
+            if (DropItemInputWorks(input))
+                return;
+
+            if (PickUpItemInputWorks(input))
+                return;
+
             var currentLocation = _character.CurrentLocation;
 
             if (currentLocation.Title == "starting point")
@@ -46,6 +57,68 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (currentLocation.Title == "gate")
                 GateExecuteInput(input);
+        }
+        private bool PickUpItemInputWorks(string input)
+        {
+            var itemsInLocation = _character.CurrentLocation.ItemList;
+            foreach (var item in itemsInLocation)
+            {
+                if (input == "pick up " + item.Title)
+                {
+                    if (!InventoryFull())
+                    {
+                        _character.PickUpItem(item);
+                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
+                        InventoryStatusPrint();
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        private bool DropItemInputWorks(string input)
+        {
+            var inventory = _character.ItemList;
+            foreach (var item in inventory)
+            {
+                if (input == "drop " + item.Title)
+                {
+                    _character.DropItem(item);
+                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
+                    return true;
+                }
+            }
+            return false;
+        }
+        private void TryCreateKey()
+        {
+            if (CharacterHasSpearAndBook())
+            {
+                Item key = new Item();
+                key.IsKey = true;
+                key.Title = "key";
+                _character.ItemList.Clear();
+                _character.ItemList.Add(key);
+                _character.CurrentLocation.Description = "\"You have made a key!\"";
+            }
+        } // skapar en ny key?
+
+        private void InventoryStatusPrint()
+        {
+            if (CharacterHasSpearAndBook())
+            {
+                _character.CurrentLocation.Description = "You have spear and book in your inventory \r\n";
+                _character.CurrentLocation.Description += "\"Hold up..! Hold up..! You are on to something here.\r\nTry use them on each other.\"";
+            }
+        }
+
+        private bool CharacterHasSpearAndBook()
+        {
+            if (_character.ItemList.Count(item => item.Title == "spear" || item.Title == "book") == 2)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void StartingPointExecuteInput(string input)
@@ -111,8 +184,9 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void GoToMiddleOfTheRoad(string previousLocation)
         {
-            _character.CurrentScenario = _gameContent.GetStartingScenario();
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "middle of the road");
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "middle of the road");
+            _character.CurrentLocation.Description =
+                "You are at the middle of the road.\r\nOh look, there is someone here. It seems to be a viking.\r\nMaybe he knows how to get out of this place.";
             _character.PreviousLocation = previousLocation;
         }
 
@@ -244,6 +318,44 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
                 _character.InDialog = false;
             }
+            else if (input.Contains("excuse me") || input.Contains("hello") || input.Contains("hi") || input == "talk to viking")
+                OpenDialog();
+
+            else if (input.Contains("great halls"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Viking: \"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
+                else
+                    DialogNotOpen();
+            }
+
+            else if (input.Contains("gate"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Viking: \"Yes, I know about this gate. It's located north from here\"";
+                else
+                    DialogNotOpen();
+            }
+
+            else if (input.Contains("key"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Viking: \"I don't know anything about a key..\r\nI do know, there are still some items left in this place that could help you.\r\nTry the house with a shield on the wall.\r\nRemember to use the word " + "\"Valhalla\"" + " when you enter.\"";
+                else
+                    DialogNotOpen();
+            }
+
+        }
+
+        private void DialogNotOpen()
+        {
+            _character.CurrentLocation.Description = "Try get his attention";
+        }
+
+        private void OpenDialog()
+        {
+            _character.CurrentLocation.Description = "Viking: \"What are you doing here? This place is dangerous.\r\nHow can I help you?\"";
+            _character.InDialog = true;
         }
 
         private void GoToHouseNextToAWaterWell(string previousLocation)
@@ -325,10 +437,60 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void HouseWithAShieldOnTheWallExecuteInput(string input)
         {
-            if(input == "go west" || input == "go back")
+            if (input == "go west" || input == "go back")
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
+            else if (input == "valhalla")
+                DisplayMuddyRoadItems();
+            else if (input == "pick up spear")
+                TryPickUpSpear();
+            else if (input == "pick up book")
+                TryPickUpBook();
+            else if (input == "pick up candle")
+                TryPickUpCandle();
+            else if (input == "pick up helmet")
+                TryPickUpHelmet();
+            else if (TryingToPickUpMultipleItems(input))
+                _character.CurrentLocation.Description = "Try pick up one item at the time.";
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
+        }
+
+        private bool TryingToPickUpMultipleItems(string input) // behöver hjälp med denna.
+        {
+            return false;
+        }
+
+        private void TryPickUpHelmet()
+        {
+            Item helmet = _character.CurrentLocation.ItemList.Find(x => x.Title == "helmet");
+            _character.ItemList.Add(helmet);
+            _character.CurrentLocation.ItemList.Remove(helmet);
+        }
+
+        private void TryPickUpCandle()
+        {
+            Item candle = _character.CurrentLocation.ItemList.Find(x => x.Title == "candle");
+            _character.ItemList.Add(candle);
+            _character.CurrentLocation.ItemList.Remove(candle);
+        }
+
+        private void TryPickUpBook()
+        {
+            Item book = _character.CurrentLocation.ItemList.Find(x => x.Title == "book");
+            _character.ItemList.Add(book);
+            _character.CurrentLocation.ItemList.Remove(book);
+        }
+
+        private void TryPickUpSpear()
+        {
+            Item spear = _character.CurrentLocation.ItemList.Find(x => x.Title == "spear");
+            _character.ItemList.Add(spear);
+            _character.CurrentLocation.ItemList.Remove(spear);
+        }
+
+        private void DisplayMuddyRoadItems()
+        {
+            _character.CurrentLocation.Description = "You unlocked the hidden items.\r\nHelmet\r\nBook\r\nCandle\r\nSpear";
         }
 
         private void HouseWithStackOfLogsExecuteInput(string input)

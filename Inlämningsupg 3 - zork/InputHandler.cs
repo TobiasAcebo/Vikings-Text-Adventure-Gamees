@@ -95,7 +95,18 @@ namespace Inlämningsupg_3___zork
                 "go to house with a carpet made of fur",
                 "go to the house with a carpet made of fur",
                 "go to house next to a water well",
-                "go to the house next to a water well"
+                "go to the house next to a water well",
+                "valhalla",
+                "pick up spear",
+                "pick up book",
+                "pick up candle",
+                "pick up helmet",
+                "drop spear",
+                "drop book",
+                "drop candle",
+                "drop helmet",
+                "use spear on book",
+                "use book on spear"
             };
 
             return validInputList.Contains(input);
@@ -177,7 +188,12 @@ namespace Inlämningsupg_3___zork
                 "fur",
                 "made",
                 "well",
-                "next"
+                "next",
+                "valhalla",
+                "helmet",
+                "spear",
+                "book",
+                "candle"
             };
         }
     }

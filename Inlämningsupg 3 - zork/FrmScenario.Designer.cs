@@ -41,12 +41,11 @@ namespace Inlämningsupg_3___zork
             this.playerNameLabel = new System.Windows.Forms.Label();
             this.inventoryLabel = new System.Windows.Forms.Label();
             this.item1Label = new System.Windows.Forms.Label();
-            this.pickUpItemBtn = new System.Windows.Forms.Button();
             this.userInputTxt = new System.Windows.Forms.TextBox();
-            this.keyOnGateBtn = new System.Windows.Forms.Button();
             this.item2Label = new System.Windows.Forms.Label();
             this.TimeCounter = new System.Windows.Forms.Timer(this.components);
             this.TimerMinNSeconds = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +96,13 @@ namespace Inlämningsupg_3___zork
             this.roomDescriptionTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomDescriptionTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.roomDescriptionTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.roomDescriptionTxt.Cursor = System.Windows.Forms.Cursors.No;
             this.roomDescriptionTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomDescriptionTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
             this.roomDescriptionTxt.Location = new System.Drawing.Point(354, 396);
             this.roomDescriptionTxt.Name = "roomDescriptionTxt";
             this.roomDescriptionTxt.ReadOnly = true;
-            this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 177);
+            this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 266);
             this.roomDescriptionTxt.TabIndex = 5;
             this.roomDescriptionTxt.Text = "";
             // 
@@ -140,6 +140,7 @@ namespace Inlämningsupg_3___zork
             this.playerNameLabel.TabIndex = 8;
             this.playerNameLabel.Text = "Name";
             this.playerNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.playerNameLabel.UseCompatibleTextRendering = true;
             // 
             // inventoryLabel
             // 
@@ -164,41 +165,18 @@ namespace Inlämningsupg_3___zork
             this.item1Label.TabIndex = 10;
             this.item1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pickUpItemBtn
-            // 
-            this.pickUpItemBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pickUpItemBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pickUpItemBtn.Location = new System.Drawing.Point(553, 770);
-            this.pickUpItemBtn.Name = "pickUpItemBtn";
-            this.pickUpItemBtn.Size = new System.Drawing.Size(141, 32);
-            this.pickUpItemBtn.TabIndex = 11;
-            this.pickUpItemBtn.Text = "Pick up item";
-            this.pickUpItemBtn.UseVisualStyleBackColor = true;
-            this.pickUpItemBtn.Click += new System.EventHandler(this.pickUpItemBtn_Click);
-            // 
             // userInputTxt
             // 
             this.userInputTxt.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userInputTxt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.userInputTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userInputTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userInputTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userInputTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.userInputTxt.Location = new System.Drawing.Point(553, 595);
+            this.userInputTxt.Location = new System.Drawing.Point(354, 705);
             this.userInputTxt.Name = "userInputTxt";
-            this.userInputTxt.Size = new System.Drawing.Size(345, 23);
+            this.userInputTxt.Size = new System.Drawing.Size(759, 30);
             this.userInputTxt.TabIndex = 12;
             this.userInputTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userInputTxt_KeyDown);
-            // 
-            // keyOnGateBtn
-            // 
-            this.keyOnGateBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.keyOnGateBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keyOnGateBtn.Location = new System.Drawing.Point(757, 770);
-            this.keyOnGateBtn.Name = "keyOnGateBtn";
-            this.keyOnGateBtn.Size = new System.Drawing.Size(141, 32);
-            this.keyOnGateBtn.TabIndex = 13;
-            this.keyOnGateBtn.Text = "Use key on gate";
-            this.keyOnGateBtn.UseVisualStyleBackColor = true;
             // 
             // item2Label
             // 
@@ -230,17 +208,28 @@ namespace Inlämningsupg_3___zork
             this.TimerMinNSeconds.TabIndex = 15;
             this.TimerMinNSeconds.Text = "0 : 0";
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Location = new System.Drawing.Point(680, 676);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 26);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Type here";
+            // 
             // FrmScenario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.TimerMinNSeconds);
             this.Controls.Add(this.item2Label);
-            this.Controls.Add(this.keyOnGateBtn);
             this.Controls.Add(this.userInputTxt);
-            this.Controls.Add(this.pickUpItemBtn);
             this.Controls.Add(this.item1Label);
             this.Controls.Add(this.inventoryLabel);
             this.Controls.Add(this.playerNameLabel);
@@ -274,12 +263,11 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Label playerNameLabel;
         private System.Windows.Forms.Label inventoryLabel;
         private System.Windows.Forms.Label item1Label;
-        private System.Windows.Forms.Button pickUpItemBtn;
         private System.Windows.Forms.TextBox userInputTxt;
-        private System.Windows.Forms.Button keyOnGateBtn;
         private System.Windows.Forms.Label item2Label;
         private System.Windows.Forms.Timer TimeCounter;
         private System.Windows.Forms.Label TimerMinNSeconds;
+        private System.Windows.Forms.Label label2;
     }
 }
 
