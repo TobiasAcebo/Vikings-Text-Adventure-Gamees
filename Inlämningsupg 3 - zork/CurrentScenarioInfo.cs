@@ -93,7 +93,7 @@ namespace Inlämningsupg_3___zork
                 "labelTheDocksShip",
                 "labelTheDocksStartingPoint",
                 "labelTheDocksEndOfDocks",
-                "labelTheDocksWestSide"
+                "labelTheDocksWestSide" //hej
 
             };
             return theDocksLabelNames.Contains(labelName);
