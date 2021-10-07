@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterResult.cs" />
     <Compile Include="CurrentScenarioInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,7 @@
     <Compile Include="Interfaces\IGame.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="FrmScenario.cs">
       <SubType>Form</SubType>
