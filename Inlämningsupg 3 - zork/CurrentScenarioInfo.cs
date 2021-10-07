@@ -106,5 +106,20 @@ namespace Inlämningsupg_3___zork
             listBoxItemsAvailable.DataSource = itemList;
             listBoxItemsAvailable.DisplayMember = "Title";
         }
+
+        private void labelTheDocksShip_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CurrentScenarioInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelTheDocksWater2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

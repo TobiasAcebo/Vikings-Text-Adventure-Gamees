@@ -210,8 +210,7 @@ namespace Inlämningsupg_3___zork
             this.richTextBox5.ReadOnly = true;
             this.richTextBox5.Size = new System.Drawing.Size(674, 64);
             this.richTextBox5.TabIndex = 21;
-            this.richTextBox5.Text = "You are not sure where you are or what to do: Navigate to a new location, there w" +
-    "ill be a description given that should help you.";
+            this.richTextBox5.Text = "If you are not sure where to go or what to do.\nType \"look\" to open map. ";
             // 
             // label5
             // 

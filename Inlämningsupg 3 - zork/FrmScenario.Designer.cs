@@ -103,7 +103,7 @@ namespace Inlämningsupg_3___zork
             this.roomDescriptionTxt.Location = new System.Drawing.Point(354, 396);
             this.roomDescriptionTxt.Name = "roomDescriptionTxt";
             this.roomDescriptionTxt.ReadOnly = true;
-            this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 266);
+            this.roomDescriptionTxt.Size = new System.Drawing.Size(759, 293);
             this.roomDescriptionTxt.TabIndex = 5;
             this.roomDescriptionTxt.Text = "";
             // 
@@ -173,7 +173,7 @@ namespace Inlämningsupg_3___zork
             this.userInputTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userInputTxt.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userInputTxt.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.userInputTxt.Location = new System.Drawing.Point(354, 705);
+            this.userInputTxt.Location = new System.Drawing.Point(354, 753);
             this.userInputTxt.Name = "userInputTxt";
             this.userInputTxt.Size = new System.Drawing.Size(759, 30);
             this.userInputTxt.TabIndex = 12;
@@ -215,7 +215,7 @@ namespace Inlämningsupg_3___zork
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Location = new System.Drawing.Point(680, 676);
+            this.label2.Location = new System.Drawing.Point(680, 724);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 26);
             this.label2.TabIndex = 16;
@@ -224,7 +224,7 @@ namespace Inlämningsupg_3___zork
             // howToPlayBtn
             // 
             this.howToPlayBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.howToPlayBtn.Location = new System.Drawing.Point(1132, 631);
+            this.howToPlayBtn.Location = new System.Drawing.Point(1131, 658);
             this.howToPlayBtn.Name = "howToPlayBtn";
             this.howToPlayBtn.Size = new System.Drawing.Size(115, 31);
             this.howToPlayBtn.TabIndex = 17;

@@ -65,9 +65,11 @@ namespace Inlämningsupg_3___zork
        
         private void Scene()
         {
+            string howToPlay = "\"How to play\"";
+            string lineBreak = "---------------------------------------------------------";
             var currentScenario = _character.CurrentScenario;
             if (_character.MovesCount == 0)
-             roomDescriptionTxt.Text = "" + "\r\n\r\n";
+             roomDescriptionTxt.Text = lineBreak + "\r\n" + "Welcome to Vikings.\r\nThis is a text-based fantasy adventure game.\r\nYou can find all rules in " + howToPlay + "\r\n" + lineBreak + "\r\n\r\n" + _character.CurrentLocation.Description + "\r\n\r\n";
             else
              roomDescriptionTxt.AppendText(_character.CurrentLocation.Description + "\r\n\r\n");
             
