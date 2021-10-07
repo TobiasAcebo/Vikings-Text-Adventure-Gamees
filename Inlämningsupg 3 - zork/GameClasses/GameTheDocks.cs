@@ -558,9 +558,11 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public void Look()
         {
-            _character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; 
-            _character.CurrentLocation.Description += "\r\nThere is a gate located east of the docks";
-            DisplayItemsAvailable();
+            //_character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; 
+            //_character.CurrentLocation.Description += "\r\nThere is a gate located east of the docks";
+            //DisplayItemsAvailable();
+            var currentScenarioInfo = new CurrentScenarioInfo(_character);
+            currentScenarioInfo.Show();
         }
 
         private bool IsTryingToGreet(string input)
