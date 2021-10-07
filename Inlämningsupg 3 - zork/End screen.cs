@@ -14,15 +14,15 @@ namespace Inlämningsupg_3___zork
     {
         Repository repository;
         
-        public EndScreen(Character character)
-        {
-            repository = new Repository();
+        //public EndScreen(Character character)
+        //{
+        //    repository = new Repository();
             
-            repository.SaveResult(character);//I SaveResult lägger en ny rad för spelare så läggs den in i textfilen
-            List<CharacterResult> highScoreLista = repository.GetHighScoreList();
-            InitializeComponent();
+        //    repository.SaveResult(character);//I SaveResult lägger en ny rad för spelare så läggs den in i textfilen
+        //    List<CharacterResult> highScoreLista = repository.GetHighScoreList();
+        //    InitializeComponent();
 
 
-        }
+        //}
     }
 }

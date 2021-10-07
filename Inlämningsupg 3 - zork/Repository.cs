@@ -12,23 +12,23 @@ namespace Inlämningsupg_3___zork
 
         public void SaveResult(Character character)
         {
-            
 
 
-                 //Ta ut alla resultat till en lista, sedan sortera på antal moves och minuter
-                //Spara ner alla resultat till txtfilen och sedan sortera de fem bästa
-               //Save result kommer spara ner alla resultat
-              //Gethighscorelist
-             //Skapa en textfil
-            
+
+            //Ta ut alla resultat till en lista, sedan sortera på antal moves och minuter
+            //Spara ner alla resultat till txtfilen och sedan sortera de fem bästa
+            //Save result kommer spara ner alla resultat
+            //Gethighscorelist
+            //Skapa en textfil
+
         }
 
-        public List<CharacterResult> GetHighScoreList()
-        {
-            StreamReader sr = new StreamReader();
+        //public List<CharacterResult> GetHighScoreList()
+        //{
+        //    StreamReader sr = new StreamReader();
 
 
-            //Skapa en textfil med alla reslutat som ska vara med namn, moves och tid.
-        }
+        //    //Skapa en textfil med alla reslutat som ska vara med namn, moves och tid.
+        //}
     }
 }

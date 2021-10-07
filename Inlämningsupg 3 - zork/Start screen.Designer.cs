@@ -70,6 +70,7 @@ namespace Inlämningsupg_3___zork
             this.userNameTxt.Name = "userNameTxt";
             this.userNameTxt.Size = new System.Drawing.Size(187, 29);
             this.userNameTxt.TabIndex = 12;
+            this.userNameTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Enter);
             // 
             // playBtn
             // 

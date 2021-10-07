@@ -65,6 +65,12 @@
     <Compile Include="GameClasses\GameMuddyRoad.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="GameClasses\GameTheDocks.cs" />
+    <Compile Include="HowToPlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowToPlayForm.Designer.cs">
+      <DependentUpon>HowToPlayForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Interfaces\IGame.cs" />
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmScenario.resx">
       <DependentUpon>FrmScenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HowToPlayForm.resx">
+      <DependentUpon>HowToPlayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Start screen.resx">
       <DependentUpon>Start screen.cs</DependentUpon>

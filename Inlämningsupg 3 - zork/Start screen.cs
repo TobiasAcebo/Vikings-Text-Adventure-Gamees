@@ -19,6 +19,18 @@ namespace Inlämningsupg_3___zork
 
         private void playBtn_Click(object sender, EventArgs e)
         {
+            StartGame();
+        }
+
+        private void Enter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+            StartGame();
+
+        }
+        private void StartGame()
+        {
             GameContent gameContent = new GameContent();
 
             Scenario currentScenario = gameContent.GetStartingScenario();
@@ -29,7 +41,6 @@ namespace Inlämningsupg_3___zork
             FrmScenario frmScenario = new FrmScenario(character, gameContent);
             StartScreen.ActiveForm.Hide();
             frmScenario.Show();
-            
         }
     }
 }
