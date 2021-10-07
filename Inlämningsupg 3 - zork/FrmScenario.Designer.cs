@@ -47,6 +47,7 @@ namespace Inlämningsupg_3___zork
             this.TimerMinNSeconds = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.howToPlayBtn = new System.Windows.Forms.Button();
+            this.mapBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -224,7 +225,7 @@ namespace Inlämningsupg_3___zork
             // howToPlayBtn
             // 
             this.howToPlayBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.howToPlayBtn.Location = new System.Drawing.Point(1131, 658);
+            this.howToPlayBtn.Location = new System.Drawing.Point(1131, 622);
             this.howToPlayBtn.Name = "howToPlayBtn";
             this.howToPlayBtn.Size = new System.Drawing.Size(115, 31);
             this.howToPlayBtn.TabIndex = 17;
@@ -232,12 +233,24 @@ namespace Inlämningsupg_3___zork
             this.howToPlayBtn.UseVisualStyleBackColor = true;
             this.howToPlayBtn.Click += new System.EventHandler(this.button1_Click);
             // 
+            // mapBtn
+            // 
+            this.mapBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mapBtn.Location = new System.Drawing.Point(1131, 659);
+            this.mapBtn.Name = "mapBtn";
+            this.mapBtn.Size = new System.Drawing.Size(115, 31);
+            this.mapBtn.TabIndex = 18;
+            this.mapBtn.Text = "Map";
+            this.mapBtn.UseVisualStyleBackColor = true;
+            this.mapBtn.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FrmScenario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
+            this.Controls.Add(this.mapBtn);
             this.Controls.Add(this.howToPlayBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TimerMinNSeconds);
@@ -282,6 +295,7 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Label TimerMinNSeconds;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button howToPlayBtn;
+        private System.Windows.Forms.Button mapBtn;
     }
 }
 

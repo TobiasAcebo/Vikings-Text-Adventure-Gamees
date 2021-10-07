@@ -136,5 +136,11 @@ namespace Inlämningsupg_3___zork
             HowToPlayForm howToPlayForm = new HowToPlayForm();
             howToPlayForm.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            var currentScenarioInfo = new CurrentScenarioInfo(_character);
+            currentScenarioInfo.Show();
+        }
     }
 }
