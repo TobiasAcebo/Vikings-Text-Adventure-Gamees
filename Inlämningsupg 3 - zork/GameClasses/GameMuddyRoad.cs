@@ -35,6 +35,10 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (PickUpItemInputWorks(input))
                 return;
 
+            if (TryingToPickUpMultipleItems(input))
+                return;
+            
+
             var currentLocation = _character.CurrentLocation;
 
             if (currentLocation.Title == "starting point")
@@ -441,22 +445,17 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
             else if (input == "valhalla")
                 DisplayMuddyRoadItems();
-            else if (input == "pick up spear")
-                TryPickUpSpear();
-            else if (input == "pick up book")
-                TryPickUpBook();
-            else if (input == "pick up candle")
-                TryPickUpCandle();
-            else if (input == "pick up helmet")
-                TryPickUpHelmet();
-            else if (TryingToPickUpMultipleItems(input))
-                _character.CurrentLocation.Description = "Try pick up one item at the time.";
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
-        private bool TryingToPickUpMultipleItems(string input) // behöver hjälp med denna.
+        private bool TryingToPickUpMultipleItems(string input) 
         {
+            if (input.Contains("pick up") && input.Contains("and"))
+            {
+                _character.CurrentLocation.Description = "Try pick up one item at the time.";
+                return true;
+            }
             return false;
         }
 

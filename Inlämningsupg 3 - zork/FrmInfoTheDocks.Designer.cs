@@ -201,7 +201,7 @@ namespace Inlämningsupg_3___zork
             this.listBoxItemsAvailable.FormattingEnabled = true;
             this.listBoxItemsAvailable.ItemHeight = 16;
             this.listBoxItemsAvailable.Location = new System.Drawing.Point(741, 61);
-            this.listBoxItemsAvailable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxItemsAvailable.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxItemsAvailable.Name = "listBoxItemsAvailable";
             this.listBoxItemsAvailable.Size = new System.Drawing.Size(162, 144);
             this.listBoxItemsAvailable.TabIndex = 52;
