@@ -14,9 +14,13 @@ namespace Inlämningsupg_3___zork
         [STAThread]
         static void Main()
         {
+            var gameContent = new GameContent();
+            var character = new Character(gameContent.GetMuddyRoadScenario(), "Ted");
+            character.CurrentLocation = character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartScreen());
+            Application.Run(new FrmScenario(character, gameContent));
         }
     }
 }
