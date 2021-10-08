@@ -13,7 +13,7 @@ namespace Inlämningsupg_3___zork
         public static string GetInputExceptionMessage(Character character, string input)
         {
 
-            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key") || input.Contains("coin"))
+            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key") || input.Contains("coin") || (input.Contains("pick up") && input.Contains("and")))
                 return null;
 
             if (input == "go forward" && character.CurrentLocation.Title == "starting point")
@@ -110,6 +110,7 @@ namespace Inlämningsupg_3___zork
                 "pick up coin",
                 "drop coin",
                 "coin"
+                
             };
 
             return validInputList.Contains(input);

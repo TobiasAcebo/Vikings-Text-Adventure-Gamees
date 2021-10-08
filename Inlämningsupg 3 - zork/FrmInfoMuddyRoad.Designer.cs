@@ -276,7 +276,7 @@ namespace Inlämningsupg_3___zork
             this.labelHouse2.Name = "labelHouse2";
             this.labelHouse2.Size = new System.Drawing.Size(222, 95);
             this.labelHouse2.TabIndex = 66;
-            this.labelHouse2.Text = "House with carpet made of fur";
+            this.labelHouse2.Text = "House with a carpet made of fur";
             this.labelHouse2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelMiddle
@@ -319,6 +319,8 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.labelMiddle);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmInfoMuddyRoad";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInfoMuddyRoad";
             this.ResumeLayout(false);
 

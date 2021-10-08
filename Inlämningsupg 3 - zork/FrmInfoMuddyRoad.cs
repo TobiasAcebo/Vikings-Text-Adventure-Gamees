@@ -50,7 +50,7 @@ namespace Inlämningsupg_3___zork
                 xHouseWithAShieldOnTheWall.Show();
             else if (character.CurrentLocation.Title == "middle of the road")
                 xMiddleOfTheRoad.Show();
-            else if (character.CurrentLocation.Title == "house with carpet made of fur")
+            else if (character.CurrentLocation.Title == "house with a carpet made of fur")
                 xHouseWithCarpetMadeOfFur.Show();
             else if (character.CurrentLocation.Title == "house next to a water well")
                 xHouseNextToWaterWell.Show();
