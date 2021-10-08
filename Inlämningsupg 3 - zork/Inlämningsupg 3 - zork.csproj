@@ -48,11 +48,17 @@
   <ItemGroup>
     <Compile Include="Character.cs" />
     <Compile Include="CharacterResult.cs" />
-    <Compile Include="CurrentScenarioInfo.cs">
+    <Compile Include="FrmInfoMuddyRoad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CurrentScenarioInfo.Designer.cs">
-      <DependentUpon>CurrentScenarioInfo.cs</DependentUpon>
+    <Compile Include="FrmInfoMuddyRoad.Designer.cs">
+      <DependentUpon>FrmInfoMuddyRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInfoTheDocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoTheDocks.Designer.cs">
+      <DependentUpon>FrmInfoTheDocks.cs</DependentUpon>
     </Compile>
     <Compile Include="End screen.cs">
       <SubType>Form</SubType>
@@ -71,6 +77,7 @@
     <Compile Include="HowToPlayForm.Designer.cs">
       <DependentUpon>HowToPlayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IFrmInfo.cs" />
     <Compile Include="Interfaces\ICharacter.cs" />
     <Compile Include="InputHandler.cs" />
     <Compile Include="Interfaces\IGame.cs" />
@@ -92,8 +99,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CurrentScenarioInfo.resx">
-      <DependentUpon>CurrentScenarioInfo.cs</DependentUpon>
+    <EmbeddedResource Include="FrmInfoMuddyRoad.resx">
+      <DependentUpon>FrmInfoMuddyRoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoTheDocks.resx">
+      <DependentUpon>FrmInfoTheDocks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="End screen.resx">
       <DependentUpon>End screen.cs</DependentUpon>

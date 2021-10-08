@@ -139,8 +139,10 @@ namespace Inlämningsupg_3___zork
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var currentScenarioInfo = new CurrentScenarioInfo(_character);
+            var currentScenarioInfo = new FrmInfoTheDocks(_character);
             currentScenarioInfo.Show();
+            _character.MovesCount++;
+            UpdateScenario();
         }
     }
 }

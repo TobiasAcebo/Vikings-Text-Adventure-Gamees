@@ -1,7 +1,7 @@
 ﻿
 namespace Inlämningsupg_3___zork
 {
-    partial class CurrentScenarioInfo
+    partial class FrmInfoTheDocks
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,6 @@ namespace Inlämningsupg_3___zork
             this.labelTheDocksShip.TabIndex = 21;
             this.labelTheDocksShip.Text = "Ship";
             this.labelTheDocksShip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTheDocksShip.Click += new System.EventHandler(this.labelTheDocksShip_Click);
             // 
             // labelTheDocksEndOfDocks
             // 
@@ -234,7 +233,6 @@ namespace Inlämningsupg_3___zork
             this.labelTheDocksWater2.TabIndex = 55;
             this.labelTheDocksWater2.Text = "Water";
             this.labelTheDocksWater2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelTheDocksWater2.Click += new System.EventHandler(this.labelTheDocksWater2_Click);
             // 
             // xTheDocksShip
             // 
@@ -353,7 +351,7 @@ namespace Inlämningsupg_3___zork
             this.labelX.Text = "X = Your position";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // CurrentScenarioInfo
+            // FrmInfoTheDocks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,10 +379,9 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.labelTheDocksWater3);
             this.Controls.Add(this.labelTheDocksEndOfDocks);
             this.Controls.Add(this.labelTheDocksShip);
-            this.Name = "CurrentScenarioInfo";
+            this.Name = "FrmInfoTheDocks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "End Screen";
-            this.Load += new System.EventHandler(this.CurrentScenarioInfo_Load);
             this.ResumeLayout(false);
 
         }
