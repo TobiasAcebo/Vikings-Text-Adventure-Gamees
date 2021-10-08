@@ -40,7 +40,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (currentLocation.Title == "starting point")
                 StartingPointExecuteInput(input);
 
-            else if (currentLocation.Title == "house with stack of logs")
+            else if (currentLocation.Title == "house with stack full of logs")
                 HouseWithStackOfLogsExecuteInput(input);
 
             else if (currentLocation.Title == "house with a shield on the wall")

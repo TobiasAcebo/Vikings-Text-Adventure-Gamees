@@ -153,7 +153,7 @@ namespace Inlämningsupg_3___zork
                 frmInfoMuddyRoad.Show();
             }
             _character.MovesCount++;
-            UpdateScenario();
+            Moves();
         }
     }
 }

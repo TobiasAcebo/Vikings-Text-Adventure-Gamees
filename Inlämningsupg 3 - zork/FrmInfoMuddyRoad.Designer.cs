@@ -32,7 +32,7 @@ namespace Inlämningsupg_3___zork
             this.labelX = new System.Windows.Forms.Label();
             this.xGate = new System.Windows.Forms.Label();
             this.xHouseWithCarpetMadeOfFur = new System.Windows.Forms.Label();
-            this.xHouseWithStackOfLogs = new System.Windows.Forms.Label();
+            this.xHouseWithStackFullOfLogs = new System.Windows.Forms.Label();
             this.xHouseWithAShieldOnTheWall = new System.Windows.Forms.Label();
             this.xHouseNextToWaterWell = new System.Windows.Forms.Label();
             this.xMiddleOfTheRoad = new System.Windows.Forms.Label();
@@ -91,19 +91,19 @@ namespace Inlämningsupg_3___zork
             this.xHouseWithCarpetMadeOfFur.Text = "X";
             this.xHouseWithCarpetMadeOfFur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xHouseWithStackOfLogs
+            // xHouseWithStackFullOfLogs
             // 
-            this.xHouseWithStackOfLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xHouseWithStackOfLogs.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xHouseWithStackOfLogs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xHouseWithStackOfLogs.ForeColor = System.Drawing.Color.Lime;
-            this.xHouseWithStackOfLogs.Location = new System.Drawing.Point(88, 611);
-            this.xHouseWithStackOfLogs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xHouseWithStackOfLogs.Name = "xHouseWithStackOfLogs";
-            this.xHouseWithStackOfLogs.Size = new System.Drawing.Size(160, 47);
-            this.xHouseWithStackOfLogs.TabIndex = 81;
-            this.xHouseWithStackOfLogs.Text = "X";
-            this.xHouseWithStackOfLogs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xHouseWithStackFullOfLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xHouseWithStackFullOfLogs.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xHouseWithStackFullOfLogs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xHouseWithStackFullOfLogs.ForeColor = System.Drawing.Color.Lime;
+            this.xHouseWithStackFullOfLogs.Location = new System.Drawing.Point(88, 611);
+            this.xHouseWithStackFullOfLogs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xHouseWithStackFullOfLogs.Name = "xHouseWithStackFullOfLogs";
+            this.xHouseWithStackFullOfLogs.Size = new System.Drawing.Size(160, 47);
+            this.xHouseWithStackFullOfLogs.TabIndex = 81;
+            this.xHouseWithStackFullOfLogs.Text = "X";
+            this.xHouseWithStackFullOfLogs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // xHouseWithAShieldOnTheWall
             // 
@@ -275,9 +275,9 @@ namespace Inlämningsupg_3___zork
             this.labelHouse3.Location = new System.Drawing.Point(41, 489);
             this.labelHouse3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHouse3.Name = "labelHouse3";
-            this.labelHouse3.Size = new System.Drawing.Size(255, 122);
+            this.labelHouse3.Size = new System.Drawing.Size(268, 122);
             this.labelHouse3.TabIndex = 67;
-            this.labelHouse3.Text = "House with stack of logs";
+            this.labelHouse3.Text = "House with stack full of logs";
             this.labelHouse3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelHouse2
@@ -319,7 +319,7 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.labelX);
             this.Controls.Add(this.xGate);
             this.Controls.Add(this.xHouseWithCarpetMadeOfFur);
-            this.Controls.Add(this.xHouseWithStackOfLogs);
+            this.Controls.Add(this.xHouseWithStackFullOfLogs);
             this.Controls.Add(this.xHouseWithAShieldOnTheWall);
             this.Controls.Add(this.xHouseNextToWaterWell);
             this.Controls.Add(this.xMiddleOfTheRoad);
@@ -345,7 +345,7 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Label xGate;
         private System.Windows.Forms.Label xHouseWithCarpetMadeOfFur;
-        private System.Windows.Forms.Label xHouseWithStackOfLogs;
+        private System.Windows.Forms.Label xHouseWithStackFullOfLogs;
         private System.Windows.Forms.Label xHouseWithAShieldOnTheWall;
         private System.Windows.Forms.Label xHouseNextToWaterWell;
         private System.Windows.Forms.Label xMiddleOfTheRoad;

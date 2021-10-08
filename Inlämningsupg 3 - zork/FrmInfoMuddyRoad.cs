@@ -26,7 +26,7 @@ namespace Inlämningsupg_3___zork
             xHouseNextToWaterWell.Hide();
             xHouseWithAShieldOnTheWall.Hide();
             xHouseWithCarpetMadeOfFur.Hide();
-            xHouseWithStackOfLogs.Hide();
+            xHouseWithStackFullOfLogs.Hide();
             xMiddleOfTheRoad.Hide();
             xGate.Hide();
         }
@@ -44,8 +44,8 @@ namespace Inlämningsupg_3___zork
         {
             if (character.CurrentLocation.Title == "starting point")
                 xStartingPoint.Show();
-            else if (character.CurrentLocation.Title == "house with stack of logs")
-                xHouseWithStackOfLogs.Show();
+            else if (character.CurrentLocation.Title == "house with stack full of logs")
+                xHouseWithStackFullOfLogs.Show();
             else if (character.CurrentLocation.Title == "house with a shield on the wall")
                 xHouseWithAShieldOnTheWall.Show();
             else if (character.CurrentLocation.Title == "middle of the road")
