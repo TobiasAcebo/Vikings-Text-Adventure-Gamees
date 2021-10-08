@@ -139,8 +139,19 @@ namespace Inlämningsupg_3___zork
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var currentScenarioInfo = new FrmInfoTheDocks(_character);
-            currentScenarioInfo.Show();
+            
+
+
+            if (_character.CurrentScenario.Id == 1)
+            {
+                var frmInfoTheDocks = new FrmInfoTheDocks(_character);
+                frmInfoTheDocks.Show();
+            }
+            else if (_character.CurrentScenario.Id == 2)
+            {
+                FrmInfoMuddyRoad frmInfoMuddyRoad = new FrmInfoMuddyRoad(_character);
+                frmInfoMuddyRoad.Show();
+            }
             _character.MovesCount++;
             UpdateScenario();
         }

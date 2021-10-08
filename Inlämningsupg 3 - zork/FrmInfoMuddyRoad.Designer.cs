@@ -30,27 +30,23 @@ namespace Inlämningsupg_3___zork
         private void InitializeComponent()
         {
             this.labelX = new System.Windows.Forms.Label();
-            this.xTheDocksGuide = new System.Windows.Forms.Label();
-            this.xTheDocksWestSide = new System.Windows.Forms.Label();
-            this.xTheDocksEndOfDocks = new System.Windows.Forms.Label();
-            this.xTheDocksGate = new System.Windows.Forms.Label();
-            this.xTheDocksWater3 = new System.Windows.Forms.Label();
-            this.xTheDocksStartingPoint = new System.Windows.Forms.Label();
-            this.xTheDocksWater1 = new System.Windows.Forms.Label();
-            this.xTheDocksShip = new System.Windows.Forms.Label();
-            this.labelTheDocksWater2 = new System.Windows.Forms.Label();
-            this.labelTheDocksWater1 = new System.Windows.Forms.Label();
+            this.xGate = new System.Windows.Forms.Label();
+            this.xHouseWithCarpetMadeOfFur = new System.Windows.Forms.Label();
+            this.xHouseWithStackOfLogs = new System.Windows.Forms.Label();
+            this.xHouseWithAShieldOnTheWall = new System.Windows.Forms.Label();
+            this.xHouseNextToWaterWell = new System.Windows.Forms.Label();
+            this.xMiddleOfTheRoad = new System.Windows.Forms.Label();
+            this.labelHouse4 = new System.Windows.Forms.Label();
+            this.labelHouse1 = new System.Windows.Forms.Label();
             this.listBoxItemsAvailable = new System.Windows.Forms.ListBox();
             this.labelItemsAvailable = new System.Windows.Forms.Label();
-            this.xTheDocksWater2 = new System.Windows.Forms.Label();
+            this.xStartingPoint = new System.Windows.Forms.Label();
             this.labelScenarioTitle = new System.Windows.Forms.Label();
-            this.labelTheDocksStartingPoint = new System.Windows.Forms.Label();
-            this.labelTheDocksWestSide = new System.Windows.Forms.Label();
-            this.labelTheDocksGate = new System.Windows.Forms.Label();
-            this.labelTheDocksGuide = new System.Windows.Forms.Label();
-            this.labelTheDocksWater3 = new System.Windows.Forms.Label();
-            this.labelTheDocksEndOfDocks = new System.Windows.Forms.Label();
-            this.labelTheDocksShip = new System.Windows.Forms.Label();
+            this.labelStartingPoint = new System.Windows.Forms.Label();
+            this.labelGate = new System.Windows.Forms.Label();
+            this.labelHouse3 = new System.Windows.Forms.Label();
+            this.labelHouse2 = new System.Windows.Forms.Label();
+            this.labelMiddle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelX
@@ -67,147 +63,119 @@ namespace Inlämningsupg_3___zork
             this.labelX.Text = "X = Your position";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksGuide
+            // xGate
             // 
-            this.xTheDocksGuide.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksGuide.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksGuide.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksGuide.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksGuide.Location = new System.Drawing.Point(539, 170);
-            this.xTheDocksGuide.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksGuide.Name = "xTheDocksGuide";
-            this.xTheDocksGuide.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksGuide.TabIndex = 85;
-            this.xTheDocksGuide.Text = "X";
-            this.xTheDocksGuide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xGate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xGate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xGate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xGate.ForeColor = System.Drawing.Color.Lime;
+            this.xGate.Location = new System.Drawing.Point(518, 170);
+            this.xGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xGate.Name = "xGate";
+            this.xGate.Size = new System.Drawing.Size(160, 47);
+            this.xGate.TabIndex = 85;
+            this.xGate.Text = "X";
+            this.xGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksWestSide
+            // xHouseWithCarpetMadeOfFur
             // 
-            this.xTheDocksWestSide.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksWestSide.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksWestSide.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksWestSide.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksWestSide.Location = new System.Drawing.Point(73, 306);
-            this.xTheDocksWestSide.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksWestSide.Name = "xTheDocksWestSide";
-            this.xTheDocksWestSide.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksWestSide.TabIndex = 84;
-            this.xTheDocksWestSide.Text = "X";
-            this.xTheDocksWestSide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xHouseWithCarpetMadeOfFur.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xHouseWithCarpetMadeOfFur.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xHouseWithCarpetMadeOfFur.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xHouseWithCarpetMadeOfFur.ForeColor = System.Drawing.Color.Lime;
+            this.xHouseWithCarpetMadeOfFur.Location = new System.Drawing.Point(88, 403);
+            this.xHouseWithCarpetMadeOfFur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xHouseWithCarpetMadeOfFur.Name = "xHouseWithCarpetMadeOfFur";
+            this.xHouseWithCarpetMadeOfFur.Size = new System.Drawing.Size(160, 47);
+            this.xHouseWithCarpetMadeOfFur.TabIndex = 83;
+            this.xHouseWithCarpetMadeOfFur.Text = "X";
+            this.xHouseWithCarpetMadeOfFur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksEndOfDocks
+            // xHouseWithStackOfLogs
             // 
-            this.xTheDocksEndOfDocks.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksEndOfDocks.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksEndOfDocks.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksEndOfDocks.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksEndOfDocks.Location = new System.Drawing.Point(539, 306);
-            this.xTheDocksEndOfDocks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksEndOfDocks.Name = "xTheDocksEndOfDocks";
-            this.xTheDocksEndOfDocks.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksEndOfDocks.TabIndex = 83;
-            this.xTheDocksEndOfDocks.Text = "X";
-            this.xTheDocksEndOfDocks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xHouseWithStackOfLogs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xHouseWithStackOfLogs.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xHouseWithStackOfLogs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xHouseWithStackOfLogs.ForeColor = System.Drawing.Color.Lime;
+            this.xHouseWithStackOfLogs.Location = new System.Drawing.Point(88, 611);
+            this.xHouseWithStackOfLogs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xHouseWithStackOfLogs.Name = "xHouseWithStackOfLogs";
+            this.xHouseWithStackOfLogs.Size = new System.Drawing.Size(160, 47);
+            this.xHouseWithStackOfLogs.TabIndex = 81;
+            this.xHouseWithStackOfLogs.Text = "X";
+            this.xHouseWithStackOfLogs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksGate
+            // xHouseWithAShieldOnTheWall
             // 
-            this.xTheDocksGate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksGate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksGate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksGate.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksGate.Location = new System.Drawing.Point(1000, 306);
-            this.xTheDocksGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksGate.Name = "xTheDocksGate";
-            this.xTheDocksGate.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksGate.TabIndex = 82;
-            this.xTheDocksGate.Text = "X";
-            this.xTheDocksGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xHouseWithAShieldOnTheWall.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xHouseWithAShieldOnTheWall.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xHouseWithAShieldOnTheWall.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xHouseWithAShieldOnTheWall.ForeColor = System.Drawing.Color.Lime;
+            this.xHouseWithAShieldOnTheWall.Location = new System.Drawing.Point(982, 611);
+            this.xHouseWithAShieldOnTheWall.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xHouseWithAShieldOnTheWall.Name = "xHouseWithAShieldOnTheWall";
+            this.xHouseWithAShieldOnTheWall.Size = new System.Drawing.Size(160, 47);
+            this.xHouseWithAShieldOnTheWall.TabIndex = 80;
+            this.xHouseWithAShieldOnTheWall.Text = "X";
+            this.xHouseWithAShieldOnTheWall.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksWater3
+            // xHouseNextToWaterWell
             // 
-            this.xTheDocksWater3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksWater3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksWater3.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksWater3.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksWater3.Location = new System.Drawing.Point(73, 439);
-            this.xTheDocksWater3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksWater3.Name = "xTheDocksWater3";
-            this.xTheDocksWater3.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksWater3.TabIndex = 81;
-            this.xTheDocksWater3.Text = "X";
-            this.xTheDocksWater3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xHouseNextToWaterWell.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xHouseNextToWaterWell.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xHouseNextToWaterWell.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xHouseNextToWaterWell.ForeColor = System.Drawing.Color.Lime;
+            this.xHouseNextToWaterWell.Location = new System.Drawing.Point(971, 403);
+            this.xHouseNextToWaterWell.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xHouseNextToWaterWell.Name = "xHouseNextToWaterWell";
+            this.xHouseNextToWaterWell.Size = new System.Drawing.Size(160, 47);
+            this.xHouseNextToWaterWell.TabIndex = 79;
+            this.xHouseNextToWaterWell.Text = "X";
+            this.xHouseNextToWaterWell.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksStartingPoint
+            // xMiddleOfTheRoad
             // 
-            this.xTheDocksStartingPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksStartingPoint.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksStartingPoint.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksStartingPoint.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksStartingPoint.Location = new System.Drawing.Point(539, 439);
-            this.xTheDocksStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksStartingPoint.Name = "xTheDocksStartingPoint";
-            this.xTheDocksStartingPoint.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksStartingPoint.TabIndex = 80;
-            this.xTheDocksStartingPoint.Text = "X";
-            this.xTheDocksStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xMiddleOfTheRoad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xMiddleOfTheRoad.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xMiddleOfTheRoad.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xMiddleOfTheRoad.ForeColor = System.Drawing.Color.Lime;
+            this.xMiddleOfTheRoad.Location = new System.Drawing.Point(518, 365);
+            this.xMiddleOfTheRoad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xMiddleOfTheRoad.Name = "xMiddleOfTheRoad";
+            this.xMiddleOfTheRoad.Size = new System.Drawing.Size(160, 47);
+            this.xMiddleOfTheRoad.TabIndex = 78;
+            this.xMiddleOfTheRoad.Text = "X";
+            this.xMiddleOfTheRoad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksWater1
+            // labelHouse4
             // 
-            this.xTheDocksWater1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksWater1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksWater1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksWater1.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksWater1.Location = new System.Drawing.Point(1000, 439);
-            this.xTheDocksWater1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksWater1.Name = "xTheDocksWater1";
-            this.xTheDocksWater1.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksWater1.TabIndex = 79;
-            this.xTheDocksWater1.Text = "X";
-            this.xTheDocksWater1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHouse4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHouse4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelHouse4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHouse4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHouse4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelHouse4.Location = new System.Drawing.Point(905, 489);
+            this.labelHouse4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse4.Name = "labelHouse4";
+            this.labelHouse4.Size = new System.Drawing.Size(287, 122);
+            this.labelHouse4.TabIndex = 77;
+            this.labelHouse4.Text = "House with a shield on the wall";
+            this.labelHouse4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksShip
+            // labelHouse1
             // 
-            this.xTheDocksShip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksShip.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksShip.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksShip.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksShip.Location = new System.Drawing.Point(539, 583);
-            this.xTheDocksShip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksShip.Name = "xTheDocksShip";
-            this.xTheDocksShip.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksShip.TabIndex = 78;
-            this.xTheDocksShip.Text = "X";
-            this.xTheDocksShip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTheDocksWater2
-            // 
-            this.labelTheDocksWater2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksWater2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksWater2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksWater2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksWater2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksWater2.Location = new System.Drawing.Point(484, 672);
-            this.labelTheDocksWater2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksWater2.Name = "labelTheDocksWater2";
-            this.labelTheDocksWater2.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksWater2.TabIndex = 77;
-            this.labelTheDocksWater2.Text = "Water";
-            this.labelTheDocksWater2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTheDocksWater1
-            // 
-            this.labelTheDocksWater1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksWater1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksWater1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksWater1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksWater1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksWater1.Location = new System.Drawing.Point(948, 392);
-            this.labelTheDocksWater1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksWater1.Name = "labelTheDocksWater1";
-            this.labelTheDocksWater1.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksWater1.TabIndex = 76;
-            this.labelTheDocksWater1.Text = "Water";
-            this.labelTheDocksWater1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHouse1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHouse1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelHouse1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHouse1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHouse1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelHouse1.Location = new System.Drawing.Point(905, 282);
+            this.labelHouse1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse1.Name = "labelHouse1";
+            this.labelHouse1.Size = new System.Drawing.Size(287, 121);
+            this.labelHouse1.TabIndex = 76;
+            this.labelHouse1.Text = "House next to a water well";
+            this.labelHouse1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listBoxItemsAvailable
             // 
@@ -238,19 +206,19 @@ namespace Inlämningsupg_3___zork
             this.labelItemsAvailable.Text = "Items available";
             this.labelItemsAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // xTheDocksWater2
+            // xStartingPoint
             // 
-            this.xTheDocksWater2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.xTheDocksWater2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.xTheDocksWater2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xTheDocksWater2.ForeColor = System.Drawing.Color.Lime;
-            this.xTheDocksWater2.Location = new System.Drawing.Point(539, 719);
-            this.xTheDocksWater2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.xTheDocksWater2.Name = "xTheDocksWater2";
-            this.xTheDocksWater2.Size = new System.Drawing.Size(160, 47);
-            this.xTheDocksWater2.TabIndex = 73;
-            this.xTheDocksWater2.Text = "X";
-            this.xTheDocksWater2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.xStartingPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.xStartingPoint.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.xStartingPoint.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xStartingPoint.ForeColor = System.Drawing.Color.Lime;
+            this.xStartingPoint.Location = new System.Drawing.Point(518, 573);
+            this.xStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xStartingPoint.Name = "xStartingPoint";
+            this.xStartingPoint.Size = new System.Drawing.Size(160, 47);
+            this.xStartingPoint.TabIndex = 73;
+            this.xStartingPoint.Text = "X";
+            this.xStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelScenarioTitle
             // 
@@ -266,111 +234,81 @@ namespace Inlämningsupg_3___zork
             this.labelScenarioTitle.Text = "Muddy Road";
             this.labelScenarioTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTheDocksStartingPoint
+            // labelStartingPoint
             // 
-            this.labelTheDocksStartingPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksStartingPoint.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksStartingPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksStartingPoint.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksStartingPoint.ForeColor = System.Drawing.Color.Red;
-            this.labelTheDocksStartingPoint.Location = new System.Drawing.Point(484, 392);
-            this.labelTheDocksStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksStartingPoint.Name = "labelTheDocksStartingPoint";
-            this.labelTheDocksStartingPoint.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksStartingPoint.TabIndex = 71;
-            this.labelTheDocksStartingPoint.Text = "Starting point";
-            this.labelTheDocksStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelStartingPoint.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelStartingPoint.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelStartingPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelStartingPoint.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartingPoint.ForeColor = System.Drawing.Color.Red;
+            this.labelStartingPoint.Location = new System.Drawing.Point(469, 527);
+            this.labelStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStartingPoint.Name = "labelStartingPoint";
+            this.labelStartingPoint.Size = new System.Drawing.Size(255, 46);
+            this.labelStartingPoint.TabIndex = 71;
+            this.labelStartingPoint.Text = "Starting point";
+            this.labelStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTheDocksWestSide
+            // labelGate
             // 
-            this.labelTheDocksWestSide.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksWestSide.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksWestSide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksWestSide.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksWestSide.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksWestSide.Location = new System.Drawing.Point(24, 259);
-            this.labelTheDocksWestSide.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksWestSide.Name = "labelTheDocksWestSide";
-            this.labelTheDocksWestSide.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksWestSide.TabIndex = 70;
-            this.labelTheDocksWestSide.Text = "West side";
-            this.labelTheDocksWestSide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelGate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelGate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelGate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGate.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGate.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelGate.Location = new System.Drawing.Point(469, 124);
+            this.labelGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelGate.Name = "labelGate";
+            this.labelGate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelGate.Size = new System.Drawing.Size(255, 46);
+            this.labelGate.TabIndex = 69;
+            this.labelGate.Text = "Gate";
+            this.labelGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTheDocksGate
+            // labelHouse3
             // 
-            this.labelTheDocksGate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksGate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksGate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksGate.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksGate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksGate.Location = new System.Drawing.Point(948, 259);
-            this.labelTheDocksGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksGate.Name = "labelTheDocksGate";
-            this.labelTheDocksGate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelTheDocksGate.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksGate.TabIndex = 69;
-            this.labelTheDocksGate.Text = "Gate";
-            this.labelTheDocksGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHouse3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHouse3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelHouse3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHouse3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHouse3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelHouse3.Location = new System.Drawing.Point(41, 489);
+            this.labelHouse3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse3.Name = "labelHouse3";
+            this.labelHouse3.Size = new System.Drawing.Size(255, 122);
+            this.labelHouse3.TabIndex = 67;
+            this.labelHouse3.Text = "House with stack of logs";
+            this.labelHouse3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTheDocksGuide
+            // labelHouse2
             // 
-            this.labelTheDocksGuide.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksGuide.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksGuide.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksGuide.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksGuide.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksGuide.Location = new System.Drawing.Point(484, 124);
-            this.labelTheDocksGuide.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksGuide.Name = "labelTheDocksGuide";
-            this.labelTheDocksGuide.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksGuide.TabIndex = 68;
-            this.labelTheDocksGuide.Text = "Guide";
-            this.labelTheDocksGuide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHouse2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelHouse2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelHouse2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHouse2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHouse2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelHouse2.Location = new System.Drawing.Point(41, 284);
+            this.labelHouse2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse2.Name = "labelHouse2";
+            this.labelHouse2.Size = new System.Drawing.Size(296, 116);
+            this.labelHouse2.TabIndex = 66;
+            this.labelHouse2.Text = "House with carpet made of fur";
+            this.labelHouse2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelTheDocksWater3
+            // labelMiddle
             // 
-            this.labelTheDocksWater3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksWater3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksWater3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksWater3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksWater3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksWater3.Location = new System.Drawing.Point(24, 392);
-            this.labelTheDocksWater3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksWater3.Name = "labelTheDocksWater3";
-            this.labelTheDocksWater3.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksWater3.TabIndex = 67;
-            this.labelTheDocksWater3.Text = "Water";
-            this.labelTheDocksWater3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTheDocksEndOfDocks
-            // 
-            this.labelTheDocksEndOfDocks.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksEndOfDocks.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksEndOfDocks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksEndOfDocks.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksEndOfDocks.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksEndOfDocks.Location = new System.Drawing.Point(484, 259);
-            this.labelTheDocksEndOfDocks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksEndOfDocks.Name = "labelTheDocksEndOfDocks";
-            this.labelTheDocksEndOfDocks.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksEndOfDocks.TabIndex = 66;
-            this.labelTheDocksEndOfDocks.Text = "End of docks";
-            this.labelTheDocksEndOfDocks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelTheDocksShip
-            // 
-            this.labelTheDocksShip.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTheDocksShip.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelTheDocksShip.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTheDocksShip.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTheDocksShip.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelTheDocksShip.Location = new System.Drawing.Point(484, 536);
-            this.labelTheDocksShip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTheDocksShip.Name = "labelTheDocksShip";
-            this.labelTheDocksShip.Size = new System.Drawing.Size(255, 46);
-            this.labelTheDocksShip.TabIndex = 65;
-            this.labelTheDocksShip.Text = "Ship";
-            this.labelTheDocksShip.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMiddle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelMiddle.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelMiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelMiddle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMiddle.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMiddle.Location = new System.Drawing.Point(426, 319);
+            this.labelMiddle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMiddle.Name = "labelMiddle";
+            this.labelMiddle.Size = new System.Drawing.Size(340, 46);
+            this.labelMiddle.TabIndex = 65;
+            this.labelMiddle.Text = "Middle of the road";
+            this.labelMiddle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmInfoMuddyRoad
             // 
@@ -379,27 +317,23 @@ namespace Inlämningsupg_3___zork
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1235, 775);
             this.Controls.Add(this.labelX);
-            this.Controls.Add(this.xTheDocksGuide);
-            this.Controls.Add(this.xTheDocksWestSide);
-            this.Controls.Add(this.xTheDocksEndOfDocks);
-            this.Controls.Add(this.xTheDocksGate);
-            this.Controls.Add(this.xTheDocksWater3);
-            this.Controls.Add(this.xTheDocksStartingPoint);
-            this.Controls.Add(this.xTheDocksWater1);
-            this.Controls.Add(this.xTheDocksShip);
-            this.Controls.Add(this.labelTheDocksWater2);
-            this.Controls.Add(this.labelTheDocksWater1);
+            this.Controls.Add(this.xGate);
+            this.Controls.Add(this.xHouseWithCarpetMadeOfFur);
+            this.Controls.Add(this.xHouseWithStackOfLogs);
+            this.Controls.Add(this.xHouseWithAShieldOnTheWall);
+            this.Controls.Add(this.xHouseNextToWaterWell);
+            this.Controls.Add(this.xMiddleOfTheRoad);
+            this.Controls.Add(this.labelHouse4);
+            this.Controls.Add(this.labelHouse1);
             this.Controls.Add(this.listBoxItemsAvailable);
             this.Controls.Add(this.labelItemsAvailable);
-            this.Controls.Add(this.xTheDocksWater2);
+            this.Controls.Add(this.xStartingPoint);
             this.Controls.Add(this.labelScenarioTitle);
-            this.Controls.Add(this.labelTheDocksStartingPoint);
-            this.Controls.Add(this.labelTheDocksWestSide);
-            this.Controls.Add(this.labelTheDocksGate);
-            this.Controls.Add(this.labelTheDocksGuide);
-            this.Controls.Add(this.labelTheDocksWater3);
-            this.Controls.Add(this.labelTheDocksEndOfDocks);
-            this.Controls.Add(this.labelTheDocksShip);
+            this.Controls.Add(this.labelStartingPoint);
+            this.Controls.Add(this.labelGate);
+            this.Controls.Add(this.labelHouse3);
+            this.Controls.Add(this.labelHouse2);
+            this.Controls.Add(this.labelMiddle);
             this.Name = "FrmInfoMuddyRoad";
             this.Text = "FrmInfoMuddyRoad";
             this.ResumeLayout(false);
@@ -409,26 +343,22 @@ namespace Inlämningsupg_3___zork
         #endregion
 
         private System.Windows.Forms.Label labelX;
-        private System.Windows.Forms.Label xTheDocksGuide;
-        private System.Windows.Forms.Label xTheDocksWestSide;
-        private System.Windows.Forms.Label xTheDocksEndOfDocks;
-        private System.Windows.Forms.Label xTheDocksGate;
-        private System.Windows.Forms.Label xTheDocksWater3;
-        private System.Windows.Forms.Label xTheDocksStartingPoint;
-        private System.Windows.Forms.Label xTheDocksWater1;
-        private System.Windows.Forms.Label xTheDocksShip;
-        private System.Windows.Forms.Label labelTheDocksWater2;
-        private System.Windows.Forms.Label labelTheDocksWater1;
+        private System.Windows.Forms.Label xGate;
+        private System.Windows.Forms.Label xHouseWithCarpetMadeOfFur;
+        private System.Windows.Forms.Label xHouseWithStackOfLogs;
+        private System.Windows.Forms.Label xHouseWithAShieldOnTheWall;
+        private System.Windows.Forms.Label xHouseNextToWaterWell;
+        private System.Windows.Forms.Label xMiddleOfTheRoad;
+        private System.Windows.Forms.Label labelHouse4;
+        private System.Windows.Forms.Label labelHouse1;
         private System.Windows.Forms.ListBox listBoxItemsAvailable;
         private System.Windows.Forms.Label labelItemsAvailable;
-        private System.Windows.Forms.Label xTheDocksWater2;
+        private System.Windows.Forms.Label xStartingPoint;
         private System.Windows.Forms.Label labelScenarioTitle;
-        private System.Windows.Forms.Label labelTheDocksStartingPoint;
-        private System.Windows.Forms.Label labelTheDocksWestSide;
-        private System.Windows.Forms.Label labelTheDocksGate;
-        private System.Windows.Forms.Label labelTheDocksGuide;
-        private System.Windows.Forms.Label labelTheDocksWater3;
-        private System.Windows.Forms.Label labelTheDocksEndOfDocks;
-        private System.Windows.Forms.Label labelTheDocksShip;
+        private System.Windows.Forms.Label labelStartingPoint;
+        private System.Windows.Forms.Label labelGate;
+        private System.Windows.Forms.Label labelHouse3;
+        private System.Windows.Forms.Label labelHouse2;
+        private System.Windows.Forms.Label labelMiddle;
     }
 }

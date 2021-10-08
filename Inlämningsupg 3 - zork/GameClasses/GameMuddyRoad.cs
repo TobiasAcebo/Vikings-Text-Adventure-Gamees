@@ -503,9 +503,8 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public void Look()
         {
-            _character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; 
-            _character.CurrentLocation.Description += "\r\nThere is a gate located north of the road";
-            DisplayItemsAvailable();
+            FrmInfoMuddyRoad frmInfoMuddyRoad = new FrmInfoMuddyRoad(_character);
+            frmInfoMuddyRoad.Show();
         }
     }
 }
