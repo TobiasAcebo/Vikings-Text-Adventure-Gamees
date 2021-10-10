@@ -51,6 +51,31 @@ namespace Inlämningsupg_3___zork
 
                     IsEndPoint = false
                 },
+
+                new Scenario
+                {
+                    Id = 3,
+                    Title = "Town",
+                    Description = "You have finally arrived in Town. \r\nThe Great halls have to be in this place…There is an armorsmith west of us and a fountain north of us. \r\nMaybe start in one of these locations.",
+                    LocationList = new List<Location>
+                    {
+                        new Location {Title = "starting point", Description = "You have finally arrived in Town.\r\nThe Great halls have to be in this place…There is an armorsmith west of us and a fountain north of us. \r\nMaybe start in one of these locations."},
+                        new Location {Title = "fountain", Description = "You are infront of a fountain.\r\n There is a guy around here called Erhild.\r\nHe should be able to help you.\r\nHe usually is in the pub. Find the pub and get your answers."},
+                        new Location {Title = "armorsmith", Description = "You are at the Armorsmith.\r\nNothing to see here i guess."},
+                        new Location {Title = "boat house", Description = "You are at the Boathouse.\r\nRemember, the boat only sails one way.\r\nYou can't sail back. You will have to walk back.\r\nWould you like to?"},
+                        new Location {Title = "stairs", Description = "This is a lot of stairs.\r\nIt has to be the way into great halls."},
+                        new Location {Title = "swordsmith", Description = "You are at the Swordsmith nothing to see here i guess...", ItemList = new List<Item>{ new Item {Title = "long sword"}}},
+                        new Location {Title = "pub", Description = "You have entered the pub, try to find Erhild."},
+                        new Location {Title = "great halls gate", Door = new Door{IsOpen = false}, Description = "You found it!.\r\nThe gate to Great halls.\r\nEnter it."}
+
+                    },
+
+                    ImagePath = "",
+
+                    IsEndPoint = false
+
+                },
+
             
             };
         }
@@ -63,6 +88,11 @@ namespace Inlämningsupg_3___zork
         public Scenario GetMuddyRoadScenario()
         {
             return _allScenariosList.First(s => s.Id == 2);
+        }
+
+        public Scenario GetTownScenario()
+        {
+            return _allScenariosList.First(s => s.Id == 3);
         }
     }
 }
