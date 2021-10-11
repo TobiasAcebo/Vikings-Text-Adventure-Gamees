@@ -20,7 +20,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public override void ExecuteInput(string input)
         {
-            if (input == "Look")
+            if (input == "look")
             {
                 Look();
                 return;
@@ -302,8 +302,8 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void Look()
         {
-            FrmInfoMuddyRoad frmInfoMuddy = new FrmInfoMuddyRoad(_character);
-            frmInfoMuddy.Show();
+            FrmInfoTown frmInfoTown = new FrmInfoTown(_character);
+            frmInfoTown.Show();
         }
     }
 }

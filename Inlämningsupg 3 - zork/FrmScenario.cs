@@ -152,6 +152,11 @@ namespace Inlämningsupg_3___zork
                 FrmInfoMuddyRoad frmInfoMuddyRoad = new FrmInfoMuddyRoad(_character);
                 frmInfoMuddyRoad.Show();
             }
+            else if (_character.CurrentScenario.Id == 3)
+            {
+                FrmInfoTown frmInfoTown = new FrmInfoTown(_character);
+                frmInfoTown.Show();
+            }
             _character.MovesCount++;
             Moves();
         }

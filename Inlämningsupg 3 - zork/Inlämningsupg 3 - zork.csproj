@@ -67,6 +67,12 @@
       <DependentUpon>End screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Door.cs" />
+    <Compile Include="FrmInfoTown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoTown.Designer.cs">
+      <DependentUpon>FrmInfoTown.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameClasses\Game.cs" />
     <Compile Include="GameClasses\GameMuddyRoad.cs" />
     <Compile Include="GameClasses\GameTown.cs" />
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="End screen.resx">
       <DependentUpon>End screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoTown.resx">
+      <DependentUpon>FrmInfoTown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmScenario.resx">
       <DependentUpon>FrmScenario.cs</DependentUpon>
