@@ -165,11 +165,30 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void WestSideExecuteInput(string input)
         {
-            if(input == "go east" || input == "go back" || IsTryingToEnterEndOfDocks(input))
+            if (input == "go east" || input == "go back" || IsTryingToEnterEndOfDocks(input))
                 GoBackToEndOfDocks(_character.CurrentLocation.Title);
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
+
+            if (input.Contains("hi") || input.Contains("hello"))
+                OpenDialogForThor();
+
+
+            else if (input.Contains("thor"))
+                _character.CurrentLocation.Description = "You have unlocked the Spirit of thor. Ask him about the key.";
+               
+
+            else if (input.Contains("key"))
+                _character.CurrentLocation.Description = "Thor: \"Yes the key to great halls.\r\nFind the helmet in muddy road.\r\nThen go to the swordsmith in town and use the word\'good work\"\' ";
+                
         }
+
+        private void OpenDialogForThor()
+        {
+            _character.CurrentLocation.Description = "Thor: \"Hello there.\"";
+            _character.InDialog = true;
+        }
+
         private void GateExecuteInput(string input)
         {
             if(input == "open gate") // lägg till flera alternativ

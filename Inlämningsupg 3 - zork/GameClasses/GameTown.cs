@@ -26,6 +26,24 @@ namespace Inlämningsupg_3___zork.GameClasses
                 return;
             }
 
+            if (input == "use helmet on long sword" || input == "use long sword on helmet")
+            {
+                TryCreateKey();
+                return;
+            }
+
+            if (_character.CurrentLocation.Title != "end of docks")
+            {
+                if (DropItemInputWorks(input))
+                    return;
+            }
+
+            if (_character.CurrentLocation.Title != "sword smith")
+            {
+                if (PickUpItemInputWorks(input))
+                    return;
+            }
+
             var currentLocation = _character.CurrentLocation;
 
             if (currentLocation.Title == "starting point")
@@ -46,13 +64,77 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (currentLocation.Title == "pub")
                 PubExecuteInput(input);
 
+            else if (currentLocation.Title == "stairs")
+                StairsExecuteInput(input);
+
             else if (currentLocation.Title == "great halls gate")
                 GreatHallsGateExecuteInput(input);
         }
 
+        private bool DropItemInputWorks(string input)
+        {
+            var inventory = _character.ItemList;
+            foreach (var item in inventory)
+            {
+                if (input == "drop " + item.Title)
+                {
+                    _character.DropItem(item);
+                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void TryCreateKey()
+        {
+            if (CharacterHasHelmetAndLongSword())
+            {
+                Item key = new Item();
+                key.IsKey = true;
+                key.Title = "key";
+                _character.ItemList.Clear();
+                _character.ItemList.Add(key);
+                _character.CurrentLocation.Description = "\"You have made a key!\"";
+            }
+        }
+
+        private bool PickUpItemInputWorks(string input)
+        {
+            var itemsInLocation = _character.CurrentLocation.ItemList;
+            foreach (var item in itemsInLocation)
+            {
+                if (input == "pick up " + item.Title)
+                {
+                    if (!InventoryFull())
+                    {
+                        _character.PickUpItem(item);
+                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
+                        InventoryStatusPrint();
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        private void StairsExecuteInput(string input)
+        {
+            if (input == "go north" || input == "go to great halls")
+                GoToGreatHalls(_character.CurrentLocation.Title);
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
+        }
+
+        private void GoToGreatHalls(string previousLocation)
+        {
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "great halls gate");
+            _character.PreviousLocation = previousLocation;
+        }
+
         private void GreatHallsGateExecuteInput(string input)
         {
-            if (input == "open gate") // lägg till flera alternativ
+            if (input == "open great halls") // lägg till flera alternativ
                 TryOpenGate();
 
             else if (input == "go south")
@@ -118,6 +200,45 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToFounatain(_character.CurrentLocation.Title);
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
+
+            if (input.Contains("excuse me") || input.Contains("hello") || input.Contains("hi") || input == "erhild")
+                OpenDialog();
+
+            else if (input.Contains("great halls"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Erhild: \"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
+                else
+                    DialogNotOpen();
+            }
+
+            else if (input.Contains("gate"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Erhild: \"Yes, I know about this gate. It's located north of the fountain\"";
+                else
+                    DialogNotOpen();
+            }
+
+            else if (input.Contains("key"))
+            {
+                if (_character.InDialog)
+                    _character.CurrentLocation.Description = "Erhild: \"I don't know anything about a key..\r\nBut!.. Excuse me, I'm bit drunk\r\nOkey yes! The key. You will need to go back to the docks and find the spirit of thor\r\nHe is located in the west side. Remember, use the word\" thor\"when you get there.\r\nOh, I almost forgot...There is a boat that you can take you back there.\r\nJust go east of the entrance and you fill fint it.\"";
+                else
+                    DialogNotOpen();
+            }
+
+        }
+
+        private void DialogNotOpen()
+        {
+            _character.CurrentLocation.Description = "Try get his attention";
+        }
+
+        private void OpenDialog()
+        {
+            _character.CurrentLocation.Description = "Erhild: \"Well hello there, I'm Erhild. Who are you?\r\nNevermind.What can I do for you?\"";
+            _character.InDialog = true;
         }
 
         private void SwordSmithExecuteInput(string input)
@@ -126,6 +247,64 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToFounatain(_character.CurrentLocation.Title);
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
+
+            if (input == "good work")
+            {
+                    GetLongSword();
+                
+                
+            }
+        }
+
+        private void GetLongSword()
+        {
+            if (LongSwordAvailable())
+            {
+                if (!InventoryFull())
+                {
+                    LongSwordGiven();
+                    _character.CurrentLocation.Description = "Swordsmith: \"Well thank you kind sir.\r\nHere, take this long sword as a sign of appreciation.\"";
+                    InventoryStatusPrint();
+                }
+                else
+                    _character.CurrentLocation.Description = "You have a full inventory, drop an item";
+
+
+            }
+            else
+                _character.CurrentLocation.Description = "Swordsmith: \"That item has already been taken.\"";
+          
+        }
+
+
+        private void InventoryStatusPrint()
+        {
+            if (CharacterHasHelmetAndLongSword())
+            {
+                _character.CurrentLocation.Description = "You have helmet and long sword in your inventory \r\n";
+                _character.CurrentLocation.Description += "\"Try use them on each other.\"";
+            }
+        }
+
+        private bool CharacterHasHelmetAndLongSword()
+        {
+            if (_character.ItemList.Count(item => item.Title == "helmet" || item.Title == "long sword") == 2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void LongSwordGiven()
+        {
+            Item knife = _character.CurrentLocation.ItemList.Find(x => x.Title == "long sword");
+            _character.ItemList.Add(knife);
+            _character.CurrentLocation.ItemList.Remove(knife);
+        }
+
+        private bool LongSwordAvailable()
+        {
+            return _character.CurrentLocation.ItemList.Any(x => x.Title == "long sword");
         }
 
         private void GoBackToFounatain(string previousLocation)
@@ -156,38 +335,14 @@ namespace Inlämningsupg_3___zork.GameClasses
                 _character.InDialog = false;
             }
 
-            else if (input == "go south" || input == "go to starting point")
+            else if (input == "go south" || input == "go to starting point" || input == "go back")
             {
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
+                _character.CurrentLocation.Description = "You are back at the entrance in Town";
                 _character.InDialog = false;
             }
              
-             // else if (input.Contains("excuse me") || input.Contains("hello") || input.Contains("hi") || input == "talk to viking")
-            //    OpenDialog();
-
-            //else if (input.Contains("great halls"))
-            //{
-            //    if (_character.InDialog)
-            //        _character.CurrentLocation.Description = "Viking: \"Ah yes, the Great halls is where King Ragnar lives.\r\nYou have to go through the gate to get there.\"";
-            //    else
-            //        DialogNotOpen();
-            //}
-
-            //else if (input.Contains("gate"))
-            //{
-            //    if (_character.InDialog)
-            //        _character.CurrentLocation.Description = "Viking: \"Yes, I know about this gate. It's located north from here\"";
-            //    else
-            //        DialogNotOpen();
-            //}
-
-            //else if (input.Contains("key"))
-            //{
-            //    if (_character.InDialog)
-            //        _character.CurrentLocation.Description = "Viking: \"I don't know anything about a key..\r\nI do know, there are still some items left in this place that could help you.\r\nTry the house with a shield on the wall.\r\nRemember to use the word " + "\"Valhalla\"" + " when you enter.\"";
-            //    else
-            //        DialogNotOpen();
-            //}
+            
         }
 
         private void GoToPub(string previousLocation)
@@ -219,7 +374,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToTheDocks();
 
             else if (input == "no")
-                _character.CurrentLocation.Description = "Okay";
+                _character.CurrentLocation.Description = "Very well then Come back anytime";
 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);

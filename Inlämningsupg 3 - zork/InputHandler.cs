@@ -13,7 +13,7 @@ namespace Inlämningsupg_3___zork
         public static string GetInputExceptionMessage(Character character, string input)
         {
 
-            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key") || input.Contains("coin") || (input.Contains("pick up") && input.Contains("and")))
+            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key") || input.Contains("coin") || (input.Contains("pick up") && input.Contains("and")) || input.Contains("erhild") || input.Contains("thor") || input.Contains("good work") || input.Contains("long sword"))
                 return null;
 
             if (input == "go forward" && character.CurrentLocation.Title == "starting point")
@@ -111,7 +111,10 @@ namespace Inlämningsupg_3___zork
                 "drop coin",
                 "coin",
                 "yes",
-                "no"
+                "no",
+                "good work"
+                
+
                 
             };
 
@@ -208,6 +211,7 @@ namespace Inlämningsupg_3___zork
                 "get",
                 "yes",
                 "no",
+                "good work",
             };
         }
     }
