@@ -109,7 +109,9 @@ namespace Inlämningsupg_3___zork
                 "use book on spear",
                 "pick up coin",
                 "drop coin",
-                "coin"
+                "coin",
+                "yes",
+                "no"
                 
             };
 
@@ -203,7 +205,9 @@ namespace Inlämningsupg_3___zork
                 "how",
                 "do",
                 "i",
-                "get"
+                "get",
+                "yes",
+                "no",
             };
         }
     }

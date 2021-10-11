@@ -34,6 +34,12 @@ namespace Inlämningsupg_3___zork
                 gameMuddyRoad.ExecuteInput(input);
             }
 
+            else if (currentScenario.Id == 3)
+            {
+                var gameTown = new GameTown(_character, _gameContent);
+                gameTown.ExecuteInput(input);
+            }
+
 
             _character.MovesCount++;
         }

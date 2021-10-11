@@ -162,7 +162,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 _character.InDialog = false;
             }
              
-            // else if (input.Contains("excuse me") || input.Contains("hello") || input.Contains("hi") || input == "talk to viking")
+             // else if (input.Contains("excuse me") || input.Contains("hello") || input.Contains("hi") || input == "talk to viking")
             //    OpenDialog();
 
             //else if (input.Contains("great halls"))
@@ -214,8 +214,24 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (input == "go west" || input == "go back")
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
+
+            else if (input == "yes")
+                GoBackToTheDocks();
+
+            else if (input == "no")
+                _character.CurrentLocation.Description = "Okay";
+
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
+        }
+
+        private void GoBackToTheDocks()
+        {
+            _character.PreviousLocation = null;
+
+            _character.CurrentScenario = _gameContent.GetStartingScenario();
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(location => location.Title == "starting point");
+            _character.CurrentLocation.Description = "You are back at the docks";
         }
 
         private void ArmmorSmithExecute(string input)
@@ -239,7 +255,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (input == "go east" || input == "go to boat house" || input == "go to the boat house")
                 GoToBoatHouse(_character.CurrentLocation.Title);
 
-            else if (input == "go west " || input == "go to armorsmith" || input == "go to the armorsmith")
+            else if (input == "go west" || input == "go to armorsmith" || input == "go to the armorsmith")
                 GoToArmorSmith(_character.CurrentLocation.Title);
 
             else if (input == "go north" || input == "go to fountain" || input == "go to the fountain")

@@ -241,7 +241,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (_character.CurrentLocation.Door.IsOpen)
             {
-                //_character.CurrentScenario = _gameContent.GetMuddyRoadScenario(); // skapa scenario
+                _character.CurrentScenario = _gameContent.GetTownScenario(); // skapa scenario
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
                 _character.PreviousLocation = null;
             }

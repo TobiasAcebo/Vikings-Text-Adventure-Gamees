@@ -60,7 +60,7 @@ namespace Inlämningsupg_3___zork
                     LocationList = new List<Location>
                     {
                         new Location {Title = "starting point", Description = "You have finally arrived in Town.\r\nThe Great halls have to be in this place…There is an armorsmith west of us and a fountain north of us. \r\nMaybe start in one of these locations."},
-                        new Location {Title = "fountain", Description = "You are infront of a fountain.\r\n There is a guy around here called Erhild.\r\nHe should be able to help you.\r\nHe usually is in the pub. Find the pub and get your answers."},
+                        new Location {Title = "fountain", Description = "You are infront of a fountain.\r\nThere is a guy around here called Erhild.\r\nHe should be able to help you.\r\nHe usually is in the pub. Find the pub and get your answers."},
                         new Location {Title = "armorsmith", Description = "You are at the Armorsmith.\r\nNothing to see here i guess."},
                         new Location {Title = "boat house", Description = "You are at the Boathouse.\r\nRemember, the boat only sails one way.\r\nYou can't sail back. You will have to walk back.\r\nWould you like to?"},
                         new Location {Title = "stairs", Description = "This is a lot of stairs.\r\nIt has to be the way into great halls."},

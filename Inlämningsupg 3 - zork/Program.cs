@@ -15,7 +15,7 @@ namespace Inlämningsupg_3___zork
         static void Main()
         {
             var gameContent = new GameContent();
-            var character = new Character(gameContent.GetMuddyRoadScenario(), "Ted");
+            var character = new Character(gameContent.GetTownScenario(), "Tobias");
             character.CurrentLocation = character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
 
             Application.EnableVisualStyles();
