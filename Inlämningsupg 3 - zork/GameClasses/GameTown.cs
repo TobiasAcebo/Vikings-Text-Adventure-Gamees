@@ -159,7 +159,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (_character.CurrentLocation.Door.IsOpen)
             {
-                var EndScreen = new EndScreen();
+                var EndScreen = new EndScreen(_character);
                 EndScreen.Show();
             }
             else if (CharacterHasKey())

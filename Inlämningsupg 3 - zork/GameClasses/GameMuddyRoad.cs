@@ -348,7 +348,6 @@ namespace Inlämningsupg_3___zork.GameClasses
                 else
                     DialogNotOpen();
             }
-
         }
 
         private void DialogNotOpen()
