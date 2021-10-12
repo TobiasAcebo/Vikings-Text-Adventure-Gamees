@@ -297,9 +297,9 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void LongSwordGiven()
         {
-            Item knife = _character.CurrentLocation.ItemList.Find(x => x.Title == "long sword");
-            _character.ItemList.Add(knife);
-            _character.CurrentLocation.ItemList.Remove(knife);
+            Item longSword = _character.CurrentLocation.ItemList.Find(x => x.Title == "long sword");
+            _character.ItemList.Add(longSword);
+            _character.CurrentLocation.ItemList.Remove(longSword);
         }
 
         private bool LongSwordAvailable()
