@@ -149,8 +149,8 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (input == "go south" || input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
                 GoToWater(_character.CurrentLocation.Title);
-            else if (input == "pick up coin")
-                TryToPickUpCoin();
+            //else if (input == "pick up coin")
+            //    TryToPickUpCoin();
 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
