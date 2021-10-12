@@ -72,10 +72,18 @@ namespace Inlämningsupg_3___zork
              roomDescriptionTxt.Text = lineBreak + "\r\n" + "Welcome to Vikings.\r\nThis is a text-based fantasy adventure game.\r\nYou can find all rules in " + howToPlay + "\r\n" + lineBreak + "\r\n\r\n" + _character.CurrentLocation.Description + "\r\n\r\n";
             else
              roomDescriptionTxt.AppendText(_character.CurrentLocation.Description + "\r\n\r\n");
-            
-            roomNameLabel.Text = currentScenario.Title;
-            roomPicturebox.ImageLocation = currentScenario.ImagePath;
-            roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (_character.CurrentLocation.Title == "boat house")
+            {
+                roomNameLabel.Text = "Boat house: Town";
+                roomPicturebox.ImageLocation = @"../../boat house town.jpg";
+                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                roomNameLabel.Text = currentScenario.Title;
+                roomPicturebox.ImageLocation = currentScenario.ImagePath;
+                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         private void Moves()
         {

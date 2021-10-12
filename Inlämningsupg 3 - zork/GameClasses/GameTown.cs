@@ -134,7 +134,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void GreatHallsGateExecuteInput(string input)
         {
-            if (input == "open great halls") // lägg till flera alternativ
+            if (input == "open great halls" || input == "open gate" || input == "use key on gate") 
                 TryOpenGate();
 
             else if (input == "go south")
@@ -148,7 +148,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 else
                     _character.CurrentLocation.Description = "You need to enter town again";
             }
-            else if (input == "enter the great halls" || input == "go to the great halls")
+            else if (input == "enter great halls" || input == "go to great halls")
                 TryEnterGreatHalls();
 
             else
@@ -159,9 +159,8 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (_character.CurrentLocation.Door.IsOpen)
             {
-                //_character.CurrentScenario = _gameContent.GetMuddyRoadScenario(); // skapa scenario
-                _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
-                _character.PreviousLocation = null;
+                var EndScreen = new EndScreen();
+                EndScreen.Show();
             }
             else if (CharacterHasKey())
             {
@@ -249,11 +248,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
 
             if (input == "good work")
-            {
-                    GetLongSword();
-                
-                
-            }
+                GetLongSword();
         }
 
         private void GetLongSword()
@@ -263,7 +258,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 if (!InventoryFull())
                 {
                     LongSwordGiven();
-                    _character.CurrentLocation.Description = "Swordsmith: \"Well thank you kind sir.\r\nHere, take this long sword as a sign of appreciation.\"";
+                    _character.CurrentLocation.Description = "Swordsmith: \"Well thank you kind sir.\r\nHere, take this long sword as a sign of my appreciation.\"";
                     InventoryStatusPrint();
                 }
                 else
@@ -281,7 +276,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (CharacterHasHelmetAndLongSword())
             {
-                _character.CurrentLocation.Description = "You have helmet and long sword in your inventory \r\n";
+                _character.CurrentLocation.Description += "You have helmet and long sword in your inventory \r\n";
                 _character.CurrentLocation.Description += "\"Try use them on each other.\"";
             }
         }
@@ -311,7 +306,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "fountain");
             _character.CurrentLocation.Description =
-                "Back at the fountain hope the guy Erhild is still around. He should be able to help you. He usually is in the pub. Find the pub and get your answers.";
+                "Back at the fountain. Hopefully Erhild is still around. He should be able to help you. He usually stays in the pub. Find the pub and get your answers.";
             _character.PreviousLocation = previousLocation;
         }
 
@@ -374,7 +369,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToTheDocks();
 
             else if (input == "no")
-                _character.CurrentLocation.Description = "Very well then Come back anytime";
+                _character.CurrentLocation.Description = "Very well then, come back anytime.";
 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
@@ -386,7 +381,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             _character.CurrentScenario = _gameContent.GetStartingScenario();
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(location => location.Title == "starting point");
-            _character.CurrentLocation.Description = "You are back at the docks";
+            _character.CurrentLocation.Description = "You are back at The Docks";
         }
 
         private void ArmmorSmithExecute(string input)
@@ -401,7 +396,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "starting point");
             _character.CurrentLocation.Description =
-                "We are back at the entrance of Town. Wondering if there's someone around here.";
+                "We are back at the entrance of Town.";
             _character.PreviousLocation = previousLocation;
         }
 
@@ -426,7 +421,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void StartingPointGoBack(string previousLocation)
         {
             if (_character.PreviousLocation == null)
-                _character.CurrentLocation.Description = "You are still at the starting point \r\nIf you want to go back to the muddy road, type: enter muddy road";
+                _character.CurrentLocation.Description = "You are still at the starting point \r\nIf you want to go back to the Muddy road, type: enter muddy road";
         }
 
         private void EnterMuddyRoad()
@@ -434,7 +429,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             _character.CurrentScenario = _gameContent.GetMuddyRoadScenario();
             _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "gate");
             _character.PreviousLocation = null;
-            _character.CurrentLocation.Description = "You have entered muddy roads.\r\nYou are still at the gate.\r\nIf you want to go back to town, type: enter town.\r\nElse you can move as you please within muddy roads";
+            _character.CurrentLocation.Description = "You have entered Muddy roads.\r\nYou are still at the gate.\r\nIf you want to go back to Town, type: enter town.\r\nElse you can move as you please within Muddy roads";
         }
 
         private void GoToFountain(string previousLocation)

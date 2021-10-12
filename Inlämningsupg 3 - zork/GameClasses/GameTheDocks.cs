@@ -149,18 +149,8 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (input == "go south" || input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
                 GoToWater(_character.CurrentLocation.Title);
-            else if (input == "pick up coin")
-                TryToPickUpCoin();
-
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
-        }
-
-        private void TryToPickUpCoin()
-        {
-            Item coin = _character.CurrentLocation.ItemList.Find(x => x.Title == "coin");
-            _character.ItemList.Add(coin);
-            _character.CurrentLocation.ItemList.Remove(coin);
         }
 
         private void WestSideExecuteInput(string input)
@@ -174,27 +164,28 @@ namespace Inlämningsupg_3___zork.GameClasses
                 OpenDialogForThor();
 
 
-            else if (input.Contains("thor"))
-                _character.CurrentLocation.Description = "You have unlocked the Spirit of thor. Ask him about the key.";
-               
+            else if (input == "thor")
+
+                _character.CurrentLocation.Description = "You have unlocked the Spirit of Thor. Ask him about the key.";
+            
 
             else if (input.Contains("key"))
-                _character.CurrentLocation.Description = "Thor: \"Yes the key to great halls.\r\nFind the helmet in muddy road.\r\nThen go to the swordsmith in town and use the word\'good work\"\' ";
-                
+                _character.CurrentLocation.Description = "Spirit of Thor: \"Yes the key to the Great halls.\r\nYou will need to collect 2 items to make one.\r\nFind the helmet in muddy road.\r\nThen go to the swordsmith in Town and remember to say: " + "\"good work\"" + " when you enter.\"";
+
         }
 
         private void OpenDialogForThor()
         {
-            _character.CurrentLocation.Description = "Thor: \"Hello there.\"";
+            _character.CurrentLocation.Description = "Spirit of Thor: \"Hello there.\"";
             _character.InDialog = true;
         }
 
         private void GateExecuteInput(string input)
         {
-            if(input == "open gate") // lägg till flera alternativ
+            if (input == "open gate") // lägg till flera alternativ
                 TryOpenGate();
 
-            else if(input == "go west")
+            else if (input == "go west")
                 GoBackToEndOfDocks(_character.CurrentLocation.Title);
             else if (input == "go back")
             {
@@ -205,8 +196,9 @@ namespace Inlämningsupg_3___zork.GameClasses
                 else
                     _character.CurrentLocation.Description = "You need to enter muddy road again";
             }
-
-            else if(IsTryingToEnterMuddyRoad(input))
+            else if (input == "yes")
+                _character.CurrentLocation.Description = "Try open the gate";
+            else if (IsTryingToEnterMuddyRoad(input))
                 TryEnterMuddyRoad();
 
             else
@@ -391,7 +383,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (CharacterHasKnifeAndFihsingLine())
             {
-                _character.CurrentLocation.Description = "You have knife and fishing line in your inventory \r\n";
+                _character.CurrentLocation.Description += "You have knife and fishing line in your inventory \r\n";
                 _character.CurrentLocation.Description += "\"Try use them on each other.\"";
             }
         }
@@ -485,7 +477,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "guidance");
             _character.CurrentLocation.Description =
-                "Hi there, traveler. We meet again. You seem lost. Maybe the fisherman knows the way around this place. Remember to be polite.";
+                "Hi there, traveler. We meet again. You seem lost. Maybe the fisherman knows the way around this place. Remember to excuse yourself to get his attention.";
             _character.PreviousLocation = previousLocation;
         }
         private void GoBackToWestSide(string previousLocation)
@@ -528,7 +520,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (!characterHasKey && !gateIsOpen)
             {
                 _character.CurrentLocation.Description =
-                    "A locked gate. Wondering where this leads. Do you have a key perhaps? We could find out. \r\nIf not, ask around the docks. Maybe someone knows.";
+                    "A locked gate. Wondering where this leads. Do you have a key perhaps?. \r\nIf not, ask around the docks. Maybe someone knows.";
             }
             else if (characterHasKey && !gateIsOpen)
             {
@@ -577,9 +569,6 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public void Look()
         {
-            //_character.CurrentLocation.Description = _character.CurrentScenario.Description + "\r\n"; 
-            //_character.CurrentLocation.Description += "\r\nThere is a gate located east of the docks";
-            //DisplayItemsAvailable();
             var currentScenarioInfo = new FrmInfoTheDocks(_character);
             currentScenarioInfo.Show();
         }

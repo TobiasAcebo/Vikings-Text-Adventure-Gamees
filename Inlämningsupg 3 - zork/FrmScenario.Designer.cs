@@ -67,7 +67,7 @@ namespace Inlämningsupg_3___zork
             this.roomNameLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomNameLabel.Location = new System.Drawing.Point(12, 6);
             this.roomNameLabel.Name = "roomNameLabel";
-            this.roomNameLabel.Size = new System.Drawing.Size(208, 31);
+            this.roomNameLabel.Size = new System.Drawing.Size(294, 31);
             this.roomNameLabel.TabIndex = 1;
             this.roomNameLabel.Text = "The docks";
             // 
