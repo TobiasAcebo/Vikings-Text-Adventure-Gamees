@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Inlämningsupg_3___zork.Interfaces;
 
 namespace Inlämningsupg_3___zork.GameClasses
 {
-    class GameTheDocks : Game, IGame
+    class GameTheDocks : Game
     {
         private readonly Character _character;
         private readonly GameContent _gameContent;
@@ -19,12 +18,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public override void ExecuteInput(string input)
         {
-            if (input == "look")
-            {
-                Look();
-                return;
-            }
-
+            
             if (input == "use knife on fishing line" || input == "use fishing line on knife")
             {
                 TryCreateKey();
@@ -35,15 +29,13 @@ namespace Inlämningsupg_3___zork.GameClasses
             {
                 if (DropItemInputWorks(input))
                     return;
-            }
-                
 
-            if (_character.CurrentLocation.Title != "end of docks")
-            {
                 if (PickUpItemInputWorks(input))
+                {
+                    InventoryStatusPrint();
                     return;
+                }
             }
-            
 
             var currentLocation = _character.CurrentLocation;
 
@@ -69,136 +61,99 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GateExecuteInput(input);
         }
 
-        private bool PickUpItemInputWorks(string input)
-        {
-            var itemsInLocation = _character.CurrentLocation.ItemList;
-            foreach (var item in itemsInLocation)
-            {
-                if (input == "pick up " + item.Title)
-                {
-                    if (!InventoryFull())
-                    {
-                        _character.PickUpItem(item);
-                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
-                        InventoryStatusPrint();
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private bool DropItemInputWorks(string input)
-        {
-            var inventory = _character.ItemList;
-            foreach (var item in inventory)
-            {
-                if (input == "drop " + item.Title)
-                {
-                    _character.DropItem(item);
-                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void TryCreateKey()
-        {
-            if (CharacterHasKnifeAndFihsingLine())
-            {
-                Item key = new Item();
-                key.IsKey = true;
-                key.Title = "key";
-                _character.ItemList.Clear();
-                _character.ItemList.Add(key);
-                _character.CurrentLocation.Description = "\"You have made a key!\"";
-            }
-        }
-
+        
         private void StartingPointExecuteInput(string input)
         {
 
-            if (input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
-                GoToWater(_character.CurrentLocation.Title);
+            if (input.IsDirectionEast() || input.IsDirectionWest() || input.IsJumpInWater())
+                GoTo("water");
             
-            else if (input == "go south" || IsTryingToEnterBoat(input))
-                GoToBoat(_character.CurrentLocation.Title);
+            else if (input.IsDirectionSouth() || input.IsEnterBoat())
+                GoTo("boat");
             
-            else if (input == "go north"|| IsTryingToEnterEndOfDocks(input))
-                GoToEndOfDocks(_character.CurrentLocation.Title);
+            else if (input.IsDirectionNorth() || input.IsMoveToEndOfDocks())
+                GoTo("end of docks");
             
-            else if (input == "go back")
-                StartingPointGoBack(_character.CurrentLocation.Title);
+            else if (input.IsGoBack())
+                StartingPointGoBack();
 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
         private void WaterExecuteInput(string input)
         {
-            if (IsTryingToClimb(input))
-                GoBackToStartingPoint(_character.CurrentLocation.Title);
+            if (input.IsClimbUp())
+                GoBackTo("starting point");
                 
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
         private void BoatExecuteInput(string input)
         {
-            if (input == "go north" || input == "go to starting point" || input == "go back")
-                GoBackToStartingPoint(_character.CurrentLocation.Title);
+            if (input.IsDirectionNorth() || input.IsMoveToStartingPoint() || input.IsGoBack())
+                GoBackTo("starting point");
 
-            else if (input == "go south" || input == "go east" || input == "go west" || IsTryingToJumpInWater(input))
-                GoToWater(_character.CurrentLocation.Title);
+            else if (input.IsDirectionSouth() || input.IsDirectionEast() || input.IsDirectionWest() || input.IsJumpInWater())
+                GoTo("water");
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
-
         private void WestSideExecuteInput(string input)
         {
-            if (input == "go east" || input == "go back" || IsTryingToEnterEndOfDocks(input))
-                GoBackToEndOfDocks(_character.CurrentLocation.Title);
-            else
-                CannotExecuteInputFrom(_character.CurrentLocation.Title);
-
-            if (input.Contains("hi") || input.Contains("hello"))
+            if (input.IsDirectionEast() || input.IsGoBack() || input.IsMoveToEndOfDocks())
+            {
+                GoBackTo("end of docks");
+                _character.InDialog = false;
+            }
+                
+            
+            else if (input.IsAGreeting())
+            {
+                if(_character.InDialog)
+                    _character.CurrentLocation.Description = "Spirit of Thor: \"Hello there.\"";
+                else
+                {
+                    //nåt svar om att det inte finns någon att säga hej till
+                }
+            }
+            
+            else if (input.Contains("thor"))
                 OpenDialogForThor();
 
-
-            else if (input == "thor")
-
-                _character.CurrentLocation.Description = "You have unlocked the Spirit of Thor. Ask him about the key.";
-            
-
             else if (input.Contains("key"))
-                _character.CurrentLocation.Description = "Spirit of Thor: \"Yes the key to the Great halls.\r\nYou will need to collect 2 items to make one.\r\nFind the helmet in muddy road.\r\nThen go to the swordsmith in Town and remember to say: " + "\"good work\"" + " when you enter.\"";
+            {
+                if(_character.InDialog) 
+                    _character.CurrentLocation.Description = "Spirit of Thor: \"Yes the key to the Great halls.\r\nYou will need to collect 2 items to make one.\r\nFind the helmet in muddy road.\r\nThen go to the swordsmith in Town and remember to say: " + "\"good work\"" + " when you enter.\"";
+                else
+                {
+                    //nåt svar om att det inte finns någon att fråga det om
+                }
+            }
 
+            else
+                CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
-
-        private void OpenDialogForThor()
-        {
-            _character.CurrentLocation.Description = "Spirit of Thor: \"Hello there.\"";
-            _character.InDialog = true;
-        }
-
         private void GateExecuteInput(string input)
         {
-            if (input == "open gate") // lägg till flera alternativ
+            if (input.IsOpenGate())
                 TryOpenGate();
 
-            else if (input == "go west")
-                GoBackToEndOfDocks(_character.CurrentLocation.Title);
-            else if (input == "go back")
+            else if (input.IsDirectionWest())
+                GoBackTo("end of docks");
+
+            else if (input.IsGoBack())
             {
                 if (_character.PreviousLocation != null)
-                {
-                    GoBackToEndOfDocks(_character.CurrentLocation.Title);
-                }
+                    GoBackTo("end of docks");
+                
                 else
                     _character.CurrentLocation.Description = "You need to enter muddy road again";
             }
+
             else if (input == "yes")
                 _character.CurrentLocation.Description = "Try open the gate";
-            else if (IsTryingToEnterMuddyRoad(input))
+
+            else if (input.IsEnterMuddyRoad())
                 TryEnterMuddyRoad();
 
             else
@@ -206,39 +161,39 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         private void GuidanceExecuteInput(string input)
         {
-            if(input == "go back" || IsTryingToEnterEndOfDocks(input))
-                GoBackToEndOfDocks(_character.CurrentLocation.Title);
+            if(input.IsGoBack() || input.IsMoveToEndOfDocks())
+                GoBackTo("end of docks");
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
         private void EndOfDocksExecuteInput(string input)
         {
-            if (input == "go east" || input == "go to gate")
+            if (input.IsDirectionEast() || input.IsMoveToGate())
             {
-                GoToGate(_character.CurrentLocation.Title);
+                GoToGate();
                 _character.InDialog = false;
             }
                 
-            else if (input == "go west")
+            else if (input.IsDirectionWest())
             {
-                GoToWestSide(_character.CurrentLocation.Title);
+                GoTo("west side");
                 _character.InDialog = false;
             }
                 
-            else if (input == "go back")
+            else if (input.IsGoBack())
             {
-                EndOfDocksGoBack(_character.CurrentLocation.Title);
+                EndOfDocksGoBack();
                 _character.InDialog = false;
             }
                 
-            else if (input == "go north")
+            else if (input.IsDirectionNorth())
             {
-                EndOfDocksGoForward(_character.CurrentLocation.Title);
+                GoTo("guidance");
                 _character.InDialog = false;
             }
-            else if (input == "go south" || input == "go to starting point")
+            else if (input.IsDirectionSouth() || input.IsMoveToStartingPoint())
             {
-                GoBackToStartingPoint(_character.CurrentLocation.Title);
+                GoBackTo("starting point");
                 _character.InDialog = false;
             }
 
@@ -276,7 +231,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                     DialogNotOpen();
             }
 
-            else if (IsTryingToGreet(input) || input == "talk to fisherman")
+            else if (input.IsAGreeting() || input == "talk to fisherman")
             {
                 if (_character.InDialog)
                     _character.CurrentLocation.Description = "Fisherman: \"Hello there, traveler. How can I help you?\"";
@@ -309,17 +264,167 @@ namespace Inlämningsupg_3___zork.GameClasses
             }
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
-                
-            
         }
 
         
+        private void InventoryStatusPrint()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                _character.CurrentLocation.Description += "You have knife and fishing line in your inventory \r\n";
+                _character.CurrentLocation.Description += "\"Try use them on each other.\"";
+            }
+        }
+
+        private void StartingPointGoBack()
+        {
+            if (_character.PreviousLocation == null)
+                _character.CurrentLocation.Description = "You are still at the starting point";
+            else
+            {
+                if (_character.PreviousLocation == "end of docks")
+                    GoBackTo("end of docks");
+
+                else if (_character.PreviousLocation == "water")
+                    GoBackTo("water");
+
+                else if (_character.PreviousLocation == "boat")
+                    GoBackTo("boat");
+            }
+        }
+        private void EndOfDocksGoBack()
+        {
+            if (_character.PreviousLocation == "starting point")
+                GoBackTo("starting point");
+
+            else if (_character.PreviousLocation == "west side")
+                GoBackTo("west side");
+
+            else if (_character.PreviousLocation == "gate")
+                GoToGate();
+
+            else if (_character.PreviousLocation == "guidance")
+                GoBackTo("guidance");
+        }
+
+        private void GoBackTo(string locationTitle)
+        {
+            _character.PreviousLocation = _character.CurrentLocation.Title;
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == locationTitle);
+
+            if(_character.CurrentLocation.Title == "starting point")
+                _character.CurrentLocation.Description = "Ah here we are, back were we started. At the end of the docks I can see a fisherman talking about his travels with his men. ";
+
+            else if(_character.CurrentLocation.Title == "end of docks")
+                _character.CurrentLocation.Description = "Once again, you are at the end of the docks, there's a fisherman here talking about his travels with his men.";
+
+            else if(_character.CurrentLocation.Title == "water")
+                _character.CurrentLocation.Description = "Oh no! You fell into the water AGAIN. Try and climb back up the docks.";
+
+            else if(_character.CurrentLocation.Title == "west side")
+                _character.CurrentLocation.Description = "West side of the docks. \r\nIt’s still noisy here. Very well, nothing to see I guess.";
+
+            else if (_character.CurrentLocation.Title == "guidance")
+                _character.CurrentLocation.Description = "Hi there, traveler. We meet again. You seem lost. Maybe the fisherman knows the way around this place. Remember to excuse yourself to get his attention.";
+
+            else if (_character.CurrentLocation.Title == "boat")
+                _character.CurrentLocation.Description = "You are back on the ship.";
+        }
+        private void GoTo(string locationTitle)
+        {
+            _character.PreviousLocation = _character.CurrentLocation.Title;
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == locationTitle);
+        }
+        private void GoToGate()
+        {
+            _character.PreviousLocation = _character.CurrentLocation.Title;
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "gate");
+            var characterHasKey = _character.ItemList.Any(i => i.Title == "key");
+            var gateIsOpen = _character.CurrentLocation.Door.IsOpen;
+            if (!characterHasKey && !gateIsOpen)
+            {
+                _character.CurrentLocation.Description =
+                    "A locked gate. Wondering where this leads. Do you have a key perhaps?. \r\nIf not, ask around the docks. Maybe someone knows.";
+            }
+            else if (characterHasKey && !gateIsOpen)
+            {
+                _character.CurrentLocation.Description =
+                    "A locked gate. Wondering where this leads. Do you have a key perhaps?";
+            }
+            else
+            {
+                _character.CurrentLocation.Description =
+                    "An open gate.";
+            }
+        }
+        
+        private bool KnifeAvailable()
+        {
+            return _character.CurrentLocation.ItemList.Any(x => x.Title == "knife");
+        }
+        private bool FishingLineAvailable()
+        {
+            return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
+        }
+        private bool CharacterHasKnifeAndFihsingLine()
+        {
+            if (_character.ItemList.Count(item => item.Title == "knife" || item.Title == "fishing line") == 2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void BuyFishingLine()
+        {
+            Item fishingLine = _character.CurrentLocation.ItemList.Find(x => x.Title == "fishing line");
+            _character.ItemList.Add(fishingLine);
+            _character.CurrentLocation.ItemList.Remove(fishingLine);
+        }
+        private void BuyKnife()
+        {
+            Item knife = _character.CurrentLocation.ItemList.Find(x => x.Title == "knife");
+            _character.ItemList.Add(knife);
+            _character.CurrentLocation.ItemList.Remove(knife);
+        }
+
+        private void CoinSpent()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                var coin = _character.ItemList.First(i => i.isCoin);
+                _character.ItemList.Remove(coin);
+                
+            }
+        }
+
+        private void OpenDialogForThor()
+        {
+            _character.CurrentLocation.Description = "You have unlocked the Spirit of Thor. Ask him about the key.";
+            _character.InDialog = true;
+        }
         private void OpenDialog()
         {
             _character.CurrentLocation.Description = "Fisherman: \"Oh hello there traveler. Didn't quite see you.\r\nHow can I help you?\"";
             _character.InDialog = true;
         }
+        private void DialogNotOpen()
+        {
+            _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by being polite.";
+        }
 
+        private void TryCreateKey()
+        {
+            if (CharacterHasKnifeAndFihsingLine())
+            {
+                Item key = new Item();
+                key.IsKey = true;
+                key.Title = "key";
+                _character.ItemList.Clear();
+                _character.ItemList.Add(key);
+                _character.CurrentLocation.Description = "\"You have made a key!\"";
+            }
+        }
         private void TryOpenGate()
         {
 
@@ -338,9 +443,8 @@ namespace Inlämningsupg_3___zork.GameClasses
             }
             else
                 _character.CurrentLocation.Description = "The gate is already open. You can now enter Muddy Road.";
-            
-        }
 
+        }
         private void TryEnterMuddyRoad()
         {
             if (_character.CurrentLocation.Door.IsOpen)
@@ -360,6 +464,24 @@ namespace Inlämningsupg_3___zork.GameClasses
                     "You must open the gate to enter Muddy Road. I don't believe you have the key, do you. Ask around the docks. Maybe someone knows how to get one.";
             }
         }
+        private void TryBuyKnife()
+        {
+            if (KnifeAvailable())
+            {
+                if (CharacterHasCoin())
+                {
+                    BuyKnife();
+                    _character.CurrentLocation.Description = "Fisherman:  \"Here you go.\"";
+                    CoinSpent();
+                    InventoryStatusPrint();
+                }
+                else
+                    _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
+
+            }
+            else
+                _character.CurrentLocation.Description = "Fisherman: \"That item has already been bought.\"";
+        }
         private void TryBuyFishingLine()
         {
             if (FishingLineAvailable())
@@ -373,30 +495,11 @@ namespace Inlämningsupg_3___zork.GameClasses
                 }
                 else
                     _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
-                
+
             }
             else
                 _character.CurrentLocation.Description = "Fisherman: \"That item has already been bought.\"";
         }
-
-        private void InventoryStatusPrint()
-        {
-            if (CharacterHasKnifeAndFihsingLine())
-            {
-                _character.CurrentLocation.Description += "You have knife and fishing line in your inventory \r\n";
-                _character.CurrentLocation.Description += "\"Try use them on each other.\"";
-            }
-        }
-
-        private bool CharacterHasKnifeAndFihsingLine()
-        {
-            if (_character.ItemList.Count(item => item.Title == "knife" || item.Title == "fishing line") == 2)
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void TryBuyFishingLineAndKnife()
         {
             if (FishingLineAvailable() && KnifeAvailable())
@@ -411,265 +514,11 @@ namespace Inlämningsupg_3___zork.GameClasses
                 }
                 else
                     _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
-                
+
             }
             else
                 _character.CurrentLocation.Description = "You can't do that.";
         }
-        private void TryBuyKnife()
-        {
-            if (KnifeAvailable())
-            {
-                if (CharacterHasCoin())
-                {
-                    BuyKnife();
-                    _character.CurrentLocation.Description = "Fisherman:  \"Here you go.\"";
-                    CoinSpent();
-                    InventoryStatusPrint();
-                }
-                else
-                    _character.CurrentLocation.Description = "Fisherman: \"You can't buy that without a coin.\"";
-               
-            }
-            else
-                _character.CurrentLocation.Description = "Fisherman: \"That item has already been bought.\"";
-        }
 
-        private void StartingPointGoBack(string previousLocation)
-        {
-            if (_character.PreviousLocation == null)
-                _character.CurrentLocation.Description = "You are still at the starting point";
-            else
-            {
-                if (_character.PreviousLocation == "end of docks")
-                    GoBackToEndOfDocks(previousLocation);
-
-                else if (_character.PreviousLocation == "water")
-                    GoBackToWater(previousLocation);
-
-                else if (_character.PreviousLocation == "boat")
-                    GoBackToBoat(previousLocation);
-            }
-        }
-        private void EndOfDocksGoBack(string previousLocation)
-        {
-            if (_character.PreviousLocation == "starting point")
-                GoBackToStartingPoint(previousLocation);
-
-            else if (_character.PreviousLocation == "west side")
-                GoBackToWestSide(previousLocation);
-
-            else if (_character.PreviousLocation == "gate")
-                GoBackToGate(previousLocation);
-
-            else if (_character.PreviousLocation == "guidance")
-                GoBackToGuidance(previousLocation);
-        }
-
-        private void GoBackToStartingPoint(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "starting point");
-            _character.CurrentLocation.Description =
-                "Ah here we are, back were we started. At the end of the docks I can see a fisherman talking about his travels with his men. ";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoBackToGuidance(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "guidance");
-            _character.CurrentLocation.Description =
-                "Hi there, traveler. We meet again. You seem lost. Maybe the fisherman knows the way around this place. Remember to excuse yourself to get his attention.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoBackToWestSide(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "west side");
-            _character.CurrentLocation.Description = "West side of the docks. \r\nIt’s still noisy here. Very well, nothing to see I guess.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoBackToGate(string previousLocation)
-        {
-            GoToGate(previousLocation);
-        }
-        private void GoBackToEndOfDocks(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "end of docks");
-            _character.CurrentLocation.Description =
-                "Once again, you are at the end of the docks, there's a fisherman here talking about his travels with his men.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoBackToWater(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "water");
-            _character.CurrentLocation.Description =
-                "Oh no! You fell into the water AGAIN. Try and climb back up the docks.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoBackToBoat(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "boat");
-            _character.CurrentLocation.Description = "You are back on the ship.";
-            _character.PreviousLocation = previousLocation;
-        }
-        
-
-        private void GoToGate(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "gate");
-            var characterHasKey = _character.ItemList.Any(i => i.Title == "key");
-            var gateIsOpen = _character.CurrentLocation.Door.IsOpen;
-            if (!characterHasKey && !gateIsOpen)
-            {
-                _character.CurrentLocation.Description =
-                    "A locked gate. Wondering where this leads. Do you have a key perhaps?. \r\nIf not, ask around the docks. Maybe someone knows.";
-            }
-            else if (characterHasKey && !gateIsOpen)
-            {
-                _character.CurrentLocation.Description =
-                    "A locked gate. Wondering where this leads. Do you have a key perhaps?";
-            }
-            else
-            {
-                _character.CurrentLocation.Description =
-                    "An open gate.";
-            }
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoToEndOfDocks(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "end of docks");
-            _character.CurrentLocation.Description =
-                "You are at the end of the docks, there's a fisherman here talking about his travels with his men.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoToBoat(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "boat");
-            _character.CurrentLocation.Description = "You have boarded the ship.\r\nPssst..There is a Coin on this ship.";
-            _character.PreviousLocation = previousLocation;
-        }
-
-        private void GoToWater(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "water");
-            _character.CurrentLocation.Description =
-                "Oh no! You fell into the water. Try and climb back up the docks.";
-            _character.PreviousLocation = previousLocation;
-        }
-        private void GoToWestSide(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "west side");
-            _character.PreviousLocation = previousLocation;
-        }
-        private void EndOfDocksGoForward(string previousLocation)
-        {
-            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "guidance");
-            _character.CurrentLocation.Description = "Lady: \"Hey there traveler! You seem lost. Maybe the fisherman knows the way around this place.\"";
-            _character.PreviousLocation = previousLocation;
-        }
-
-        public void Look()
-        {
-            var currentScenarioInfo = new FrmInfoTheDocks(_character);
-            currentScenarioInfo.Show();
-        }
-
-        private bool IsTryingToGreet(string input)
-        {
-            var greetingPhrasesList = new List<string>
-            {
-                "hi",
-                "hi there",
-                "hello",
-                "hello there"
-            };
-
-            return greetingPhrasesList.Contains(input);
-        }
-        private bool IsTryingToClimb(string input)
-        {
-            var climbingPhrasesList = new List<string>
-            {
-                "climb up",
-                "climb back up"
-            };
-
-            return climbingPhrasesList.Contains(input);
-        }
-        private bool IsTryingToEnterBoat(string input)
-        {
-            var boatPhrasesList = new List<string>
-            {
-                "go on the boat",
-                "go on boat"
-            };
-
-            return boatPhrasesList.Contains(input);
-        }
-        private bool IsTryingToEnterEndOfDocks(string input)
-        {
-            var endOfDocksPhrasesList = new List<string>
-            {
-                "go to fisherman",
-                "go to end of docks"
-            };
-
-            return endOfDocksPhrasesList.Contains(input);
-        }
-        private bool IsTryingToJumpInWater(string input)
-        {
-            var jumpInWaterPhrasesList = new List<string>
-            {
-                "jump in water",
-                "jump into the water"
-            };
-
-            return jumpInWaterPhrasesList.Contains(input);
-        }
-        private bool IsTryingToEnterMuddyRoad(string input)
-        {
-            var enterMuddyRoadPhrasesList = new List<string>
-            {
-                "enter muddy road",
-                "go to muddy road"
-            };
-
-            return enterMuddyRoadPhrasesList.Contains(input);
-        }
- 
-        private void DialogNotOpen()
-        {
-            _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by being polite.";
-        }
-        private bool KnifeAvailable()
-        {
-            return _character.CurrentLocation.ItemList.Any(x => x.Title == "knife");
-        }
-
-        private void BuyFishingLine()
-        {
-            Item fishingLine = _character.CurrentLocation.ItemList.Find(x => x.Title == "fishing line");
-            _character.ItemList.Add(fishingLine);
-            _character.CurrentLocation.ItemList.Remove(fishingLine);
-        }
-        private void BuyKnife()
-        {
-            Item knife = _character.CurrentLocation.ItemList.Find(x => x.Title == "knife");
-            _character.ItemList.Add(knife);
-            _character.CurrentLocation.ItemList.Remove(knife);
-        }
-        private bool FishingLineAvailable()
-        {
-            return _character.CurrentLocation.ItemList.Any(x => x.Title == "fishing line");
-        }
-        private void CoinSpent()
-        {
-            if (CharacterHasKnifeAndFihsingLine())
-            {
-                var coin = _character.ItemList.First(i => i.isCoin);
-                _character.ItemList.Remove(coin);
-                
-            }
-        }
-       
     }
 }

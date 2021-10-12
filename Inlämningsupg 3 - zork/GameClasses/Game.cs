@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inlämningsupg_3___zork.GameClasses;
-using Inlämningsupg_3___zork.Interfaces;
 
 namespace Inlämningsupg_3___zork
 {
@@ -21,6 +20,14 @@ namespace Inlämningsupg_3___zork
 
         public virtual void ExecuteInput(string input)
         {
+            if (input == "look")
+            {
+                Look();
+                return;
+            }
+
+            
+
             var currentScenario = _character.CurrentScenario;
 
             if(currentScenario.Id == 1)
@@ -39,24 +46,8 @@ namespace Inlämningsupg_3___zork
                 var gameTown = new GameTown(_character, _gameContent);
                 gameTown.ExecuteInput(input);
             }
-
-
-            _character.MovesCount++;
         }
-        public void DisplayItemsAvailable()
-        {
-            _character.CurrentLocation.Description += "\r\nItems available: ";
-            foreach (var location in _character.CurrentScenario.LocationList)
-            {
-                foreach (var item in location.ItemList)
-                {
-                    _character.CurrentLocation.Description += "\r\n" + item.Title;
-                }
 
-            }
-
-            _character.CurrentLocation.Description += "\r\n";
-        }
         public bool InventoryFull()
         {
             if (_character.ItemList.Count() == 2)
@@ -84,8 +75,58 @@ namespace Inlämningsupg_3___zork
             return _character.ItemList.Any(i => i.isCoin == true);
         }
 
+        public void Look()
+        {
+            if (_character.CurrentScenario.Id == 1)
+            {
+                var frmInfoTheDocks = new FrmInfoTheDocks(_character);
+                frmInfoTheDocks.Show();
+            }
+            else if (_character.CurrentScenario.Id == 2)
+            {
+                var frmInfoMuddyRoad = new FrmInfoMuddyRoad(_character);
+                frmInfoMuddyRoad.Show();
+            }
+            else if (_character.CurrentScenario.Id == 3)
+            {
+                var frmInfoTown = new FrmInfoTown(_character);
+                frmInfoTown.Show();
+            }
 
 
+        }
+
+        public bool PickUpItemInputWorks(string input)
+        {
+            var itemsInLocation = _character.CurrentLocation.ItemList;
+            foreach (var item in itemsInLocation)
+            {
+                if (input == "pick up " + item.Title)
+                {
+                    if (!InventoryFull())
+                    {
+                        _character.PickUpItem(item);
+                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool DropItemInputWorks(string input)
+        {
+            var inventory = _character.ItemList;
+            foreach (var item in inventory)
+            {
+                if (input == "drop " + item.Title)
+                {
+                    _character.DropItem(item);
+                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
+                    return true;
+                }
+            }
+            return false;
+        }
 
     }
 }

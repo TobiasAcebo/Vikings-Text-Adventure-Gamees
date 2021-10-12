@@ -1,5 +1,4 @@
-﻿using Inlämningsupg_3___zork.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork.GameClasses
 {
-    class GameMuddyRoad : Game, IGame
+    class GameMuddyRoad : Game
     {
         private readonly Character _character;
         private readonly GameContent _gameContent;
@@ -18,11 +17,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         public override void ExecuteInput(string input)
         {
-            if (input == "look")
-            {
-                Look();
-                return;
-            }
+            
 
             if (input == "use spear on book" || input == "use book on spear")
             {

@@ -178,6 +178,23 @@ namespace Inlämningsupg_3___zork
 
             return goGoBackPhrasesArr.Contains(input);
         }
+        public static bool ContainsKeyWord(this string input)
+        {
+            if (input.Contains("erhild") ||
+                input.Contains("thor") ||
+                input.Contains("good work") ||
+                input.Contains("long sword") ||
+                input.Contains("excuse me") ||
+                input.Contains("great halls") ||
+                input.Contains("gate") ||
+                input.Contains("key") ||
+                input.Contains("coin"))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
     }
 }

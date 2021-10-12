@@ -127,6 +127,7 @@ namespace Inlämningsupg_3___zork
             else
             {
                 _game.ExecuteInput(userInput);
+                _character.MovesCount++;
 
                 UpdateScenario();
             }

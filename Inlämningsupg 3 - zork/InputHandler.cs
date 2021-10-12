@@ -13,8 +13,9 @@ namespace Inlämningsupg_3___zork
         public static string GetInputExceptionMessage(Character character, string input)
         {
 
-            if (input.Contains("excuse me") || input.Contains("great halls") || input.Contains("gate") || input.Contains("key") || input.Contains("coin") || (input.Contains("pick up") && input.Contains("and")) || input.Contains("erhild") || input.Contains("thor") || input.Contains("good work") || input.Contains("long sword"))
+            if (IsValidInput(input))
                 return null;
+
 
             if (input == "go forward" && character.CurrentLocation.Title == "starting point")
                 return "Try use: go north";
@@ -22,10 +23,6 @@ namespace Inlämningsupg_3___zork
             List<string> inputWordsExceptionsList = GetInputWordsExceptionsList(input);
             if (inputWordsExceptionsList.Count > 0)
                 return GetWordExceptionMessage(inputWordsExceptionsList);
-
-            if (IsValidInput(input))
-                return null;
-
 
             return _standardExceptionMessage;
         }
@@ -45,26 +42,7 @@ namespace Inlämningsupg_3___zork
         {
             string [] validInputList = 
             {
-                "go east",
-                "go west",
-                "go north",
-                "go south",
-                "go to fisherman",
-                "open gate",
-                "jump in water",
-                "jump into the water",
-                "climb up",
-                "climb back up",
-                "go back",
-                "go to end of docks",
-                "go to gate",
                 "look",
-                "go on the boat",
-                "go on boat",
-                "hi",
-                "hi there",
-                "hello",
-                "hello there", 
                 "talk to fisherman",
                 "buy fishing line",
                 "buy knife",
@@ -72,12 +50,6 @@ namespace Inlämningsupg_3___zork
                 "buy knife and fishing line",
                 "use fishing line on knife",
                 "use knife on fishing line",
-                "go to starting point",
-                "enter muddy road",
-                "go to muddy road",
-                "use key on gate",
-                "open gate",
-                "open door",
                 "drop knife",
                 "drop fishing line",
                 "pick up knife",
@@ -113,12 +85,31 @@ namespace Inlämningsupg_3___zork
                 "yes",
                 "no",
                 "good work"
-                
 
-                
             };
 
-            return validInputList.Contains(input);
+            if ((input.Contains("pick up") && input.Contains("and")) ||
+                input.ContainsKeyWord() ||
+                input.IsAGreeting() ||
+                input.IsClimbUp() ||
+                input.IsDirectionEast() ||
+                input.IsDirectionNorth() ||
+                input.IsDirectionSouth() ||
+                input.IsDirectionWest() ||
+                input.IsEnterBoat() ||
+                input.IsEnterMuddyRoad() ||
+                input.IsGoBack() ||
+                input.IsJumpInWater() ||
+                input.IsMoveToEndOfDocks() ||
+                input.IsMoveToGate() ||
+                input.IsMoveToStartingPoint() ||
+                input.IsOpenGate() ||
+                validInputList.Contains(input))
+            {
+                return true;
+            }
+                    
+            return false;
         }
 
         private static List<string> GetInputWordsExceptionsList(string input)

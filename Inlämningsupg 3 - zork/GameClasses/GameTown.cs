@@ -1,5 +1,4 @@
-﻿using Inlämningsupg_3___zork.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +19,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         public override void ExecuteInput(string input)
         {
-            if (input == "look")
-            {
-                Look();
-                return;
-            }
+            
 
             if (input == "use helmet on long sword" || input == "use long sword on helmet")
             {
@@ -32,17 +27,18 @@ namespace Inlämningsupg_3___zork.GameClasses
                 return;
             }
 
-            if (_character.CurrentLocation.Title != "end of docks")
+            if (_character.CurrentLocation.Title != "sword smith")
             {
                 if (DropItemInputWorks(input))
                     return;
+
+                if (PickUpItemInputWorks(input))
+                {
+                    InventoryStatusPrint();
+                    return;
+                }
             }
 
-            if (_character.CurrentLocation.Title != "sword smith")
-            {
-                if (PickUpItemInputWorks(input))
-                    return;
-            }
 
             var currentLocation = _character.CurrentLocation;
 
@@ -71,20 +67,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GreatHallsGateExecuteInput(input);
         }
 
-        private bool DropItemInputWorks(string input)
-        {
-            var inventory = _character.ItemList;
-            foreach (var item in inventory)
-            {
-                if (input == "drop " + item.Title)
-                {
-                    _character.DropItem(item);
-                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
-                    return true;
-                }
-            }
-            return false;
-        }
+        
 
         private void TryCreateKey()
         {
@@ -99,24 +82,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             }
         }
 
-        private bool PickUpItemInputWorks(string input)
-        {
-            var itemsInLocation = _character.CurrentLocation.ItemList;
-            foreach (var item in itemsInLocation)
-            {
-                if (input == "pick up " + item.Title)
-                {
-                    if (!InventoryFull())
-                    {
-                        _character.PickUpItem(item);
-                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
-                        InventoryStatusPrint();
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        
 
         private void StairsExecuteInput(string input)
         {
@@ -450,10 +416,6 @@ namespace Inlämningsupg_3___zork.GameClasses
             _character.PreviousLocation = previousLocation;
         }
 
-        private void Look()
-        {
-            FrmInfoTown frmInfoTown = new FrmInfoTown(_character);
-            frmInfoTown.Show();
-        }
+       
     }
 }
