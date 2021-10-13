@@ -126,6 +126,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             if (_character.CurrentLocation.Door.IsOpen)
             {
                 var EndScreen = new EndScreen(_character);
+                FrmScenario.ActiveForm.Hide();
                 EndScreen.Show();
             }
             else if (CharacterHasKey())

@@ -42,10 +42,10 @@ namespace Inlämningsupg_3___zork
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.playBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace Inlämningsupg_3___zork
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(662, 516);
+            this.label1.Location = new System.Drawing.Point(662, 575);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 53);
             this.label1.TabIndex = 13;
@@ -68,7 +68,7 @@ namespace Inlämningsupg_3___zork
             this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label2.Font = new System.Drawing.Font("Tahoma", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(662, 360);
+            this.label2.Location = new System.Drawing.Point(662, 437);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(235, 53);
             this.label2.TabIndex = 14;
@@ -81,7 +81,7 @@ namespace Inlämningsupg_3___zork
             this.scoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.scoreLabel.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.ForeColor = System.Drawing.SystemColors.Info;
-            this.scoreLabel.Location = new System.Drawing.Point(658, 421);
+            this.scoreLabel.Location = new System.Drawing.Point(658, 490);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(254, 85);
             this.scoreLabel.TabIndex = 16;
@@ -94,7 +94,7 @@ namespace Inlämningsupg_3___zork
             this.player1ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player1ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player1ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player1ScoreLabel.Location = new System.Drawing.Point(834, 595);
+            this.player1ScoreLabel.Location = new System.Drawing.Point(834, 654);
             this.player1ScoreLabel.Name = "player1ScoreLabel";
             this.player1ScoreLabel.Size = new System.Drawing.Size(84, 31);
             this.player1ScoreLabel.TabIndex = 18;
@@ -107,7 +107,7 @@ namespace Inlämningsupg_3___zork
             this.player1Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player1Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player1Label.Location = new System.Drawing.Point(675, 595);
+            this.player1Label.Location = new System.Drawing.Point(675, 654);
             this.player1Label.Name = "player1Label";
             this.player1Label.Size = new System.Drawing.Size(84, 31);
             this.player1Label.TabIndex = 17;
@@ -120,7 +120,7 @@ namespace Inlämningsupg_3___zork
             this.player2ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player2ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player2ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player2ScoreLabel.Location = new System.Drawing.Point(834, 639);
+            this.player2ScoreLabel.Location = new System.Drawing.Point(834, 698);
             this.player2ScoreLabel.Name = "player2ScoreLabel";
             this.player2ScoreLabel.Size = new System.Drawing.Size(84, 31);
             this.player2ScoreLabel.TabIndex = 20;
@@ -133,7 +133,7 @@ namespace Inlämningsupg_3___zork
             this.player2Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player2Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player2Label.Location = new System.Drawing.Point(675, 639);
+            this.player2Label.Location = new System.Drawing.Point(675, 698);
             this.player2Label.Name = "player2Label";
             this.player2Label.Size = new System.Drawing.Size(84, 31);
             this.player2Label.TabIndex = 19;
@@ -146,7 +146,7 @@ namespace Inlämningsupg_3___zork
             this.player3ScoreLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player3ScoreLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player3ScoreLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player3ScoreLabel.Location = new System.Drawing.Point(834, 684);
+            this.player3ScoreLabel.Location = new System.Drawing.Point(834, 743);
             this.player3ScoreLabel.Name = "player3ScoreLabel";
             this.player3ScoreLabel.Size = new System.Drawing.Size(84, 31);
             this.player3ScoreLabel.TabIndex = 22;
@@ -159,7 +159,7 @@ namespace Inlämningsupg_3___zork
             this.player3Label.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.player3Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.player3Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.player3Label.Location = new System.Drawing.Point(675, 684);
+            this.player3Label.Location = new System.Drawing.Point(675, 743);
             this.player3Label.Name = "player3Label";
             this.player3Label.Size = new System.Drawing.Size(84, 31);
             this.player3Label.TabIndex = 21;
@@ -172,7 +172,7 @@ namespace Inlämningsupg_3___zork
             this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label5.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(638, 595);
+            this.label5.Location = new System.Drawing.Point(638, 654);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 31);
             this.label5.TabIndex = 23;
@@ -185,7 +185,7 @@ namespace Inlämningsupg_3___zork
             this.label11.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label11.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(638, 639);
+            this.label11.Location = new System.Drawing.Point(638, 698);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 31);
             this.label11.TabIndex = 24;
@@ -198,47 +198,60 @@ namespace Inlämningsupg_3___zork
             this.label12.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label12.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label12.Location = new System.Drawing.Point(638, 684);
+            this.label12.Location = new System.Drawing.Point(638, 743);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 31);
             this.label12.TabIndex = 25;
             this.label12.Text = "3.";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1239, 663);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(254, 163);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
-            // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label13.Location = new System.Drawing.Point(354, 114);
+            this.label13.Location = new System.Drawing.Point(419, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(759, 257);
+            this.label13.Size = new System.Drawing.Size(759, 140);
             this.label13.TabIndex = 27;
-            this.label13.Text = "YOU WIN!";
+            this.label13.Text = "You have entered Great halls";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1002, 187);
+            this.pictureBox1.Location = new System.Drawing.Point(419, 166);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(759, 257);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
+            // 
+            // playBtn
+            // 
+            this.playBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playBtn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playBtn.Location = new System.Drawing.Point(1063, 453);
+            this.playBtn.Name = "playBtn";
+            this.playBtn.Size = new System.Drawing.Size(115, 32);
+            this.playBtn.TabIndex = 29;
+            this.playBtn.Text = "Play again";
+            this.playBtn.UseVisualStyleBackColor = true;
+            this.playBtn.Click += new System.EventHandler(this.playBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1063, 501);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 32);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Exit game";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EndScreen
             // 
@@ -246,9 +259,10 @@ namespace Inlämningsupg_3___zork
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.playBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
@@ -264,7 +278,6 @@ namespace Inlämningsupg_3___zork
             this.Name = "EndScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "End Screen";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -283,8 +296,9 @@ namespace Inlämningsupg_3___zork
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button playBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

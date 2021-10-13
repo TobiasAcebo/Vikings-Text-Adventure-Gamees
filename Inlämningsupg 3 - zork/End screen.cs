@@ -24,5 +24,17 @@ namespace Inlämningsupg_3___zork
 
 
         }
+
+        private void playBtn_Click(object sender, EventArgs e)
+        {
+            StartScreen startScreen = new StartScreen();
+            EndScreen.ActiveForm.Hide();
+            startScreen.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
