@@ -397,7 +397,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         private void DialogNotOpen()
         {
-            _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by being polite.";
+            _character.CurrentLocation.Description = "They seem to be in a middle of a conversation.\r\nTry and get their attention by excusing yourself.";
         }
 
         private void TryCreateKey()
