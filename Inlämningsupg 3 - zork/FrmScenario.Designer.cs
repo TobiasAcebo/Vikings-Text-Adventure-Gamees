@@ -31,7 +31,7 @@ namespace Inlämningsupg_3___zork
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmScenario));
-            this.label1 = new System.Windows.Forms.Label();
+            this.topPanelLabel = new System.Windows.Forms.Label();
             this.roomNameLabel = new System.Windows.Forms.Label();
             this.timerLabel = new System.Windows.Forms.Label();
             this.movesLabel = new System.Windows.Forms.Label();
@@ -51,18 +51,17 @@ namespace Inlämningsupg_3___zork
             ((System.ComponentModel.ISupportInitialize)(this.roomPicturebox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // topPanelLabel
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(0, -2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1496, 45);
-            this.label1.TabIndex = 0;
+            this.topPanelLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.topPanelLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.topPanelLabel.Location = new System.Drawing.Point(-718, 0);
+            this.topPanelLabel.Name = "topPanelLabel";
+            this.topPanelLabel.Size = new System.Drawing.Size(3000, 43);
+            this.topPanelLabel.TabIndex = 0;
             // 
             // roomNameLabel
             // 
-            this.roomNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.roomNameLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomNameLabel.Location = new System.Drawing.Point(12, 6);
@@ -73,7 +72,7 @@ namespace Inlämningsupg_3___zork
             // 
             // timerLabel
             // 
-            this.timerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.timerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.timerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.timerLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.Location = new System.Drawing.Point(922, 6);
@@ -84,7 +83,7 @@ namespace Inlämningsupg_3___zork
             // 
             // movesLabel
             // 
-            this.movesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.movesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.movesLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.movesLabel.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movesLabel.Location = new System.Drawing.Point(1189, 6);
@@ -121,7 +120,7 @@ namespace Inlämningsupg_3___zork
             // 
             // playerLabel
             // 
-            this.playerLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playerLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.playerLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.playerLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerLabel.Location = new System.Drawing.Point(0, 797);
@@ -133,7 +132,7 @@ namespace Inlämningsupg_3___zork
             // 
             // playerNameLabel
             // 
-            this.playerNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.playerNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.playerNameLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.playerNameLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerNameLabel.Location = new System.Drawing.Point(114, 797);
@@ -146,7 +145,7 @@ namespace Inlämningsupg_3___zork
             // 
             // inventoryLabel
             // 
-            this.inventoryLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.inventoryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.inventoryLabel.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.inventoryLabel.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventoryLabel.Location = new System.Drawing.Point(1258, 797);
@@ -158,7 +157,7 @@ namespace Inlämningsupg_3___zork
             // 
             // item1Label
             // 
-            this.item1Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.item1Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.item1Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.item1Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.item1Label.Location = new System.Drawing.Point(1372, 797);
@@ -182,7 +181,7 @@ namespace Inlämningsupg_3___zork
             // 
             // item2Label
             // 
-            this.item2Label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.item2Label.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.item2Label.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.item2Label.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.item2Label.Location = new System.Drawing.Point(1372, 765);
@@ -199,7 +198,7 @@ namespace Inlämningsupg_3___zork
             // 
             // TimerMinNSeconds
             // 
-            this.TimerMinNSeconds.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TimerMinNSeconds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TimerMinNSeconds.AutoSize = true;
             this.TimerMinNSeconds.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.TimerMinNSeconds.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold);
@@ -224,6 +223,7 @@ namespace Inlämningsupg_3___zork
             // 
             // howToPlayBtn
             // 
+            this.howToPlayBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.howToPlayBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.howToPlayBtn.Location = new System.Drawing.Point(1131, 622);
             this.howToPlayBtn.Name = "howToPlayBtn";
@@ -235,6 +235,7 @@ namespace Inlämningsupg_3___zork
             // 
             // mapBtn
             // 
+            this.mapBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mapBtn.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mapBtn.Location = new System.Drawing.Point(1131, 659);
             this.mapBtn.Name = "mapBtn";
@@ -246,8 +247,7 @@ namespace Inlämningsupg_3___zork
             // 
             // FrmScenario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1496, 828);
             this.Controls.Add(this.mapBtn);
@@ -265,7 +265,7 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.movesLabel);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.roomNameLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.topPanelLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmScenario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -279,7 +279,7 @@ namespace Inlämningsupg_3___zork
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label topPanelLabel;
         private System.Windows.Forms.Label roomNameLabel;
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label movesLabel;
