@@ -8,10 +8,7 @@ namespace Inlämningsupg_3___zork
 {
     interface ICharacter
     {
-        void Move(string direction);
         void PickUpItem(Item item);
         void DropItem(Item item);
-        bool TryOpenDoor(Item door);
-
     }
 }

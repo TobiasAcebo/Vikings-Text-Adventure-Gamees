@@ -22,11 +22,7 @@ namespace Inlämningsupg_3___zork
         public string PreviousLocation { get; set; }
         public int MovesCount { get; set; } = 0;
         public bool InDialog { get; set; } 
-        public void Move(string direction)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public void PickUpItem(Item item)
         {
             ItemList.Add(item);
@@ -37,11 +33,6 @@ namespace Inlämningsupg_3___zork
         {
             ItemList.Remove(item);
             CurrentLocation.ItemList.Add(item);
-        }
-
-        public bool TryOpenDoor(Item door)
-        {
-            throw new NotImplementedException();
         }
     }
 }

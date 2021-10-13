@@ -17,22 +17,22 @@ namespace Inlämningsupg_3___zork.GameClasses
         }
         public override void ExecuteInput(string input)
         {
-            
-
             if (input == "use spear on book" || input == "use book on spear")
             {
                 TryCreateKey();
                 return;
             }
+
             if (DropItemInputWorks(input))
                 return;
 
             if (PickUpItemInputWorks(input))
+            {
+                InventoryStatusPrint();
                 return;
-
-            if (TryingToPickUpMultipleItems(input))
-                return;
+            }
             
+
 
             var currentLocation = _character.CurrentLocation;
 
@@ -57,38 +57,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             else if (currentLocation.Title == "gate")
                 GateExecuteInput(input);
         }
-        private bool PickUpItemInputWorks(string input)
-        {
-            var itemsInLocation = _character.CurrentLocation.ItemList;
-            foreach (var item in itemsInLocation)
-            {
-                if (input == "pick up " + item.Title)
-                {
-                    if (!InventoryFull())
-                    {
-                        _character.PickUpItem(item);
-                        _character.CurrentLocation.Description = "You have picked up " + item.Title;
-                        InventoryStatusPrint();
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-        private bool DropItemInputWorks(string input)
-        {
-            var inventory = _character.ItemList;
-            foreach (var item in inventory)
-            {
-                if (input == "drop " + item.Title)
-                {
-                    _character.DropItem(item);
-                    _character.CurrentLocation.Description = "You have dropped " + item.Title + " in " + "\"" + _character.CurrentLocation.Title + "\"";
-                    return true;
-                }
-            }
-            return false;
-        }
+        
         private void TryCreateKey()
         {
             if (CharacterHasSpearAndBook())
@@ -443,43 +412,35 @@ namespace Inlämningsupg_3___zork.GameClasses
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
-        private bool TryingToPickUpMultipleItems(string input) 
-        {
-            if (input.Contains("pick up") && input.Contains("and"))
-            {
-                _character.CurrentLocation.Description = "Try pick up one item at the time.";
-                return true;
-            }
-            return false;
-        }
+        
 
-        private void TryPickUpHelmet()
-        {
-            Item helmet = _character.CurrentLocation.ItemList.Find(x => x.Title == "helmet");
-            _character.ItemList.Add(helmet);
-            _character.CurrentLocation.ItemList.Remove(helmet);
-        }
+        //private void TryPickUpHelmet()
+        //{
+        //    Item helmet = _character.CurrentLocation.ItemList.Find(x => x.Title == "helmet");
+        //    _character.ItemList.Add(helmet);
+        //    _character.CurrentLocation.ItemList.Remove(helmet);
+        //}
 
-        private void TryPickUpCandle()
-        {
-            Item candle = _character.CurrentLocation.ItemList.Find(x => x.Title == "candle");
-            _character.ItemList.Add(candle);
-            _character.CurrentLocation.ItemList.Remove(candle);
-        }
+        //private void TryPickUpCandle()
+        //{
+        //    Item candle = _character.CurrentLocation.ItemList.Find(x => x.Title == "candle");
+        //    _character.ItemList.Add(candle);
+        //    _character.CurrentLocation.ItemList.Remove(candle);
+        //}
 
-        private void TryPickUpBook()
-        {
-            Item book = _character.CurrentLocation.ItemList.Find(x => x.Title == "book");
-            _character.ItemList.Add(book);
-            _character.CurrentLocation.ItemList.Remove(book);
-        }
+        //private void TryPickUpBook()
+        //{
+        //    Item book = _character.CurrentLocation.ItemList.Find(x => x.Title == "book");
+        //    _character.ItemList.Add(book);
+        //    _character.CurrentLocation.ItemList.Remove(book);
+        //}
 
-        private void TryPickUpSpear()
-        {
-            Item spear = _character.CurrentLocation.ItemList.Find(x => x.Title == "spear");
-            _character.ItemList.Add(spear);
-            _character.CurrentLocation.ItemList.Remove(spear);
-        }
+        //private void TryPickUpSpear()
+        //{
+        //    Item spear = _character.CurrentLocation.ItemList.Find(x => x.Title == "spear");
+        //    _character.ItemList.Add(spear);
+        //    _character.CurrentLocation.ItemList.Remove(spear);
+        //}
 
         private void DisplayMuddyRoadItems()
         {
@@ -492,12 +453,6 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
             else
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
-        }
-
-        public void Look()
-        {
-            FrmInfoMuddyRoad frmInfoMuddyRoad = new FrmInfoMuddyRoad(_character);
-            frmInfoMuddyRoad.Show();
         }
     }
 }

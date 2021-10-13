@@ -26,7 +26,8 @@ namespace Inlämningsupg_3___zork
                 return;
             }
 
-            
+            if (TryingToPickUpMultipleItems(input))
+                return;
 
             var currentScenario = _character.CurrentScenario;
 
@@ -127,6 +128,14 @@ namespace Inlämningsupg_3___zork
             }
             return false;
         }
-
+        private bool TryingToPickUpMultipleItems(string input)
+        {
+            if (input.Contains("pick up") && input.Contains(" and "))
+            {
+                _character.CurrentLocation.Description = "Try pick up one item at the time.";
+                return true;
+            }
+            return false;
+        }
     }
 }

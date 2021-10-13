@@ -138,6 +138,7 @@ namespace Inlämningsupg_3___zork
                 "docks",
                 "gate",
                 "boat",
+                "ship",
                 "buy",
                 "hi",
                 "hello",
@@ -202,7 +203,11 @@ namespace Inlämningsupg_3___zork
                 "get",
                 "yes",
                 "no",
-                "good work",
+                "good",
+                "work",
+                "move",
+                "pick",
+                "up"
             };
         }
     }
