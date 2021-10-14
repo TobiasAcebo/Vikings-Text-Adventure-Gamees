@@ -1,2 +1,0 @@
-﻿1. Vi använder textfil för att spara progressionen:
-	Användaren stänger ner spelet innan det är slut --> Nästa gång spelet öppnas så tar hen vid där hen slutade.

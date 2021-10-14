@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Inlämningsupg_3___zork.GameClasses
@@ -65,6 +66,8 @@ namespace Inlämningsupg_3___zork.GameClasses
 
             else if (currentLocation.Title == "great halls gate")
                 GreatHallsGateExecuteInput(input);
+            else if (currentLocation.Title == "sailing")
+                SailingExecuteInput(input);
         }
 
         
@@ -125,9 +128,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (_character.CurrentLocation.Door.IsOpen)
             {
-                var EndScreen = new EndScreen(_character);
-                FrmScenario.ActiveForm.Hide();
-                EndScreen.Show();
+                _character.IsAtEndPoint = true;
             }
             else if (CharacterHasKey())
             {
@@ -333,7 +334,8 @@ namespace Inlämningsupg_3___zork.GameClasses
                 GoBackToStartingPoint(_character.CurrentLocation.Title);
 
             else if (input == "yes")
-                GoBackToTheDocks();
+                Sailing();
+            
 
             else if (input == "no")
                 _character.CurrentLocation.Description = "Very well then, come back anytime.";
@@ -342,10 +344,22 @@ namespace Inlämningsupg_3___zork.GameClasses
                 CannotExecuteInputFrom(_character.CurrentLocation.Title);
         }
 
+        private void Sailing()
+        {
+            _character.PreviousLocation = null;
+            _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(location => location.Title == "sailing");
+        }
+        private void SailingExecuteInput(string input)
+        {
+            if (input == "sail back to the docks")
+            {
+                GoBackToTheDocks();
+            }
+        }
+
         private void GoBackToTheDocks()
         {
             _character.PreviousLocation = null;
-
             _character.CurrentScenario = _gameContent.GetStartingScenario();
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(location => location.Title == "starting point");
             _character.CurrentLocation.Description = "You are back at The Docks";

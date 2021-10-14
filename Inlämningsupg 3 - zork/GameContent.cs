@@ -66,7 +66,8 @@ namespace Inlämningsupg_3___zork
                         new Location {Title = "stairs", Description = "This is a lot of stairs.\r\nIt has to be the way into great halls.\r\nTry go north and you find the gate."},
                         new Location {Title = "swordsmith", Description = "You are at the Swordsmith nothing to see here i guess...", ItemList = new List<Item>{ new Item {Title = "long sword"}}},
                         new Location {Title = "pub", Description = "You have entered the pub, try to find Erhild."},
-                        new Location {Title = "great halls gate", Door = new Door{IsOpen = false}, Description = "You found it!\r\nThe gate to the Great halls.\r\nTry to open it."}
+                        new Location {Title = "great halls gate", Door = new Door{IsOpen = false}, Description = "You found it!\r\nThe gate to the Great halls.\r\nTry to open it."},
+                        new Location {Title = "sailing", Description = "Sailing back to The Docks...\r\nPress Enter to continue."}
 
                     },
 

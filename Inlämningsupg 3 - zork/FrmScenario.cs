@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -78,12 +79,19 @@ namespace Inlämningsupg_3___zork
                 roomPicturebox.ImageLocation = @"../../boat house town.jpg";
                 roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            else if (_character.CurrentLocation.Title == "sailing")
+            {
+                roomNameLabel.Text = "Sea";
+                roomPicturebox.ImageLocation = @"../../sailing.jpg";
+                roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
             else
             {
                 roomNameLabel.Text = currentScenario.Title;
                 roomPicturebox.ImageLocation = currentScenario.ImagePath;
                 roomPicturebox.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+            
         }
         private void Moves()
         {
@@ -103,6 +111,7 @@ namespace Inlämningsupg_3___zork
             TimerMinNSeconds.Text = this._minutes.ToString() + ":" + this._seconds.ToString();
             
         }
+      
         private void PrintExceptionMessage(string inputExceptionMessage)
         {
             roomDescriptionTxt.AppendText(inputExceptionMessage + "\r\n\r\n");
@@ -117,6 +126,12 @@ namespace Inlämningsupg_3___zork
         {
             if (e.KeyCode != Keys.Enter)
                 return;
+            if (_character.CurrentLocation.Title == "sailing")
+            {
+                _game.ExecuteInput("sail back to the docks");
+                UpdateScenario();
+                return;
+            }
 
             string userInput = userInputTxt.Text.ToLower();
             string inputExceptionMessage = InputHandler.GetInputExceptionMessage(_character, userInput);
@@ -128,7 +143,13 @@ namespace Inlämningsupg_3___zork
             {
                 _game.ExecuteInput(userInput);
                 _character.MovesCount++;
-
+                if (_character.IsAtEndPoint)
+                {
+                    EndScreen endScreen = new EndScreen(_character.MovesCount, _minutes, _seconds);
+                    FrmScenario.ActiveForm.Hide();
+                    endScreen.Show();
+                }
+                else
                 UpdateScenario();
             }
             userInputTxt.Clear();

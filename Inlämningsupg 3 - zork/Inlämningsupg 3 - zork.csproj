@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
-    <Compile Include="CharacterResult.cs" />
     <Compile Include="FrmInfoMuddyRoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +89,6 @@
     <Compile Include="InputHandler.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Repository.cs" />
     <Compile Include="Scenario.cs" />
     <Compile Include="FrmScenario.cs">
       <SubType>Form</SubType>
@@ -148,9 +146,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Idéer.txt" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,8 @@ namespace Inlämningsupg_3___zork
         public List<Item> ItemList { get; set; } = new List<Item>();
         public string PreviousLocation { get; set; }
         public int MovesCount { get; set; } = 0;
-        public bool InDialog { get; set; } 
+        public bool InDialog { get; set; }
+        public bool IsAtEndPoint { get; set; } = false;
         
         public void PickUpItem(Item item)
         {

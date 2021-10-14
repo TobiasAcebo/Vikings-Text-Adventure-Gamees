@@ -12,17 +12,13 @@ namespace Inlämningsupg_3___zork
 {
     public partial class EndScreen : Form
     {
-        Repository repository;
+        
 
-        public EndScreen(Character character)
+        public EndScreen(int moves, int minutes, int seconds)
         {
-            repository = new Repository();
-
-            repository.SaveResult(character);//I SaveResult lägger en ny rad för spelare så läggs den in i textfilen
-            //List<CharacterResult> highScoreLista = repository.GetHighScoreList();
             InitializeComponent();
-
-
+            movesLabel.Text = moves.ToString();
+            timeLabel.Text = $"{minutes}:{seconds}";
         }
 
         private void playBtn_Click(object sender, EventArgs e)
