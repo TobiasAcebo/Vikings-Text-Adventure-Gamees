@@ -103,7 +103,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void GreatHallsGateExecuteInput(string input)
         {
-            if (input == "open great halls" || input == "open gate" || input == "use key on gate") 
+            if (input.IsOpenGate()) 
                 TryOpenGate();
 
             else if (input == "go south")

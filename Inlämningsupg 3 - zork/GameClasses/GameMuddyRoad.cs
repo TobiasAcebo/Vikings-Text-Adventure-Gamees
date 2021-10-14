@@ -180,7 +180,7 @@ namespace Inlämningsupg_3___zork.GameClasses
 
         private void GateExecuteInput(string input)
         {
-            if (input == "open gate") // lägg till flera alternativ
+            if (input.IsOpenGate()) 
                 TryOpenGate();
 
             else if (input == "go south")
@@ -205,7 +205,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         {
             if (_character.CurrentLocation.Door.IsOpen)
             {
-                _character.CurrentScenario = _gameContent.GetTownScenario(); // skapa scenario
+                _character.CurrentScenario = _gameContent.GetTownScenario();
                 _character.CurrentLocation = _character.CurrentScenario.LocationList.First(l => l.Title == "starting point");
                 _character.PreviousLocation = null;
             }
