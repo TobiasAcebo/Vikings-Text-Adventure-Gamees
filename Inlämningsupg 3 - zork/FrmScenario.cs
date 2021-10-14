@@ -108,7 +108,10 @@ namespace Inlämningsupg_3___zork
                 this._minutes++;
             }
 
-            TimerMinNSeconds.Text = this._minutes.ToString() + ":" + this._seconds.ToString();
+            if(_seconds < 10)
+                TimerMinNSeconds.Text = this._minutes.ToString() + ":0" + this._seconds.ToString();
+            else
+                TimerMinNSeconds.Text = this._minutes.ToString() + ":" + this._seconds.ToString();
             
         }
       

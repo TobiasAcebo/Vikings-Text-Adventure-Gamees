@@ -175,6 +175,7 @@ namespace Inlämningsupg_3___zork.GameClasses
         private void GoToHouseWithAShieldOnTheWall(string previousLocation)
         {
             _character.CurrentLocation = _character.CurrentScenario.LocationList.Find(x => x.Title == "house with a shield on the wall");
+            _character.CurrentLocation.Description = "You have entered a house with a shield on the wall.";
             _character.PreviousLocation = previousLocation;
         }
 

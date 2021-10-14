@@ -18,7 +18,7 @@ namespace Inlämningsupg_3___zork
         {
             InitializeComponent();
             movesLabel.Text = moves.ToString();
-            timeLabel.Text = $"{minutes}:{seconds}";
+            timeLabel.Text = seconds < 10 ? $"{minutes}:0{seconds}" : $"{minutes}:{seconds}";
         }
 
         private void playBtn_Click(object sender, EventArgs e)
