@@ -57,10 +57,9 @@ namespace Inlämningsupg_3___zork
             this.labelX.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelX.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX.ForeColor = System.Drawing.Color.Lime;
-            this.labelX.Location = new System.Drawing.Point(951, 706);
-            this.labelX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelX.Location = new System.Drawing.Point(713, 574);
             this.labelX.Name = "labelX";
-            this.labelX.Size = new System.Drawing.Size(268, 58);
+            this.labelX.Size = new System.Drawing.Size(201, 47);
             this.labelX.TabIndex = 104;
             this.labelX.Text = "X = Your position";
             this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,10 +70,9 @@ namespace Inlämningsupg_3___zork
             this.xGate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xGate.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xGate.ForeColor = System.Drawing.Color.Lime;
-            this.xGate.Location = new System.Drawing.Point(517, 143);
-            this.xGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xGate.Location = new System.Drawing.Point(388, 116);
             this.xGate.Name = "xGate";
-            this.xGate.Size = new System.Drawing.Size(160, 47);
+            this.xGate.Size = new System.Drawing.Size(120, 38);
             this.xGate.TabIndex = 103;
             this.xGate.Text = "X";
             this.xGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -85,10 +83,9 @@ namespace Inlämningsupg_3___zork
             this.xSwordSmith.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xSwordSmith.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xSwordSmith.ForeColor = System.Drawing.Color.Lime;
-            this.xSwordSmith.Location = new System.Drawing.Point(108, 426);
-            this.xSwordSmith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xSwordSmith.Location = new System.Drawing.Point(81, 346);
             this.xSwordSmith.Name = "xSwordSmith";
-            this.xSwordSmith.Size = new System.Drawing.Size(160, 47);
+            this.xSwordSmith.Size = new System.Drawing.Size(120, 38);
             this.xSwordSmith.TabIndex = 102;
             this.xSwordSmith.Text = "X";
             this.xSwordSmith.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -99,10 +96,9 @@ namespace Inlämningsupg_3___zork
             this.xArmorSmith.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xArmorSmith.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xArmorSmith.ForeColor = System.Drawing.Color.Lime;
-            this.xArmorSmith.Location = new System.Drawing.Point(88, 596);
-            this.xArmorSmith.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xArmorSmith.Location = new System.Drawing.Point(66, 489);
             this.xArmorSmith.Name = "xArmorSmith";
-            this.xArmorSmith.Size = new System.Drawing.Size(160, 47);
+            this.xArmorSmith.Size = new System.Drawing.Size(120, 38);
             this.xArmorSmith.TabIndex = 101;
             this.xArmorSmith.Text = "X";
             this.xArmorSmith.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -113,10 +109,9 @@ namespace Inlämningsupg_3___zork
             this.xBoatHouse.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xBoatHouse.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xBoatHouse.ForeColor = System.Drawing.Color.Lime;
-            this.xBoatHouse.Location = new System.Drawing.Point(998, 596);
-            this.xBoatHouse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xBoatHouse.Location = new System.Drawing.Point(748, 489);
             this.xBoatHouse.Name = "xBoatHouse";
-            this.xBoatHouse.Size = new System.Drawing.Size(160, 47);
+            this.xBoatHouse.Size = new System.Drawing.Size(120, 38);
             this.xBoatHouse.TabIndex = 100;
             this.xBoatHouse.Text = "X";
             this.xBoatHouse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -127,10 +122,9 @@ namespace Inlämningsupg_3___zork
             this.xPub.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xPub.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xPub.ForeColor = System.Drawing.Color.Lime;
-            this.xPub.Location = new System.Drawing.Point(998, 426);
-            this.xPub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xPub.Location = new System.Drawing.Point(748, 346);
             this.xPub.Name = "xPub";
-            this.xPub.Size = new System.Drawing.Size(160, 47);
+            this.xPub.Size = new System.Drawing.Size(120, 38);
             this.xPub.TabIndex = 99;
             this.xPub.Text = "X";
             this.xPub.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,10 +135,9 @@ namespace Inlämningsupg_3___zork
             this.xStairs.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xStairs.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xStairs.ForeColor = System.Drawing.Color.Lime;
-            this.xStairs.Location = new System.Drawing.Point(517, 271);
-            this.xStairs.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xStairs.Location = new System.Drawing.Point(388, 220);
             this.xStairs.Name = "xStairs";
-            this.xStairs.Size = new System.Drawing.Size(160, 47);
+            this.xStairs.Size = new System.Drawing.Size(120, 38);
             this.xStairs.TabIndex = 98;
             this.xStairs.Text = "X";
             this.xStairs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,10 +149,9 @@ namespace Inlämningsupg_3___zork
             this.labelHouse4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelHouse4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHouse4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelHouse4.Location = new System.Drawing.Point(955, 550);
-            this.labelHouse4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse4.Location = new System.Drawing.Point(716, 447);
             this.labelHouse4.Name = "labelHouse4";
-            this.labelHouse4.Size = new System.Drawing.Size(237, 46);
+            this.labelHouse4.Size = new System.Drawing.Size(178, 38);
             this.labelHouse4.TabIndex = 97;
             this.labelHouse4.Text = "Boat house";
             this.labelHouse4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,10 +163,9 @@ namespace Inlämningsupg_3___zork
             this.labelHouse1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelHouse1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHouse1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelHouse1.Location = new System.Drawing.Point(955, 371);
-            this.labelHouse1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse1.Location = new System.Drawing.Point(716, 301);
             this.labelHouse1.Name = "labelHouse1";
-            this.labelHouse1.Size = new System.Drawing.Size(237, 55);
+            this.labelHouse1.Size = new System.Drawing.Size(178, 45);
             this.labelHouse1.TabIndex = 96;
             this.labelHouse1.Text = "Pub";
             this.labelHouse1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -187,11 +178,11 @@ namespace Inlämningsupg_3___zork
             this.listBoxItemsAvailable.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxItemsAvailable.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.listBoxItemsAvailable.FormattingEnabled = true;
-            this.listBoxItemsAvailable.ItemHeight = 19;
-            this.listBoxItemsAvailable.Location = new System.Drawing.Point(988, 75);
-            this.listBoxItemsAvailable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listBoxItemsAvailable.ItemHeight = 16;
+            this.listBoxItemsAvailable.Location = new System.Drawing.Point(741, 61);
+            this.listBoxItemsAvailable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxItemsAvailable.Name = "listBoxItemsAvailable";
-            this.listBoxItemsAvailable.Size = new System.Drawing.Size(216, 152);
+            this.listBoxItemsAvailable.Size = new System.Drawing.Size(162, 112);
             this.listBoxItemsAvailable.TabIndex = 95;
             // 
             // labelItemsAvailable
@@ -200,10 +191,9 @@ namespace Inlämningsupg_3___zork
             this.labelItemsAvailable.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelItemsAvailable.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelItemsAvailable.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelItemsAvailable.Location = new System.Drawing.Point(987, 16);
-            this.labelItemsAvailable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelItemsAvailable.Location = new System.Drawing.Point(740, 13);
             this.labelItemsAvailable.Name = "labelItemsAvailable";
-            this.labelItemsAvailable.Size = new System.Drawing.Size(223, 49);
+            this.labelItemsAvailable.Size = new System.Drawing.Size(167, 40);
             this.labelItemsAvailable.TabIndex = 94;
             this.labelItemsAvailable.Text = "Items available";
             this.labelItemsAvailable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,10 +204,9 @@ namespace Inlämningsupg_3___zork
             this.xStartingPoint.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xStartingPoint.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xStartingPoint.ForeColor = System.Drawing.Color.Lime;
-            this.xStartingPoint.Location = new System.Drawing.Point(517, 596);
-            this.xStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xStartingPoint.Location = new System.Drawing.Point(388, 489);
             this.xStartingPoint.Name = "xStartingPoint";
-            this.xStartingPoint.Size = new System.Drawing.Size(160, 47);
+            this.xStartingPoint.Size = new System.Drawing.Size(120, 38);
             this.xStartingPoint.TabIndex = 93;
             this.xStartingPoint.Text = "X";
             this.xStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -228,13 +217,12 @@ namespace Inlämningsupg_3___zork
             this.labelScenarioTitle.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelScenarioTitle.Font = new System.Drawing.Font("Tahoma", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelScenarioTitle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelScenarioTitle.Location = new System.Drawing.Point(16, 11);
-            this.labelScenarioTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelScenarioTitle.Location = new System.Drawing.Point(25, 13);
             this.labelScenarioTitle.Name = "labelScenarioTitle";
-            this.labelScenarioTitle.Size = new System.Drawing.Size(252, 71);
+            this.labelScenarioTitle.Size = new System.Drawing.Size(189, 58);
             this.labelScenarioTitle.TabIndex = 92;
             this.labelScenarioTitle.Text = "Town";
-            this.labelScenarioTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelScenarioTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelStartingPoint
             // 
@@ -243,10 +231,9 @@ namespace Inlämningsupg_3___zork
             this.labelStartingPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelStartingPoint.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStartingPoint.ForeColor = System.Drawing.Color.Red;
-            this.labelStartingPoint.Location = new System.Drawing.Point(471, 550);
-            this.labelStartingPoint.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelStartingPoint.Location = new System.Drawing.Point(353, 447);
             this.labelStartingPoint.Name = "labelStartingPoint";
-            this.labelStartingPoint.Size = new System.Drawing.Size(255, 46);
+            this.labelStartingPoint.Size = new System.Drawing.Size(192, 38);
             this.labelStartingPoint.TabIndex = 91;
             this.labelStartingPoint.Text = "Starting point";
             this.labelStartingPoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -258,11 +245,10 @@ namespace Inlämningsupg_3___zork
             this.labelGate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelGate.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelGate.Location = new System.Drawing.Point(443, 97);
-            this.labelGate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelGate.Location = new System.Drawing.Point(332, 76);
             this.labelGate.Name = "labelGate";
             this.labelGate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelGate.Size = new System.Drawing.Size(299, 46);
+            this.labelGate.Size = new System.Drawing.Size(225, 38);
             this.labelGate.TabIndex = 90;
             this.labelGate.Text = "Great Halls Gate";
             this.labelGate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,10 +260,9 @@ namespace Inlämningsupg_3___zork
             this.labelHouse3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelHouse3.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHouse3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelHouse3.Location = new System.Drawing.Point(41, 550);
-            this.labelHouse3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse3.Location = new System.Drawing.Point(31, 447);
             this.labelHouse3.Name = "labelHouse3";
-            this.labelHouse3.Size = new System.Drawing.Size(257, 46);
+            this.labelHouse3.Size = new System.Drawing.Size(193, 38);
             this.labelHouse3.TabIndex = 89;
             this.labelHouse3.Text = "Armorsmith";
             this.labelHouse3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,10 +274,9 @@ namespace Inlämningsupg_3___zork
             this.labelHouse2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelHouse2.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHouse2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelHouse2.Location = new System.Drawing.Point(41, 371);
-            this.labelHouse2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHouse2.Location = new System.Drawing.Point(31, 301);
             this.labelHouse2.Name = "labelHouse2";
-            this.labelHouse2.Size = new System.Drawing.Size(295, 55);
+            this.labelHouse2.Size = new System.Drawing.Size(222, 45);
             this.labelHouse2.TabIndex = 88;
             this.labelHouse2.Text = "Swordsmith";
             this.labelHouse2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -304,10 +288,9 @@ namespace Inlämningsupg_3___zork
             this.labelMiddle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.labelMiddle.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMiddle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelMiddle.Location = new System.Drawing.Point(523, 225);
-            this.labelMiddle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelMiddle.Location = new System.Drawing.Point(392, 180);
             this.labelMiddle.Name = "labelMiddle";
-            this.labelMiddle.Size = new System.Drawing.Size(138, 46);
+            this.labelMiddle.Size = new System.Drawing.Size(104, 38);
             this.labelMiddle.TabIndex = 87;
             this.labelMiddle.Text = "Stairs";
             this.labelMiddle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -319,10 +302,9 @@ namespace Inlämningsupg_3___zork
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(511, 371);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(383, 301);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 55);
+            this.label1.Size = new System.Drawing.Size(125, 45);
             this.label1.TabIndex = 105;
             this.label1.Text = "Fountain";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,20 +315,19 @@ namespace Inlämningsupg_3___zork
             this.xFountain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.xFountain.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xFountain.ForeColor = System.Drawing.Color.Lime;
-            this.xFountain.Location = new System.Drawing.Point(517, 426);
-            this.xFountain.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.xFountain.Location = new System.Drawing.Point(388, 346);
             this.xFountain.Name = "xFountain";
-            this.xFountain.Size = new System.Drawing.Size(160, 47);
+            this.xFountain.Size = new System.Drawing.Size(120, 38);
             this.xFountain.TabIndex = 106;
             this.xFountain.Text = "X";
             this.xFountain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmInfoTown
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1235, 775);
+            this.ClientSize = new System.Drawing.Size(926, 630);
             this.Controls.Add(this.xFountain);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelX);
@@ -367,7 +348,9 @@ namespace Inlämningsupg_3___zork
             this.Controls.Add(this.labelHouse3);
             this.Controls.Add(this.labelHouse2);
             this.Controls.Add(this.labelMiddle);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmInfoTown";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmInfoTown";
             this.ResumeLayout(false);
 

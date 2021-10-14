@@ -69,7 +69,7 @@ namespace Inlämningsupg_3___zork.GameClasses
                 _character.ItemList.Add(key);
                 _character.CurrentLocation.Description = "\"You have made a key!\"";
             }
-        } // skapar en ny key?
+        } 
 
         private void InventoryStatusPrint()
         {
@@ -388,6 +388,7 @@ namespace Inlämningsupg_3___zork.GameClasses
             {
                 _character.CurrentLocation.Description =
                     "Another locked gate. Wondering where this one leads. Do you have the key? \r\nIf not, ask the Viking, he should know";
+              
             }
             else if (characterHasKey && !gateIsOpen)
             {
